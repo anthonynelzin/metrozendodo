@@ -1,0 +1,389 @@
+@font-face {
+    font-family: "Alegreya Sans";
+    src: url("../fonts/alegreyasans-regular-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Alegreya Sans";
+    src: url("../fonts/alegreyasans-italic-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Alegreya Sans";
+    src: url("../fonts/alegreyasans-bold-webfont.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Alegreya Sans";
+    src: url("../fonts/alegreyasans-bolditalic-webfont.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+:root {
+	--color-alt: #04b2d9; /* Blue */
+	--color-light: #fafafa; /* Off white */
+	--color-dark: #4a4a4a; /* Dark gray */
+	--color-code: #efefef; /* Light gray */
+}
+
+::-moz-selection {
+	background: var(--color-alt);
+	color: var(--color-light);
+}
+
+::selection {
+	background: var(--color-alt);
+	color: var(--color-light);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+body {
+	background-color: #612273;
+	background-color: var(--color-main);
+	color: #fafafa;
+	color: var(--color-light);
+	font-size: 16px;
+	font-family: "Alegreya Sans", -apple-system, "Helvetica Neue", Helvetica, sans-serif;
+	line-height: 1;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	margin: 5em 1em;
+}
+
+@media (min-width: 47em) {
+	.site-wrapper {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: start;
+	}
+	
+	.site-main {
+		order: 1;
+		flex: 3;
+	}
+	
+	.site-sidebar {
+		order: 1;
+		flex: 1;
+		margin-left: 1em;
+	}
+}
+
+@media (min-width: 60em) {
+	body {
+		font-size: 18px;
+		margin: 10em 4em;
+	}
+}
+
+@media (min-width: 80em) {
+	body {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 100em) {
+	body {
+		font-size: 24px;
+	}
+}
+
+.skip {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+ }
+
+.skip:focus {
+	background: var(--color-light);
+	color: var(--color-dark);
+	clip: auto !important;
+	display: block;
+	top: 1em;
+	left: 1em;
+	height: auto;
+	width: auto;
+	padding: 1em;
+	z-index: 100000;
+}
+
+.site-header,
+.site-sidebar,
+.site-aside,
+.site-main {
+	margin-bottom: 1em;
+}
+
+.site-back,
+.site-title {
+	font-style: italic;
+}
+
+.site-back {
+	font-size: .8em;
+	margin-bottom: .3em;
+}
+
+.site-main {
+	background: var(--color-light);
+	color: var(--color-dark);
+	border: 1px solid;
+	padding: 1em;
+	box-shadow: 0px 2px 4px 0 #41174c, 0 4px 20px 0 #41174c;
+}
+
+.archive-title {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 1em;
+	margin-top: 3em;
+}
+
+.archive-title:first-of-type {
+	margin-top: 0;
+}
+
+.article-list,
+.article-footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.article-list {
+	width: 100%;
+	padding: 1em 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.article-list:first-of-type {
+	border-top: 1px solid #ccc;
+}
+
+.article-list .article-title {
+	max-width: 75%;
+}
+
+.article-list .article-time {
+	max-width: 25%;
+	text-align: right;
+}
+
+.footnote {
+	margin: 1em 0 0 33%;
+	font-size: .8em;
+}
+
+.article-footer {
+	margin-top: 1em;
+	padding: 1em 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.site-nav {
+	width: 100%;
+	text-align: right;
+}
+
+.site-toggle {
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	font-size: 1em;
+}
+
+.site-toggle::after {
+	content: "◉";
+	color: var(--color-light);
+}
+
+a {
+	color: inherit;
+}
+
+a:hover {
+	color: var(--color-alt);
+}
+
+h1 {
+	font-size: 1.728em;
+}
+
+h2 {
+	font-size: 1.44em;
+}
+
+h3,
+.site-aside h2 {
+	font-size: 1.2em;
+}
+
+h4,
+h5,
+h6 {
+	font-size: 1em;	
+}
+
+ol,
+ul {
+	list-style-position: inside;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.article-single {
+	line-height: 1.5;
+}
+
+.article-single figure,
+.article-single p,
+.article-single pre,
+.article-single ul {
+	margin-bottom: 1em;
+}
+
+.article-single abbr[title],
+.article-single dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+.article-single blockquote {
+	border-left: 5px solid var(--color-main);
+	padding-left: 1em;
+}
+
+.article-single code,
+.article-single pre {
+	font-size: .8em;
+	font-family: Consolas, Menlo, "Liberation Mono", monospace;
+	background: var(--color-code);
+}
+
+.article-single del {
+	text-decoration: line-through;
+}
+
+.article-single figcaption {
+	font-style: italic;
+	text-align: right;
+}
+
+.article-single h2 {
+	border-bottom: 1px solid;
+	margin-bottom: .3em;
+}
+
+.article-single hr {
+	display: block;
+    height: 1px;
+    border: 0;   
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.article-single ins {
+	background: #99bf0f; /* Green */
+	text-decoration: none;
+	color: var(--color-light);
+}
+
+.article-single mark {
+	background: #d90479; /* Pink */
+	color: var(--color-light);
+}
+
+.article-single pre {
+	white-space: pre-wrap;
+	padding: 1em;
+}
+
+.article-single sub,
+.article-single sup {
+	font-size: .8em;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+.article-single sub {
+	bottom: -.3em;
+}
+
+.article-single sup {
+	top: -.65em;
+	padding-left: .1em;
+}
+
+.article-single ul {
+	padding-left: 1em;
+}
+
+.site-aside h2 {
+	margin-bottom: .3em;
+}
+
+.site-aside p {
+	border-bottom: 1px solid var(--color-light);
+	padding: .3em 0;
+}
+
+.site-aside p:first-of-type {
+	border-top: 1px solid var(--color-light);
+}
+
+.night {
+	--color-alt: #99Bf0f; /* Green */
+	--color-main: #263238; /* Dark blue-black */
+	--color-dark: #efefef; /* Light gray */
+	--color-code: #1A2226; /* Almost black */
+}
+
+.night .site-main {
+	--color-light: #263238; /* Dark blue-black */
+	box-shadow: 0px 2px 4px 0 #1A2226, 0 4px 20px 0 #1A2226;
+}
+
+.night .site-main img {
+	opacity: .5;
+}

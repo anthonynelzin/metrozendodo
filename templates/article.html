@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<article class="article-single">
+		{{ article.content }}
+		
+		<footer class="article-footer">
+			<div class="article-author">{{ article.author }}</div>
+			
+			{% if article.tags %}
+				<div class="article-tags">
+				{% for tag in article.tags %}
+					<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
+				{% endfor %}
+				</div>
+			{% endif %}
+			
+			<time class="article-time" datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time>
+		</footer>
+	</article>
+	
+	<!--{% if article.related_posts %}
+	<hr />
+	<aside class="related">
+		<h2>Sur le même sujet : </h2>
+		<ul>
+    	{% for related_post in article.related_posts %}
+        	<li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+    	{% endfor %}
+    	</ul>
+	</aside>
+	{% endif %}-->
+{% endblock %}
