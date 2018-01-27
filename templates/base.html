@@ -28,11 +28,11 @@
 		
 		<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
 		<style>
-			{% block customcss %}
 			:root {
 				--color-main: {{ SITECOLOR }};
 			}
-			{% endblock %}
+			
+			{% block customcss %}{% endblock %}
 			
 			body {
 				{% if SITEASIDE %}

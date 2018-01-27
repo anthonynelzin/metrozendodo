@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-{% if article.color %}
-	{% block customcss %}
+{% block customcss %}
+	{% if article.color %}
 	:root {
 		--color-main: {{ article.color }};
 	}
-	{% endblock %}
-{% endif %}
+	{% endif %}
+{% endblock %}
+
 {% block content %}
 	<article class="article-single">
 		{{ article.content }}
