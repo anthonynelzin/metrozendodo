@@ -15,12 +15,12 @@
 }
 
 ::-moz-selection {
-	background: #d90479;
+	background: #0095c6;
 	color: #fefcfe;
 }
 
 ::selection {
-	background: #d90479;
+	background: #0095c6;
 	color: #fefcfe;
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 .site-header {
-	background: #000e11;
+	background: #2d2c4d;
 	color: #fefcfe;
 	padding: 1em;
 }
@@ -99,7 +99,16 @@ body {
 }
 
 .site-footer {
-	background: #000e11;
+	background: #2d2c4d;
 	color: #fefcfe;
 	padding: 1em;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #d72d5c;
 }
