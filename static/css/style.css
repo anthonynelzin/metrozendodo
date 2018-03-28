@@ -90,18 +90,30 @@ body {
 	background: #2d2c4d;
 	color: #fbfbfd;
 	padding: 1em;
+	width: 100%;
 }
 
 .site-main {
 	background: #fbfbfd;
 	margin: 1em 0;
 	padding: 1em;
+	width: 100%;
+}
+
+.site-content {
+	
+}
+
+.site-single {
+	line-height: 1.4;
+	max-width: 35em;
 }
 
 .site-footer {
 	background: #2d2c4d;
 	color: #fbfbfd;
 	padding: 1em;
+	width: 100%;
 }
 
 a {
@@ -111,4 +123,20 @@ a {
 
 a:hover {
 	color: #d72d5c;
+}
+
+h1 {
+	font-size: 1.953em;
+}
+
+h2 {
+	font-size: 1.563em;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+.site-single a {
+	text-decoration: underline;
 }

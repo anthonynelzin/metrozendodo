@@ -8,7 +8,9 @@
 {% endblock %}
 
 {% block content %}
-	<article class="article-single">
+	<article class="site-single">
+		<h1 class="article-title">{{ article.title }}</h1>
+		
 		{{ article.content }}
 		
 		<footer class="article-footer">
@@ -26,6 +28,8 @@
 		</footer>
 	</article>
 	
+	<aside class="single-aside">
+	
 	<!--{% if article.related_posts %}
 	<hr />
 	<aside class="related">
@@ -37,4 +41,5 @@
     	</ul>
 	</aside>
 	{% endif %}-->
+	</aside>
 {% endblock %}

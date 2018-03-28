@@ -49,17 +49,13 @@
 		
 		<header class="site-header">
 			{% block siteback %}<p class="site-back"><a href="{{ SITEURL }}" title="Retour à l’accueil">&larr; {{ SITENAME }}</a></p>{% endblock %}
-			{% if article %}
-				<h1 class="article-title">{{ article.title }}</h1>
-			{% elif page %}
-				<h1 class="page-title">{{ page.title }}</h1>
-			{% else %}
-				<h1 class="site-title">{% block title %}{{ SITENAME }}{% endblock %}</h1>
-			{% endif %}
+			<h1 class="site-title">{% block title %}{{ SITENAME }}{% endblock %}</h1>
 		</header>
 		
 		<main class="site-main">
-			{% block content %}{% endblock %}
+			<div class="site-content">
+				{% block content %}{% endblock %}
+			</div>
 		</main>
 		
 		<footer class="site-footer">
