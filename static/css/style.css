@@ -148,6 +148,11 @@ h3 {
 	font-size: 1.25em;
 }
 
+ol,
+ul {
+	list-style-position: inside;
+}
+
 .site-single {
 	line-height: 1.4;
 }
@@ -156,10 +161,86 @@ h3 {
 	text-decoration: underline;
 }
 
+.site-single abbr[title],
+.site-single dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+.site-single blockquote {
+	border-left: .5em solid #d72d5c;
+	padding-left: 1em;
+}
+
+.site-single code,
+.site-single pre {
+	background: #bfc8e0;
+	font-size: .9em;
+	font-family: Consolas, Menlo, "Liberation Mono", monospace;
+}
+
+.site-single del {
+	text-decoration: line-through;
+}
+
+.site-single figure {
+	margin-bottom: 1em;
+	max-width: 100%;
+}
+
+.site-single figure figcaption {
+	font-style: italic;
+	text-align: right;
+}
+
+.site-single figure img {
+	max-width: 100%;
+}
+
+.site-single ins {
+	text-decoration: none;
+}
+
 .site-single h1 {
 	margin-bottom: 1em;
 }
 
+.site-single hr {
+	border: 1px solid inherit;
+	margin: 1em 0;
+}
+
+.site-single mark {
+	background: #ffb025;
+}
+
 .site-single p {
 	margin-bottom: 1em;
+}
+
+.site-single pre {
+	white-space: pre-wrap;
+	margin-bottom: 1em;
+	padding: 1em;
+}
+
+.site-single sub,
+.site-single sup {
+	font-size: .8em;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+.site-single sub {
+	bottom: -.3em;
+}
+
+.site-single sup {
+	top: -.65em;
+	padding-left: .1em;
+}
+
+.site-single ul {
+	margin: 0 0 1em 1em;
 }
