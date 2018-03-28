@@ -48,22 +48,28 @@
 		<a href="#site-main" class="skip">Aller directement au contenu principal</a>
 		
 		<header class="site-header">
-			<a class="site-title" href="{{ SITEURL }}">{% block title %}{{ SITENAME }}{% endblock %}</a>
+			<div class="site-wrapper">
+				<a class="site-title" href="{{ SITEURL }}">{% block title %}{{ SITENAME }}{% endblock %}</a>
+			</div>
 		</header>
 		
 		<main class="site-main">
-			{% block content %}{% endblock %}
+			<div class="site-wrapper">
+				{% block content %}{% endblock %}
+			</div>
 		</main>
 		
 		<footer class="site-footer">
-			<nav class="site-nav"> 
-				<!-- Fat footer trois colonnes (MZD, catégories -> notamment pour MSD, tags). Puis ligne dessous. -->
-				{% for title, link in FOOTER_LINKS %}
-					<a href="{{ link }}">{{ title }}</a> | 
-				{% endfor %}
-				
-				<button onClick="darkModeSet()" class="site-toggle"></button>
-			</nav>
+			<div class="site-wrapper">
+				<nav class="site-nav"> 
+					<!-- Fat footer trois colonnes (MZD, catégories -> notamment pour MSD, tags). Puis ligne dessous. -->
+					{% for title, link in FOOTER_LINKS %}
+						<a href="{{ link }}">{{ title }}</a> | 
+					{% endfor %}
+					
+					<button onClick="darkModeSet()" class="site-toggle"></button>
+				</nav>
+			</div>
 		</footer>
 	</body>
 </html>

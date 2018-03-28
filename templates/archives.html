@@ -3,7 +3,6 @@
 {% block meta_description %}Tous les articles publiés sur {{ SITENAME }}.{% endblock %}
 
 {% block content %}
-	<div class="site-wrapper">
 	{% for year, date_year in dates|groupby("date.year")|sort(reverse=True) %}	
 	<h2 class="archive-title">{{ year }}</h2>
 		{% for article in date_year %}
@@ -14,5 +13,4 @@
 		</article>
 		{% endfor %}
 	{% endfor %}
-	</div>
 {% endblock %}

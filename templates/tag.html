@@ -5,7 +5,6 @@
 {% block meta_description %}Tous les articles sur le thème {{ tag }} sur {{ SITENAME }}.{% endblock %}
 
 {% block content %}
-	<div class="site-wrapper">
 	{% for article in articles %}
 		<article class="article-list">
 			<h3 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
@@ -13,5 +12,4 @@
 			<time class="article-time" datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time>
 		</article>
 	{% endfor %}
-	</div>
 {% endblock %}
