@@ -58,40 +58,9 @@
 			{% endif %}
 		</header>
 		
-		<div class="site-wrapper">
-			<main class="site-main">
-				{% block content %}{% endblock %}
-			</main>
-			
-			{% if SITEASIDE %}
-				<aside class="site-sidebar">
-					{% if SITEASIDECATEGORIES %}
-						<section class="site-aside">
-							<h2>Catégories</h2>
-							{% for category,null in categories %}
-								<p><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></p>
-		                    {% endfor %}
-						</section>
-					{% endif %}
-					
-					{% for title,description in SITEASIDES %}
-						<section class="site-aside">
-							<h2>{{ title }}</h2>
-							<p>{{ description }}</p>
-						</section>
-					{% endfor %}
-					
-					{% if SITEASIDETAGS %}
-						<section class="site-aside">
-							<h2>Thèmes</h2>
-							{% for tag,null in tags %}
-								<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
-							{% endfor %}
-						</section>
-					{% endif %}
-				</aside>
-			{% endif %}
-		</div>
+		<main class="site-main">
+			{% block content %}{% endblock %}
+		</main>
 		
 		<footer class="site-footer">
 			<nav class="site-nav"> 
