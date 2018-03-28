@@ -65,18 +65,18 @@ time, mark, audio, video {
 	z-index: 100000;
 }
 
-/*
-*
-* Mise en page générale
-*
-*/
+/************************
+*************************
+* Mise en page générale *
+*************************
+************************/
 
 html {
 	font-size: 100%;
 }
 
 body {
-	background: #722887;
+	background: #5f4B8b;
 	color: #000e11;
 	font-size: 1rem;
 	font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
@@ -88,6 +88,7 @@ body {
 
 .site-header {
 	background: #000e11;
+	color: #fefcfe;
 	padding: 1em;
 }
 
@@ -99,5 +100,6 @@ body {
 
 .site-footer {
 	background: #000e11;
+	color: #fefcfe;
 	padding: 1em;
 }
