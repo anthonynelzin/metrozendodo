@@ -100,8 +100,8 @@ body {
 	width: 100%;
 }
 
-.site-content {
-	
+.site-wrapper {
+	max-width: 35em;
 }
 
 .site-single {
@@ -135,6 +135,10 @@ h2 {
 
 h3 {
 	font-size: 1.25em;
+}
+
+.site-single {
+	line-height: 1.4;
 }
 
 .site-single a {

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<article class="article-single">
+	<article class="site-single  site-wrapper">
+		<h1 class="article-title">{{ page.title }}</h1>
+		
 		{{ page.content }}
 	</article>
 {% endblock %}

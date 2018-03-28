@@ -2,6 +2,7 @@
 {% block siteback %}<p class="site-back"><a href="https://metrozendodo.fr" title="Retour à métro[zen]dodo">&larr; métro[zen]dodo</a></p>{% endblock %}
 
 {% block content %}
+	<div class="site-wrapper">
 	{% for article in articles %}
 	{% if loop.index < 10 %}
 		<article class="article-list">
@@ -11,4 +12,5 @@
 		</article>
 	{% endif %}
 	{% endfor %}
+	</div>
 {% endblock %}

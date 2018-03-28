@@ -5,6 +5,7 @@
 {% block meta_description %}Tous les thèmes abordés sur {{ SITENAME }}.{% endblock %}
 
 {% block content %}
+	<div class="site-wrapper">
 	{% for tag, articles in tags|sort %}	
 	<h2 class="archive-title"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</h2>
 		{% for article in articles %}
@@ -15,4 +16,5 @@
 		</article>
 		{% endfor %}
 	{% endfor %}
+	</div>
 {% endblock %}
