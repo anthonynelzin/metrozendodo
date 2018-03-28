@@ -48,8 +48,7 @@
 		<a href="#site-main" class="skip">Aller directement au contenu principal</a>
 		
 		<header class="site-header">
-			{% block siteback %}<p class="site-back"><a href="{{ SITEURL }}" title="Retour à l’accueil">&larr; {{ SITENAME }}</a></p>{% endblock %}
-			<h1 class="site-title">{% block title %}{{ SITENAME }}{% endblock %}</h1>
+			<a class="site-title" href="{{ SITEURL }}">{% block title %}{{ SITENAME }}{% endblock %}</a>
 		</header>
 		
 		<main class="site-main">
@@ -58,6 +57,7 @@
 		
 		<footer class="site-footer">
 			<nav class="site-nav"> 
+				<!-- Fat footer trois colonnes (MZD, catégories -> notamment pour MSD, tags). Puis ligne dessous. -->
 				{% for title, link in FOOTER_LINKS %}
 					<a href="{{ link }}">{{ title }}</a> | 
 				{% endfor %}
