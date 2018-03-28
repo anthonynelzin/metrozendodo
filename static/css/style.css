@@ -57,11 +57,11 @@ time, mark, audio, video {
 	color: var(--color-dark);
 	clip: auto !important;
 	display: block;
-	top: 1em;
-	left: 1em;
+	top: 1rem;
+	left: 1rem;
 	height: auto;
 	width: auto;
-	padding: 1em;
+	padding: 1rem;
 	z-index: 100000;
 }
 
@@ -83,7 +83,7 @@ body {
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	line-height: 1;
-	margin: 1em;
+	margin: 1rem;
 }
 
 .site-wrapper {
@@ -93,20 +93,49 @@ body {
 .site-header {
 	background: #2d2c4d;
 	color: #fbfbfd;
-	padding: 1em;
+	padding: 1rem;
 	width: 100%;
 }
 
 .site-main {
 	background: #fbfbfd;
-	margin: 1em 0;
-	padding: 1em;
+	margin: 1rem 0;
+	padding: 1rem;
 	width: 100%;
 }
 
 @media (min-width: 768px) {
 	.site-wrapper {
 		margin-left: 20%;
+	}
+}
+
+.article-list {
+	align-items: center;
+	border-bottom: 1px solid #ebebf3;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 1rem 0;
+}
+
+.article-list:first-of-type {
+	border-top: 1px solid #ebebf3;
+}
+
+.article-title {
+	padding-bottom: 1rem;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.article-title {
+		padding-bottom: 0;
+		width: 75%;
+	}
+	
+	.article-time {
+		width: 25%;
+		text-align: right;
 	}
 }
 
@@ -118,7 +147,7 @@ body {
 .site-footer {
 	background: #2d2c4d;
 	color: #fbfbfd;
-	padding: 1em;
+	padding: 1rem;
 	width: 100%;
 }
 
@@ -140,11 +169,11 @@ h1 {
 	font-size: 1.953em;
 }
 
-h2 {
+h2 {
 	font-size: 1.563em;
 }
 
-h3 {
+h3 {
 	font-size: 1.25em;
 }
 
@@ -169,7 +198,7 @@ ul {
 
 .site-single blockquote {
 	border-left: .5em solid #d72d5c;
-	padding-left: 1em;
+	padding-left: 1rem;
 }
 
 .site-single code,
@@ -184,7 +213,7 @@ ul {
 }
 
 .site-single figure {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 	max-width: 100%;
 }
 
@@ -202,12 +231,13 @@ ul {
 }
 
 .site-single h1 {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 
 .site-single hr {
-	border: 1px solid inherit;
-	margin: 1em 0;
+	border: 0;
+	border-top: 1px solid #ebebf3;
+	margin: 1rem 0;
 }
 
 .site-single mark {
@@ -215,13 +245,13 @@ ul {
 }
 
 .site-single p {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 
 .site-single pre {
 	white-space: pre-wrap;
-	margin-bottom: 1em;
-	padding: 1em;
+	margin-bottom: 1rem;
+	padding: 1rem;
 }
 
 .site-single sub,
@@ -242,5 +272,5 @@ ul {
 }
 
 .site-single ul {
-	margin: 0 0 1em 1em;
+	margin: 0 0 1rem 1rem;
 }
