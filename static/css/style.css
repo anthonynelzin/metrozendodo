@@ -1,22 +1,27 @@
+/*****************************
+******************************
+*                            *
+*   Anthony Nelzin-Santos    *
+*     anthony@nelzin.fr      *
+* https://anthony.nelzin.fr/ *
+*                            *
+*         EUPL v1.2          *
+*                            *
+******************************
+*****************************/
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
 
-:root {
-	--color-alt: #04b2d9; /* Blue */
-	--color-light: #fafafa; /* Off white */
-	--color-dark: #4a4a4a; /* Dark gray */
-	--color-code: #efefef; /* Light gray */
-}
-
 ::-moz-selection {
-	background: var(--color-alt);
-	color: var(--color-light);
+	background: #d90479;
+	color: #fefcfe;
 }
 
 ::selection {
-	background: var(--color-alt);
-	color: var(--color-light);
+	background: #d90479;
+	color: #fefcfe;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -37,58 +42,6 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-}
-
-body {
-	background-color: #612273;
-	background-color: var(--color-main);
-	color: #fafafa;
-	color: var(--color-light);
-	font-size: 16px;
-	font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
-	line-height: 1;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-	margin: 5em 1em;
-}
-
-@media (min-width: 47em) {
-	.site-wrapper {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-		align-items: start;
-	}
-	
-	.site-main {
-		order: 1;
-		flex: 3;
-	}
-	
-	.site-sidebar {
-		order: 1;
-		flex: 1;
-		margin-left: 1em;
-	}
-}
-
-@media (min-width: 60em) {
-	body {
-		font-size: 18px;
-		margin: 10em 4em;
-	}
-}
-
-@media (min-width: 80em) {
-	body {
-		font-size: 20px;
-	}
-}
-
-@media (min-width: 100em) {
-	body {
-		font-size: 24px;
-	}
 }
 
 .skip {
@@ -112,250 +65,39 @@ body {
 	z-index: 100000;
 }
 
-.site-header,
-.site-sidebar,
-.site-aside,
-.site-main {
-	margin-bottom: 1em;
+/*
+*
+* Mise en page générale
+*
+*/
+
+html {
+	font-size: 100%;
 }
 
-.site-back,
-.site-title {
-	font-style: italic;
+body {
+	background: #722887;
+	color: #000e11;
+	font-size: 1rem;
+	font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	line-height: 1;
+	margin: 1em;
 }
 
-.site-back {
-	font-size: .8em;
-	margin-bottom: .3em;
-}
-
-.site-main {
-	background: var(--color-light);
-	color: var(--color-dark);
-	border: 1px solid;
-	padding: 1em;
-	box-shadow: 0px 2px 4px 0 #41174c, 0 4px 20px 0 #41174c;
-}
-
-.archive-title {
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 1em;
-	margin-top: 3em;
-}
-
-.archive-title:first-of-type {
-	margin-top: 0;
-}
-
-.article-list,
-.article-footer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.article-list {
-	width: 100%;
-	padding: 1em 0;
-	border-bottom: 1px solid #ccc;
-}
-
-.article-list:first-of-type {
-	border-top: 1px solid #ccc;
-}
-
-.article-list .article-title {
-	max-width: 75%;
-}
-
-.article-list .article-time {
-	max-width: 25%;
-	text-align: right;
-}
-
-.footnote {
-	margin: 1em 0 0 33%;
-	font-size: .8em;
-}
-
-.article-footer {
-	margin-top: 1em;
-	padding: 1em 0;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-}
-
-.site-nav {
-	width: 100%;
-	text-align: right;
-}
-
-.site-toggle {
-	background: transparent;
-	border: none;
-	margin: 0;
-	padding: 0;
-	cursor: pointer;
-	font-size: 1em;
-}
-
-.site-toggle::after {
-	content: "◉";
-	color: var(--color-light);
-}
-
-a {
-	color: inherit;
-}
-
-a:hover {
-	color: var(--color-alt);
-}
-
-h1 {
-	font-size: 1.728em;
-}
-
-h2 {
-	font-size: 1.44em;
-}
-
-h3,
-.site-aside h2 {
-	font-size: 1.2em;
-}
-
-h4,
-h5,
-h6 {
-	font-size: 1em;	
-}
-
-ol,
-ul {
-	list-style-position: inside;
-}
-
-img {
-	display: block;
-	max-width: 100%;
-}
-
-.article-single {
-	line-height: 1.5;
-}
-
-.article-single figure,
-.article-single p,
-.article-single pre,
-.article-single ul {
-	margin-bottom: 1em;
-}
-
-.article-single abbr[title],
-.article-single dfn[title] {
-    border-bottom: 1px dotted;
-    cursor: help;
-}
-
-.article-single blockquote {
-	border-left: 5px solid var(--color-main);
-	padding-left: 1em;
-}
-
-.article-single code,
-.article-single pre {
-	font-size: .8em;
-	font-family: Consolas, Menlo, "Liberation Mono", monospace;
-	background: var(--color-code);
-}
-
-.article-single del {
-	text-decoration: line-through;
-}
-
-.article-single figcaption {
-	font-style: italic;
-	text-align: right;
-}
-
-.article-single h2 {
-	border-bottom: 1px solid;
-	margin-bottom: .3em;
-}
-
-.article-single hr {
-	display: block;
-    height: 1px;
-    border: 0;   
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-.article-single ins {
-	background: #99bf0f; /* Green */
-	text-decoration: none;
-	color: var(--color-light);
-}
-
-.article-single mark {
-	background: #d90479; /* Pink */
-	color: var(--color-light);
-}
-
-.article-single pre {
-	white-space: pre-wrap;
+.site-header {
+	background: #000e11;
 	padding: 1em;
 }
 
-.article-single sub,
-.article-single sup {
-	font-size: .8em;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+.site-main {
+	background: #fefcfe;
+	margin: 1em 0;
+	padding: 1em;
 }
 
-.article-single sub {
-	bottom: -.3em;
-}
-
-.article-single sup {
-	top: -.65em;
-	padding-left: .1em;
-}
-
-.article-single ul {
-	padding-left: 1em;
-}
-
-.site-aside h2 {
-	margin-bottom: .3em;
-}
-
-.site-aside p {
-	border-bottom: 1px solid var(--color-light);
-	padding: .3em 0;
-}
-
-.site-aside p:first-of-type {
-	border-top: 1px solid var(--color-light);
-}
-
-.night {
-	--color-alt: #99Bf0f; /* Green */
-	--color-main: #263238; /* Dark blue-black */
-	--color-dark: #efefef; /* Light gray */
-	--color-code: #1A2226; /* Almost black */
-}
-
-.night .site-main {
-	--color-light: #263238; /* Dark blue-black */
-	box-shadow: 0px 2px 4px 0 #1A2226, 0 4px 20px 0 #1A2226;
-}
-
-.night .site-main img {
-	opacity: .5;
+.site-footer {
+	background: #000e11;
+	padding: 1em;
 }
