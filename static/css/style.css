@@ -93,6 +93,7 @@ a {
 
 a:hover {
 	color: #d72d5c;
+	text-decoration: underline;
 }
 
 h1, h2, h3 {
@@ -233,6 +234,7 @@ ul {
 
 .site-single a {
 	text-decoration: underline;
+	text-decoration-color: #d72d5c;
 }
 
 .site-single abbr[title],
