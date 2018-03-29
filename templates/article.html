@@ -8,38 +8,35 @@
 {% endblock %}
 
 {% block content %}
-	<div class="site-content">
-		<article class="site-single">
-			<header class="single-header">
-				<h1 class="single-title">{{ article.title }}</h1>
-			</header>
-			
-			{{ article.content }}
-			
-			<footer class="single-footer">
-				<div class="single-author">{{ article.author }}</div>
-				
-				{% if article.tags %}
-					<div class="single-tags">
-					{% for tag in article.tags %}
-						<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
-					{% endfor %}
-					</div>
-				{% endif %}
-				
-				<time class="single-time" datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time>
-			</footer>
-		</article>
+	<article class="site-single">
+		<header class="single-header">
+			<h1 class="single-title">{{ article.title }}</h1>
+			<time class="single-time" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+		</header>
 		
-		<aside class="site-aside">
-			<div class="aside-widget">
-				<h2>Sur le même sujet : </h2>
-				<ul>
-		    	{% for related_post in article.related_posts %}
-		        	<li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
-		    	{% endfor %}
-		    	</ul>
-			</div>
-		</aside>
-	</div>
+		{{ article.content }}
+		
+		<footer class="single-footer">
+			<div class="single-author">{{ article.author }}</div>
+			
+			{% if article.tags %}
+				<div class="single-tags">
+				{% for tag in article.tags %}
+					<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
+				{% endfor %}
+				</div>
+			{% endif %}
+		</footer>
+	</article>
+	
+	<aside class="site-aside">
+		<div class="aside-widget">
+			<h2>Sur le même sujet : </h2>
+			<ul>
+	    	{% for related_post in article.related_posts %}
+	        	<li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+	    	{% endfor %}
+	    	</ul>
+		</div>
+	</aside>
 {% endblock %}
