@@ -31,7 +31,7 @@
 	
 	<aside class="site-aside">
 		<div class="aside-widget">
-			<h2>Sur le même sujet : </h2>
+			<h3>Sur le même sujet</h3>
 			<ul>
 	    	{% for related_post in article.related_posts %}
 	        	<li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>

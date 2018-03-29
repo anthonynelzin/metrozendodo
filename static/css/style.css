@@ -158,6 +158,12 @@ ul {
 	line-height: 1.4;
 }
 
+@supports (display: grid) {
+	.site-single {
+		display: grid;
+	}
+}
+
 .site-aside {
 	margin-top: 5em;
 }
@@ -237,7 +243,12 @@ ul {
 
 .site-single blockquote {
 	border-left: .5em solid #d72d5c;
-	padding-left: 1rem;
+	margin: 0 5em 1em 5em;
+	padding-left: 1em;
+}
+
+.site-single blockquote p:last-of-type {
+	margin-bottom: 0;
 }
 
 .site-single code,
