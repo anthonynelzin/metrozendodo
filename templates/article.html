@@ -14,7 +14,9 @@
 			<time class="single-time" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
 		</header>
 		
-		{{ article.content }}
+		<div class="single-content">
+			{{ article.content }}
+		</div>
 		
 		<footer class="single-footer">
 			<div class="single-author">{{ article.author }}</div>
@@ -27,16 +29,16 @@
 				</div>
 			{% endif %}
 		</footer>
+		
+		<aside class="single-aside">
+			<div class="aside-widget">
+				<h3>Sur le même sujet</h3>
+				<ul>
+		    	{% for related_post in article.related_posts %}
+		        	<li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+		    	{% endfor %}
+		    	</ul>
+			</div>
+		</aside>
 	</article>
-	
-	<aside class="site-aside">
-		<div class="aside-widget">
-			<h3>Sur le même sujet</h3>
-			<ul>
-	    	{% for related_post in article.related_posts %}
-	        	<li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
-	    	{% endfor %}
-	    	</ul>
-		</div>
-	</aside>
 {% endblock %}
