@@ -96,8 +96,11 @@ a:hover {
 }
 
 h1, h2, h3 {
+	letter-spacing: -.05em;
+	line-height: 1;
 	margin: 0;
 	padding: 0;
+	text-transform: uppercase;
 }
 
 h1 {
@@ -134,6 +137,11 @@ ul {
 	width: 100%;
 }
 
+.site-header a:hover,
+.site-footer a:hover {
+	color: #ffb025;
+}
+
 .site-main {
 	background: #fbfbfd;
 	margin: 1rem 0;
@@ -142,7 +150,24 @@ ul {
 }
 
 .site-wrapper {
+	clear: both;
 	margin: 0 auto;
+}
+
+.site-content {
+	align-items: flex-start;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.site-single {
+	line-height: 1.4;
+	width: 60%;
+}
+
+.site-aside {
+	width: 30%;
 }
 
 .site-footer {
@@ -163,6 +188,7 @@ ul {
 	border-bottom: 1px solid #ebebf3;
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: space-between;
 	padding: 1rem 0;
 }
 
@@ -170,24 +196,24 @@ ul {
 	border-top: 1px solid #ebebf3;
 }
 
-.article-title {
+.article-list .article-title {
 	padding-bottom: 1rem;
 	width: 100%;
 }
 
-.article-time {
+.article-list .article-time {
 	font-family: Georgia, serif;
 }
 
 @media (min-width: 768px) {
-	.article-title {
+	.article-list .article-title {
 		padding-bottom: 0;
-		width: 75%;
+		width: 60%;
 	}
 	
-	.article-time {
-		width: 25%;
+	.article-list .article-time {
 		text-align: right;
+		width: 30%;
 	}
 }
 
@@ -197,9 +223,18 @@ ul {
 *****************************
 ****************************/
 
-.site-single {
-	line-height: 1.4;
-	max-width: 35em;
+.site-single .single-header {
+	margin-bottom: 1em;
+}
+
+.site-single .single-footer {
+	align-items: center;
+	border-bottom: 1px solid #ebebf3;
+	border-top: 1px solid #ebebf3;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 1em 0;
 }
 
 .site-single a {
@@ -244,10 +279,6 @@ ul {
 
 .site-single ins {
 	text-decoration: none;
-}
-
-.site-single h1 {
-	margin-bottom: 1rem;
 }
 
 .site-single hr {
