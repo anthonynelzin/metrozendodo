@@ -65,11 +65,11 @@ time, mark, audio, video {
 	z-index: 100000;
 }
 
-/************************
-*************************
-* Mise en page générale *
-*************************
-************************/
+/**********************
+***********************
+* Éléments génériques *
+***********************
+**********************/
 
 html {
 	font-size: 100%;
@@ -85,6 +85,43 @@ body {
 	line-height: 1;
 	margin: 1rem;
 }
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #d72d5c;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 1.953em;
+}
+
+h2 {
+	font-size: 1.563em;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+ol,
+ul {
+	list-style-position: inside;
+}
+
+/************************
+*************************
+* Mise en page générale *
+*************************
+************************/
 
 .site-wrapper {
 	max-width: 50em;
@@ -107,6 +144,19 @@ body {
 .site-wrapper {
 	margin: 0 auto;
 }
+
+.site-footer {
+	background: #2d2c4d;
+	color: #fbfbfd;
+	padding: 1rem;
+	width: 100%;
+}
+
+/**************************
+***************************
+* Mise en page des listes *
+***************************
+**************************/
 
 .article-list {
 	align-items: center;
@@ -141,51 +191,15 @@ body {
 	}
 }
 
+/****************************
+*****************************
+* Mise en page des articles *
+*****************************
+****************************/
+
 .site-single {
 	line-height: 1.4;
 	max-width: 35em;
-}
-
-.site-footer {
-	background: #2d2c4d;
-	color: #fbfbfd;
-	padding: 1rem;
-	width: 100%;
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #d72d5c;
-}
-
-h1, h2, h3 {
-	margin: 0;
-	padding: 0;
-}
-
-h1 {
-	font-size: 1.953em;
-}
-
-h2 {
-	font-size: 1.563em;
-}
-
-h3 {
-	font-size: 1.25em;
-}
-
-ol,
-ul {
-	list-style-position: inside;
-}
-
-.site-single {
-	line-height: 1.4;
 }
 
 .site-single a {
