@@ -218,7 +218,7 @@ ul {
 	text-transform: uppercase;
 }
 
-.site-single .single-footer {
+.single-footer {
 	align-items: center;
 	color: #9d9da8;
 	display: flex;
@@ -228,13 +228,19 @@ ul {
 	text-transform: uppercase;
 }
 
-.site-single .single-footer .single-author {
+.single-author {
 	font-weight: bold;
 }
 
 .site-single a {
 	text-decoration: underline;
+	-webkit-text-decoration-color: #d72d5c;
 	text-decoration-color: #d72d5c;
+}
+
+.single-tags a {
+	-webkit-text-decoration-color: #efaec0;
+	text-decoration-color: #efaec0;
 }
 
 .site-single abbr[title],
