@@ -104,10 +104,8 @@ body {
 	width: 100%;
 }
 
-@media (min-width: 768px) {
-	.site-wrapper {
-		margin-left: 20%;
-	}
+.site-wrapper {
+	margin: 0 auto;
 }
 
 .article-list {
@@ -125,6 +123,10 @@ body {
 .article-title {
 	padding-bottom: 1rem;
 	width: 100%;
+}
+
+.article-time {
+	font-family: Georgia, serif;
 }
 
 @media (min-width: 768px) {
