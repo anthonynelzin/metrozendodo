@@ -311,6 +311,29 @@ ul {
 	max-width: 100%;
 }
 
+.site-single .footnote {
+	font-size: .8em;
+}
+
+.site-single .footnote ol {
+	counter-reset: section;
+	list-style-type: none;
+}
+
+.site-single .footnote ol li {
+	margin-bottom: 1em;
+}
+
+.site-single .footnote ol li::before {
+	content: counters(section,".") ". ";
+	counter-increment: section;
+	font-weight: bold;
+}
+
+.site-single .footnote ol li p {
+	display: inline;
+}
+
 .site-single ins {
 	text-decoration: none;
 }
