@@ -48,8 +48,16 @@
 		<a href="#site-main" class="skip">Aller directement au contenu principal</a>
 		
 		<header class="site-header">
-			<div class="site-wrapper">
+			<div class="site-first-header site-wrapper">
 				<a class="site-title" href="{{ SITEURL }}">{% block title %}{{ SITENAME }}{% endblock %}</a>
+				
+				<nav class="site-nav" aria-label="Navigation principale">
+					<ul class="unstyled inline">
+					{% for title, link in HEADER_LINKS %}
+						<li><a href="{{ link }}">{{ title }}</a></li>{{ " |" if not loop.last }}
+                    {% endfor %}
+					</ul>
+				</nav>
 			</div>
 		</header>
 		
@@ -62,7 +70,7 @@
 		<footer class="site-footer">
 			<div class="site-first-footer site-wrapper">
 				{% if FOOTER_LINKS_TITLE %}
-				<nav class="site-nav">
+				<nav aria-label="Liens externes">
 					<h1 class="smtitle">{{ FOOTER_LINKS_TITLE }}</h1>
 					<ul class="unstyled">
 					{% for title, link in FOOTER_LINKS %}

@@ -129,6 +129,10 @@ ul {
 	list-style-type: none;
 }
 
+.inline li {
+	display: inline;
+}
+
 /************************
 *************************
 * Mise en page générale *
@@ -146,13 +150,43 @@ ul {
 	width: 100%;
 }
 
+.site-nav a,
+.site-footer a {
+	text-decoration: underline;
+}
+
 .site-header a:hover,
 .site-footer a:hover {
 	color: #ffb025;
 }
 
+.site-first-header,
+.site-first-footer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
 .site-title {
+	font-weight: bold;
 	text-transform: uppercase;
+}
+
+.site-title::before {
+	content: "[…] ";
+}
+
+.site-nav {
+	text-align: right;
+	margin-top: 1em;
+	width: 100%;
+}
+
+@media (min-width: 60em) {
+	.site-nav {
+		margin: 0;
+		width: auto;
+	}
 }
 
 .site-main {
@@ -187,16 +221,6 @@ ul {
 	color: #fbfbfd;
 	padding: 1rem;
 	width: 100%;
-}
-
-.site-footer a {
-	text-decoration: underline;
-}
-
-.site-first-footer {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
 }
 
 .site-first-footer nav {
