@@ -476,6 +476,25 @@ figcaption a {
 	padding-left: .1em;
 }
 
+.site-single table {
+	border-collapse: collapse;
+	margin-bottom: 1em;
+	text-align: center;
+	width: 100%;
+}
+
+.site-single table thead {
+	background: #d72d5c;
+}
+
+.site-single table th,
+.site-single table td {
+	border-bottom: 1px solid #9d9da8;
+	padding: 1em;
+}
+
+/* tr th td  #9d9da8*/
+
 .site-single ul {
 	margin: 0 0 1rem 1rem;
 }
@@ -493,6 +512,10 @@ figcaption a {
 .night a:hover {
 	color: #ffb025;
 	text-decoration: underline;
+}
+
+.night img {
+	filter: brightness(75%);
 }
 
 .night .site-header,
@@ -521,6 +544,6 @@ figcaption a {
 	padding-left: 1em;
 }
 
-.night img {
-	filter: brightness(75%);
+.night .site-single table thead {
+	background: #ffb025;
 }
