@@ -23,19 +23,23 @@ function getCookie(name) {
 function darkModeCheck() {
 	if (getCookie("darkMode") == "enabled") {
 		document.querySelector("body").classList.add("night");
-		document.querySelector(".site-toggle").setAttribute("aria-label", "Activer le mode clair");
+		document.querySelector(".site-toggle").setAttribute("aria-label", "Activer l’affichage clair");
+		document.querySelector(".site-toggle").innerHTML = "Activer l’affichage clair";
 	} else {
-		document.querySelector(".site-toggle").setAttribute("aria-label", "Activer le mode sombre");
+		document.querySelector(".site-toggle").setAttribute("aria-label", "Activer l’affichage sombre");
+		document.querySelector(".site-toggle").innerHTML = "Activer l’affichage sombre";
 	}
 }
 
 function darkModeSet() {
 	if (getCookie("darkMode") == "enabled") {
 		setCookie("darkMode", "disabled", 7);
-		document.querySelector(".site-toggle").setAttribute("aria-label", "Activer le mode clair");
+		document.querySelector(".site-toggle").setAttribute("aria-label", "Activer l’affichage sombre");
+		document.querySelector(".site-toggle").innerHTML = "Activer l’affichage sombre";
 	} else {
 		setCookie("darkMode", "enabled", 7);
-		document.querySelector(".site-toggle").setAttribute("aria-label", "Activer le mode sombre");
+		document.querySelector(".site-toggle").setAttribute("aria-label", "Activer l’affichage clair");
+		document.querySelector(".site-toggle").innerHTML = "Activer l’affichage clair";
 	}
 	
 	document.querySelector("body").classList.toggle("night");
