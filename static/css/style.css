@@ -10,6 +10,8 @@
 ******************************
 *****************************/
 
+@import url(../fonts/css/ibm-plex.css);
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -79,7 +81,7 @@ body {
 	background: #5f4B8b;
 	color: #000e11;
 	font-size: 1rem;
-	font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
+	font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	line-height: 1.4;
@@ -97,6 +99,7 @@ a:hover {
 }
 
 h1, h2, h3 {
+	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
 	letter-spacing: -.05em;
 	margin: 0;
 	padding: 0;
@@ -116,6 +119,7 @@ h3 {
 }
 
 .smtitle {
+	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
 	font-size: 1em;
 }
 
@@ -169,6 +173,7 @@ ul {
 }
 
 .site-title {
+	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -294,6 +299,7 @@ ul {
 
 article time {
 	color: #9d9da8;
+	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -323,6 +329,7 @@ article time {
 	color: #9d9da8;
 	display: flex;
 	flex-wrap: wrap;
+	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
 	grid-column: 1/3;
 	justify-content: space-between;
 	margin-top: 5em;
