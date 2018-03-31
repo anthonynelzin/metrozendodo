@@ -18,18 +18,6 @@
 			{{ article.content }}
 		</div>
 		
-		<footer class="single-footer">
-			<div class="single-author">{{ article.author }}</div>
-			
-			{% if article.tags %}
-				<div class="single-tags">
-				{% for tag in article.tags %}
-					<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
-				{% endfor %}
-				</div>
-			{% endif %}
-		</footer>
-		
 		<aside class="single-aside">
 			{% if article.related_posts %}
 			<div class="aside-widget">
@@ -42,5 +30,17 @@
 			</div>
 			{% endif %}
 		</aside>
+		
+		<footer class="single-footer">
+			<div class="single-author">{{ article.author }}</div>
+			
+			{% if article.tags %}
+				<div class="single-tags">
+				{% for tag in article.tags %}
+					<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
+				{% endfor %}
+				</div>
+			{% endif %}
+		</footer>
 	</article>
 {% endblock %}
