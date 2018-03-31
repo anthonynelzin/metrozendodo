@@ -152,6 +152,7 @@ ul {
 	background: #2d2c4d;
 	color: #fbfbfd;
 	padding: 1rem;
+	text-align: center;
 	width: 100%;
 }
 
@@ -176,7 +177,14 @@ ul {
 	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
+	width: 100%;
 }
+
+@media (min-width: 60em) {
+		.site-title {
+			width: auto;
+		}
+	}
 
 .site-title::before {
 	animation: hue 10s infinite linear;
@@ -190,7 +198,6 @@ ul {
 }
 
 .site-nav {
-	text-align: right;
 	margin-top: 1em;
 	width: 100%;
 }
