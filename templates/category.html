@@ -1,15 +1,17 @@
 {% extends "base.html" %}
-{% block title %}Catégorie : {{ category }}{% endblock %}
-{% block meta_title %}Catégorie : {{ category }} | {{ SITENAME }}{% endblock %}
+{% block meta_title %}{{ category }} | {{ SITENAME }}{% endblock %}
 {% block meta_index %}<meta name="robots" content="noindex, follow" />{% endblock %}
 {% block meta_description %}Tous les articles de la catégorie {{ category }} sur {{ SITENAME }}.{% endblock %}
 
 {% block content %}
+	<h1>{{ category }}</h1>
+	
+	<section class="site-archive">
 	{% for article in articles %}
-		<article class="article-list">
-			<h3 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
-			
-			<time class="article-time" datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time>
+		<article>
+			<h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+			<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
 		</article>
 	{% endfor %}
+	</section>
 {% endblock %}
