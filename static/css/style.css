@@ -174,7 +174,14 @@ ul {
 }
 
 .site-title::before {
+	animation: hue 10s infinite linear;
+	color: #ffb025;
 	content: "[…] ";
+}
+
+@keyframes hue {
+	30% { color: #d72d5c; }
+	60% { color: #0095c6; }
 }
 
 .site-nav {
