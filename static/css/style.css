@@ -276,6 +276,14 @@ ul {
 	margin-bottom: 0;
 }
 
+.index article img {
+	max-width: 66%;
+}
+
+.index article a:hover img {
+	opacity: .5;
+}
+
 .site-archive {
 	margin-top: 5em;
 }
