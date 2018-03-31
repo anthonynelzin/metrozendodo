@@ -85,7 +85,13 @@ body {
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	line-height: 1.4;
-	margin: 1rem;
+	margin: 1em 0;
+}
+
+@media (min-width: 60em) {
+	body {
+		margin: 1em;
+	}
 }
 
 a {
@@ -181,10 +187,10 @@ ul {
 }
 
 @media (min-width: 60em) {
-		.site-title {
-			width: auto;
-		}
+	.site-title {
+		width: auto;
 	}
+}
 
 .site-title::before {
 	animation: hue 10s infinite linear;
