@@ -97,11 +97,9 @@
 				{% if FOOTER_TAGS %}
 				<nav aria-label="Liste des mots-clefs">
 					<h1 class="smtitle">Mots-clefs</h1>
-					{% for category, null in categories %}
-						{% for tag, null in tags %}
-							<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
-						{% endfor %}
-                    {% endfor %}
+					{% for tag, null in tags %}
+						<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
+					{% endfor %}
 				</nav>
 				{% endif %}
 			</div>
