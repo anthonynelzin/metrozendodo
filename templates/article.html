@@ -13,7 +13,7 @@
 			{% if article.hero %}
 			<figure class="single-hero">
 				<img src="/static/{{ article.hero }}" />
-				<figcaption>{{ article.herocredits }}.</figcaption>
+				<figcaption>{% if article.herocredits %}{{ article.herocredits }}{% else %}Image {{ AUTHOR }}{% endif %}.</figcaption>
 			</figure>
 			{% endif %}
 			
