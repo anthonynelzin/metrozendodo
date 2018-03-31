@@ -143,6 +143,10 @@ ul {
 	color: #ffb025;
 }
 
+.site-title {
+	text-transform: uppercase;
+}
+
 .site-main {
 	background: #fbfbfd;
 	margin: 1rem 0;
