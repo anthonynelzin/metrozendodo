@@ -10,6 +10,13 @@
 {% block content %}
 	<article class="site-single">
 		<header class="single-header">
+			{% if article.hero %}
+			<figure class="single-hero">
+				<img src="/static/{{ article.hero }}" />
+				<figcaption>{{ article.herocredits }}.</figcaption>
+			</figure>
+			{% endif %}
+			
 			<h1 class="single-title">{{ article.title }}</h1>
 			<time class="single-time" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
 		</header>
