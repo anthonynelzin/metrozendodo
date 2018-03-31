@@ -328,9 +328,10 @@ article time {
 	text-decoration-color: #d72d5c;
 }
 
-.single-tags a {
-	-webkit-text-decoration-color: #efaec0;
-	text-decoration-color: #efaec0;
+.single-tags a,
+figcaption a {
+	-webkit-text-decoration-color: #efaec0 !important;
+	text-decoration-color: #efaec0 !important;
 }
 
 .site-single abbr[title],
@@ -441,4 +442,49 @@ article time {
 
 .site-single ul {
 	margin: 0 0 1rem 1rem;
+}
+
+/*******************
+********************
+* Affichage sombre *
+********************
+*******************/
+
+.night {
+	color: #f6f5fa;
+}
+
+.night a:hover {
+	color: #ffb025;
+	text-decoration: underline;
+}
+
+.night .site-header,
+.night .site-footer {
+	background: #1a192d;
+}
+
+.night .site-main {
+	background: #2d2c4d;
+}
+
+.night .site-single a {
+	-webkit-text-decoration-color: #ffb025;
+	text-decoration-color: #ffb025;
+}
+
+.night .single-tags a,
+.night figcaption a {
+	-webkit-text-decoration-color: #d3a451 !important;
+	text-decoration-color: #d3a451 !important;
+}
+
+.night .site-single blockquote {
+	border-left: .5em solid #ffb025;
+	margin: 0 0 1em 0;
+	padding-left: 1em;
+}
+
+.night img {
+	filter: brightness(75%);
 }
