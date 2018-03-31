@@ -1,14 +1,30 @@
 {% extends "base.html" %}
-{% block siteback %}<p class="site-back"><a href="https://metrozendodo.fr" title="Retour à métro[zen]dodo">&larr; métro[zen]dodo</a></p>{% endblock %}
 
 {% block content %}
+	<div class="index">
 	{% for article in articles %}
-	{% if loop.index < 10 %}
-		<article class="article-list">
-			<h2 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-			
-			<time class="article-time" datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time>
+	{% if loop.index <= 5 %}
+		<article>
+			{% if article.hero %}
+				<a href="{{ SITEURL }}/{{ article.url }}">
+					<img src="/static/{{ article.hero }}" alt="Image d’illustration de l’article" />
+					<h1>{{ article.title }}</h1>
+				</a>
+			{% else %}
+				<h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>	
+			{% endif %}
+			<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
 		</article>
 	{% endif %}
 	{% endfor %}
+	
+	{% for article in articles %}
+	{% if loop.index > 5 and loop.index <= 25 %}
+		<article>
+			<h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+			<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+		</article>
+	{% endif %}
+	{% endfor %}
+	</div>
 {% endblock %}
