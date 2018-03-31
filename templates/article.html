@@ -12,7 +12,7 @@
 		<header class="single-header">
 			{% if article.hero %}
 			<figure class="single-hero">
-				<img src="/static/{{ article.hero }}" />
+				<img src="/static/{{ article.hero }}" alt="Image d’illustration de l’article" />
 				<figcaption>{% if article.herocredits %}{{ article.herocredits }}{% else %}Image {{ AUTHOR }}{% endif %}.</figcaption>
 			</figure>
 			{% endif %}
