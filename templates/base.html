@@ -60,15 +60,52 @@
 		</main>
 		
 		<footer class="site-footer">
-			<div class="site-wrapper">
-				<nav class="site-nav"> 
-					<!-- Fat footer trois colonnes (MZD, catégories -> notamment pour MSD, tags). Puis ligne dessous. -->
+			<div class="site-first-footer site-wrapper">
+				{% if FOOTER_LINKS_TITLE %}
+				<nav class="site-nav">
+					<h1 class="smtitle">{{ FOOTER_LINKS_TITLE }}</h1>
+					<ul class="unstyled">
 					{% for title, link in FOOTER_LINKS %}
-						<a href="{{ link }}">{{ title }}</a> | 
+						<li><a href="{{ link }}">{{ title }}</a></li>
 					{% endfor %}
-					
-					<button onClick="darkModeSet()" class="site-toggle"></button>
+					</ul>
 				</nav>
+				{% endif %}
+				
+				{% if FOOTER_CATEGORIES %}
+				<nav aria-label="Liste des catégories">
+					<h1 class="smtitle">Catégories</h1>
+					<ul class="unstyled">
+					{% for category, null in categories %}
+						<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+                    {% endfor %}
+					</ul>
+				</nav>
+				{% else %}
+				<nav aria-label="Navigation principale">
+					<h1 class="smtitle">{{ SITENAME }}</h1>
+					<ul class="unstyled">
+					{% for title, link in HEADER_LINKS %}
+						<li><a href="{{ link }}">{{ title }}</a></li>
+                    {% endfor %}
+					</ul>
+				</nav>
+				{% endif %}
+				
+				{% if FOOTER_TAGS %}
+				<nav aria-label="Liste des mots-clefs">
+					<h1 class="smtitle">Mots-clefs</h1>
+					{% for category, null in categories %}
+						{% for tag, null in tags %}
+							<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
+						{% endfor %}
+                    {% endfor %}
+				</nav>
+				{% endif %}
+			</div>
+			
+			<div class="site-second-footer site-wrapper">
+				<p>{% if FOOTER_COPY %}{{ FOOTER_COPY }}{% endif %} <a href="#" onClick="darkModeSet()">Activer l’affichage sombre</a>.</p>
 			</div>
 		</footer>
 	</body>
