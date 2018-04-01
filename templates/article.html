@@ -18,18 +18,105 @@
 			{{ article.content }}
 		</div>
 		
-		<aside class="single-aside">
-			{% if article.related_posts %}
-			<div class="aside-widget">
-				<h2 class="smtitle">Sur le même sujet</h2>
-				<ul class="unstyled">
-		    	{% for related_post in article.related_posts %}
-		        	<li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
-		    	{% endfor %}
-		    	</ul>
+		<div class="single-sidebar">
+			<div class="single-sidebar-even">
+				{% if article.link %}
+				<aside class="single-aside">
+					<h2 class="smtitle">Acheter</h2>
+					<ul class="unstyled">
+			    	{% for link in article.link %}
+						<li>{{ link }}</li>
+					{% endfor %}
+			    	</ul>
+				</aside>
+				{% endif %}
+				
+				{% if article.prix %}
+				<aside class="single-aside">
+					<h2 class="smtitle">Informations</h2>
+					<ul class="unstyled">
+						{% if article.teinte %}
+						<li><b>Teinte</b> {{ article.teinte }}</li>
+						{% endif %}
+						
+						{% if article.saturation %}
+						<li><b>Saturation</b> {{ article.saturation }}</li>
+						{% endif %}
+						
+						{% if article.nuances %}
+						<li><b>Nuances</b> {{ article.nuances }}</li>
+						{% endif %}
+						
+						{% if article.lustre %}
+						<li><b>Lustre</b> {{ article.lustre }}</li>
+						{% endif %}
+						
+						{% if article.reseau %}
+						<li><b>Résistance à l’eau</b> {{ article.reseau }}</li>
+						{% endif %}
+						
+						{% if article.couleur %}
+						<li><b>Couleur</b> {{ article.couleur }}</li>
+						{% endif %}
+						
+						{% if article.modele %}
+						<li><b>Modèle</b> {{ article.modele }}</li>
+						{% endif %}
+						
+						{% if article.plume %}
+						<li><b>Plume</b> {{ article.plume }}</li>
+						{% endif %}
+						
+						{% if article.capuchon %}
+						<li><b>Capuchon</b> {{ article.capuchon }}</li>
+						{% endif %}
+						
+						{% if article.remplissage %}
+						<li><b>Remplissage</b> {{ article.remplissage }}</li>
+						{% endif %}
+						
+						{% if article.dimensions %}
+						<li><b>Dimensions</b> {{ article.dimensions }}</li>
+						{% endif %}
+						
+						{% if article.poids %}
+						<li><b>Poids</b> {{ article.poids }}</li>
+						{% endif %}
+						
+						{% if article.remarques %}
+						<li><b>Remarques</b> {{ article.remarques }}</li>
+						{% endif %}
+						
+						{% if article.prix %}
+						<li><b>Prix</b> {{ article.prix }}</li>
+						{% endif %}
+					</ul>
+				</aside>
+				{% endif %}
+				
+				{% if article.related_posts %}
+				<aside class="single-aside">
+					<div class="aside-widget">
+						<h2 class="smtitle">Sur le même sujet</h2>
+						<ul class="unstyled">
+				    	{% for related_post in article.related_posts %}
+				        	<li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+				    	{% endfor %}
+				    	</ul>
+					</div>
+				</aside>
+				{% endif %}
 			</div>
-			{% endif %}
-		</aside>
+			
+			<div class="single-sidebar-odd">
+				{% if article.teinte %}
+				<aside class="single-aside">
+					<h2 class="smtitle">Nuancier</h2>
+					<img src="/static/{{ article.slug }}-nuancier.png" />
+				</aside>
+				{% endif %}
+			</div>
+		</div>
 		
 		<footer class="single-footer">
 			<div class="single-author">{{ article.author }}</div>
