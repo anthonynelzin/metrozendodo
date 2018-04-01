@@ -257,6 +257,22 @@ ul {
 **************************/
 
 .index article {
+	margin-bottom: 1em;
+}
+
+.index article:nth-child(-n+20) {
+	margin-bottom: 2em;
+}
+
+.index article:nth-child(-n+15) {
+	margin-bottom: 3em;
+}
+
+.index article:nth-child(-n+10) {
+	margin-bottom: 4em;
+}
+
+.index article:nth-child(-n+5) {
 	margin-bottom: 5em;
 }
 
