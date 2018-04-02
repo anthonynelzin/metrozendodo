@@ -42,7 +42,7 @@
 		<a href="#site-main" class="skip">Aller directement au contenu principal</a>
 		
 		<header class="site-header">
-			<div class="site-first-header site-wrapper">
+			<div class="site-header-content site-wrapper">
 				<a class="site-title" href="{{ SITEURL }}">{{ SITENAME }}</a>
 				
 				<nav class="site-nav" aria-label="Navigation principale">
@@ -62,50 +62,50 @@
 		</main>
 		
 		<footer class="site-footer">
-			<div class="site-first-footer site-wrapper">
-				{% if FOOTER_LINKS_TITLE %}
-				<nav aria-label="Liens externes">
-					<h1 class="smtitle">{{ FOOTER_LINKS_TITLE }}</h1>
-					<ul class="unstyled">
-					{% for title, link in FOOTER_LINKS %}
-						<li><a href="{{ link }}">{{ title }}</a></li>
-					{% endfor %}
-					</ul>
-				</nav>
-				{% endif %}
-				
-				{% if FOOTER_CATEGORIES %}
-				<nav aria-label="Liste des catégories">
-					<h1 class="smtitle">Catégories</h1>
-					<ul class="unstyled">
-					{% for category, null in categories %}
-						<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
-                    {% endfor %}
-					</ul>
-				</nav>
-				{% else %}
-				<nav aria-label="Navigation principale">
-					<h1 class="smtitle">{{ SITENAME }}</h1>
-					<ul class="unstyled">
-					{% for title, link in HEADER_LINKS %}
-						<li><a href="{{ link }}">{{ title }}</a></li>
-                    {% endfor %}
-					</ul>
-				</nav>
-				{% endif %}
+			<div class="site-footer-content site-wrapper">
+				<div class="site-footer-nav">
+					{% if FOOTER_LINKS_TITLE %}
+					<nav aria-label="Liens externes">
+						<h1 class="smtitle">{{ FOOTER_LINKS_TITLE }}</h1>
+						<ul class="unstyled">
+						{% for title, link in FOOTER_LINKS %}
+							<li><a href="{{ link }}">{{ title }}</a></li>
+						{% endfor %}
+						</ul>
+					</nav>
+					{% endif %}
+					
+					{% if FOOTER_CATEGORIES %}
+					<nav aria-label="Liste des catégories">
+						<h1 class="smtitle">Catégories</h1>
+						<ul class="unstyled">
+						{% for category, null in categories %}
+							<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+	                    {% endfor %}
+						</ul>
+					</nav>
+					{% else %}
+					<nav aria-label="Navigation principale">
+						<h1 class="smtitle">{{ SITENAME }}</h1>
+						<ul class="unstyled">
+						{% for title, link in HEADER_LINKS %}
+							<li><a href="{{ link }}">{{ title }}</a></li>
+	                    {% endfor %}
+						</ul>
+					</nav>
+					{% endif %}
+				</div>
 				
 				{% if FOOTER_TAGS %}
-				<nav aria-label="Liste des mots-clefs">
+				<nav class="site-footer-tags" aria-label="Liste des mots-clefs">
 					<h1 class="smtitle">Mots-clefs</h1>
 					{% for tag, null in tags %}
 						<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ " |" if not loop.last }}
 					{% endfor %}
 				</nav>
 				{% endif %}
-			</div>
 			
-			<div class="site-second-footer site-wrapper">
-				<p>{% if FOOTER_COPY %}{{ FOOTER_COPY }}{% endif %} <a href="#" onClick="darkModeSet()" class="site-toggle"></a>.</p>
+				<p class="site-footer-colophon">{% if FOOTER_COPY %}{{ FOOTER_COPY }}{% endif %} <a href="#" onClick="darkModeSet()" class="site-toggle"></a>.</p>
 			</div>
 		</footer>
 	</body>
