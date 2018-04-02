@@ -63,38 +63,36 @@
 		
 		<footer class="site-footer">
 			<div class="site-footer-content site-wrapper">
-				<div class="site-footer-nav">
-					{% if FOOTER_LINKS_TITLE %}
-					<nav aria-label="Liens externes">
-						<h1 class="smtitle">{{ FOOTER_LINKS_TITLE }}</h1>
-						<ul class="unstyled">
-						{% for title, link in FOOTER_LINKS %}
-							<li><a href="{{ link }}">{{ title }}</a></li>
-						{% endfor %}
-						</ul>
-					</nav>
-					{% endif %}
-					
-					{% if FOOTER_CATEGORIES %}
-					<nav aria-label="Liste des catégories">
-						<h1 class="smtitle">Catégories</h1>
-						<ul class="unstyled">
-						{% for category, null in categories %}
-							<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
-	                    {% endfor %}
-						</ul>
-					</nav>
-					{% else %}
-					<nav aria-label="Navigation principale">
-						<h1 class="smtitle">{{ SITENAME }}</h1>
-						<ul class="unstyled">
-						{% for title, link in HEADER_LINKS %}
-							<li><a href="{{ link }}">{{ title }}</a></li>
-	                    {% endfor %}
-						</ul>
-					</nav>
-					{% endif %}
-				</div>
+				{% if FOOTER_LINKS_TITLE %}
+				<nav aria-label="Liens externes">
+					<h1 class="smtitle">{{ FOOTER_LINKS_TITLE }}</h1>
+					<ul class="unstyled">
+					{% for title, link in FOOTER_LINKS %}
+						<li><a href="{{ link }}">{{ title }}</a></li>
+					{% endfor %}
+					</ul>
+				</nav>
+				{% endif %}
+				
+				{% if FOOTER_CATEGORIES %}
+				<nav aria-label="Liste des catégories">
+					<h1 class="smtitle">Catégories</h1>
+					<ul class="unstyled">
+					{% for category, null in categories %}
+						<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+                    {% endfor %}
+					</ul>
+				</nav>
+				{% else %}
+				<nav aria-label="Navigation principale">
+					<h1 class="smtitle">{{ SITENAME }}</h1>
+					<ul class="unstyled">
+					{% for title, link in HEADER_LINKS %}
+						<li><a href="{{ link }}">{{ title }}</a></li>
+                    {% endfor %}
+					</ul>
+				</nav>
+				{% endif %}
 				
 				{% if FOOTER_TAGS %}
 				<nav class="site-footer-tags" aria-label="Liste des mots-clefs">
