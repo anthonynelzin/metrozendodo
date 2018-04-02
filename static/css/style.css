@@ -285,12 +285,12 @@ ul {
 }
 
 .index article img {
-	width: 80%;
+	width: 100%;
 }
 
 @media (min-width: 48em) {
 	.index article img {
-		width: 66%;
+		width: 35em;
 	}
 }
 
