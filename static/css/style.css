@@ -59,11 +59,11 @@ time, mark, audio, video {
 	color: var(--color-dark);
 	clip: auto !important;
 	display: block;
-	top: 1rem;
-	left: 1rem;
+	top: 1em;
+	left: 1em;
 	height: auto;
 	width: auto;
-	padding: 1rem;
+	padding: 1em;
 	z-index: 100000;
 }
 
@@ -158,9 +158,18 @@ ul {
 .site-header {
 	background: #2d2c4d;
 	color: #fbfbfd;
-	padding: 1rem;
+	padding: 1em;
 	text-align: center;
 	width: 100%;
+}
+
+@supports (display: grid) {
+	.site-header-content {
+		display: grid;
+		grid-column-gap: 1em;
+		grid-template-columns: max-content 1fr;
+		grid-template-rows: auto;
+	}
 }
 
 .site-nav a,
@@ -173,24 +182,11 @@ ul {
 	color: #ffb025;
 }
 
-.site-first-header,
-.site-first-footer {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-}
-
 .site-title {
 	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
 	font-weight: bold;
+	text-align: left;
 	text-transform: uppercase;
-	width: 100%;
-}
-
-@media (min-width: 46em) {
-	.site-title {
-		width: auto;
-	}
 }
 
 .site-title::before {
@@ -205,21 +201,13 @@ ul {
 }
 
 .site-nav {
-	margin-top: 1em;
-	width: 100%;
-}
-
-@media (min-width: 46em) {
-	.site-nav {
-		margin: 0;
-		width: auto;
-	}
+	text-align: right;
 }
 
 .site-main {
 	background: #fbfbfd;
-	margin: 1rem 0;
-	padding: 1rem;
+	margin: 1em 0;
+	padding: 1em;
 	width: 100%;
 }
 
@@ -537,13 +525,13 @@ figcaption a {
 }
 
 .site-single p {
-	margin-bottom: 1rem;
+	margin-bottom: 1em;
 }
 
 .site-single pre {
 	white-space: pre-wrap;
-	margin-bottom: 1rem;
-	padding: 1rem;
+	margin-bottom: 1em;
+	padding: 1em;
 }
 
 .site-single sub,
@@ -581,7 +569,7 @@ figcaption a {
 }
 
 .site-single ul {
-	margin: 0 0 1rem 1rem;
+	margin: 0 0 1em 1em;
 }
 
 /*******************
