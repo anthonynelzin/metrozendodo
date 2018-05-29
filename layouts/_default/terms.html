@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<div class="site-wrapper">
+	<h1>{{ .Title }}</h1>
+	
+	{{ range .Data.Pages }}
+		<section class="site-archive">
+			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+		
+			{{ range .Pages }}
+			<article>
+				<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>	
+				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+			</article>
+			{{ end }}
+		</section>
+	{{ end }}
+</div>
+
+{{ end }}

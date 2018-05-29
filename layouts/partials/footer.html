@@ -1,0 +1,42 @@
+<footer class="site-footer">
+	<div class="site-footer-content site-wrapper">
+		<nav aria-label="Navigation principale">
+			<h1 class="smtitle">{{ .Site.Title }}</h1>
+			<ul class="unstyled">
+			{{ range .Site.Menus.main }}
+				<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+			{{ end }}
+			</ul>
+		</nav>
+	
+		<nav aria-label="Liens externes">
+			<h1 class="smtitle">{{ .Site.Params.Menutitle }}</h1>
+			<ul class="unstyled">
+			{{ range .Site.Menus.external }}
+				<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+			{{ end }}
+			</ul>
+		</nav>
+		
+		<nav class="site-footer-tags">
+			<h1 class="smtitle">Mots-clefs</h1>
+			<ul class="unstyled" aria-label="Liste des mots-clefs">
+			{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+				<li class="commabar inline"><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>
+			{{ end }}
+			</ul>
+		</nav>
+	
+		<p class="site-footer-colophon">
+			{{ if .Site.Params.Motto }}
+				{{ .Site.Params.Motto }}
+			{{ end }}
+			
+			{{ if .Site.Params.Colophon }}
+				{{ .Site.Params.Colophon | safeHTML }}
+			{{ end }}
+			
+			<a href="#" onClick="darkModeSet()" class="site-toggle"></a>.
+		</p>
+	</div>
+</footer>

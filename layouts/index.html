@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+<div class="site-wrapper">
+	<div class="index">
+	{{ range first 5 .Data.Pages }}
+		<article>
+		{{ if .Params.Hero }}
+			<a href="{{ .Permalink }}">
+				<img src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}" alt="{{ .Title }}" />
+				<h1>{{ .Title }}</h1>
+			</a>
+		{{ else }}
+			<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>	
+		{{ end }}
+			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		</article>
+	{{ end }}
+	
+	{{ range first 25 (after 5 .Data.Pages) }}
+		<article>
+			<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>	
+			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		</article>
+	{{ end }}
+	</div>	
+</div>
+
+{{ end }}

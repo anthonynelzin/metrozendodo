@@ -104,6 +104,19 @@ a:hover {
 	text-decoration: underline;
 }
 
+.comma,
+.commabar {
+	display: inline-block;
+}
+
+.comma:not(:last-of-type):after {
+	content: ", ";
+}
+
+.commabar:not(:last-of-type):after {
+	content: " | ";
+}
+
 h1, h2, h3 {
 	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
 	letter-spacing: -.05em;
@@ -465,18 +478,18 @@ figcaption a {
 	max-width: 100%;
 }
 
-.site-single .footnote {
+.site-single .footnotes {
 	font-size: .8em;
 	margin-top: 6.25em;
 }
 
 @supports (display: grid) {
-	.site-single .footnote {
+	.site-single .footnotes {
 		grid-column: 1/2;
 	}
 	
 	@media (min-width: 46em) {
-		.site-single .footnote {
+		.site-single .footnotes {
 			align-self: end;
 			grid-column: 2/3;
 			grid-row: 1/last-row;
@@ -486,29 +499,29 @@ figcaption a {
 	}
 }
 
-.site-single .footnote hr::before {
+.site-single .footnotes hr::before {
 	content: "Notes";
 	font-size: 1em;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 
-.site-single .footnote ol {
+.site-single .footnotes ol {
 	counter-reset: section;
 	list-style-type: none;
 }
 
-.site-single .footnote ol li {
+.site-single .footnotes ol li {
 	margin-bottom: 1em;
 }
 
-.site-single .footnote ol li::before {
+.site-single .footnotes ol li::before {
 	content: counters(section,".") ". ";
 	counter-increment: section;
 	font-weight: bold;
 }
 
-.site-single .footnote ol li p {
+.site-single .footnotes ol li p {
 	display: inline;
 }
 

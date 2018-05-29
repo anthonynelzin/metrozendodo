@@ -1,3 +1,3 @@
 # métro[zen]dodo
 
-Le thème (pour [Pelican](https://blog.getpelican.com)) de [*métro[zen]dodo*](https://metrozendodo.fr).
+Le thème (pour [Hugo](https://gohugo.io)) de [*métro[zen]dodo*](https://metrozendodo.fr).
