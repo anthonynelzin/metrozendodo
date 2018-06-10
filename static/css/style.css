@@ -453,8 +453,8 @@ figcaption a {
 
 .site-single code,
 .site-single pre {
-	background: #beb3d6;
 	font-family: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+	font-size: .9em;
 }
 
 .site-single del {
