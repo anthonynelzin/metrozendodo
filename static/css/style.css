@@ -631,11 +631,6 @@ figcaption a {
 	padding-left: 1em;
 }
 
-.night .site-single code,
-.night .site-single pre {
-	background: #1b1528;
-}
-
 .night .site-single table thead {
 	background: #ffb025;
 }
