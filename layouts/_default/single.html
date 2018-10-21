@@ -36,7 +36,9 @@
 					<h2 class="smtitle">Informations</h2>
 					<ul class="unstyled">
 						{{ if .Params.teinte }}
-						<li><b>Teinte</b> {{ .Params.teinte }}</li>
+						{{ range .Params.teinte }}
+						<li><b>Teinte</b> <a href="{{ "/teinte/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+						{{ end }}
 						{{ end }}
 						
 						{{ if .Params.saturation }}
