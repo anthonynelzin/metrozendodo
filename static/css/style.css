@@ -502,7 +502,11 @@ article time {
 }
 
 .site-single figure img,
-.site-single img {
+.site-single img,
+.site-single figure audio,
+.site-single audio
+.site-single figure video,
+.site-single video {
 	max-width: 100%;
 }
 
