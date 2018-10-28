@@ -12,17 +12,58 @@
 
 @import url(../fonts/css/ibm-plex.css);
 
+:root {
+	--first-color: #5f4B8b; /* Purple */
+	--first-alt-color: #322749; /* Dark purple (+20%) */
+	--second-color: #d72d5c; /* Pink */
+	--third-color: #0095c6; /* Blue */
+	--fourth-color: #ffb025; /* Yellow */
+	
+	--sans-font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+	--serif-font: "IBM Plex Serif", "Georgia", Times, serif;
+	--condensed-font: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+	--mono-font: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+	
+	--main-background: #f6f5fa;
+	--main-color: #000e11;
+	
+	--black: #000e11;
+	--gray: #9d9da8;
+	--white: #f6f5fa;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--first-color: #322749; /* Purple */
+		--first-alt-color: #040307; /* Dark purple (+20%) */
+		--second-color: #ffb025; /* Yellow */
+		--third-color: #d72d5c; /* Pink */
+		--fourth-color: #0095c6; /* Blue */
+
+		--main-background: #1b1528;
+		--main-color: #b3b3bc;
+
+		--black: #000e11;
+		--gray: #9d9da8;
+		--white: #b3b3bc;
+	}
+	
+	img {
+		filter: brightness(75%);
+	}
+}
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
 
 ::-moz-selection {
-	background: #0095c6;
+	background: var(--third-color);
 	color: #fefcfe;
 }
 
 ::selection {
-	background: #0095c6;
+	background: var(--third-color);
 	color: #fefcfe;
 }
 
@@ -78,10 +119,10 @@ html {
 }
 
 body {
-	background: #5f4B8b;
-	color: #000e11;
+	background: var(--first-color);
+	color: var(--black);
 	font-size: 1rem;
-	font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+	font-family: var(--sans-font);
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	line-height: 1.4;
@@ -100,7 +141,7 @@ a {
 }
 
 a:hover {
-	color: #d72d5c;
+	color: var(--second-color);
 	text-decoration: underline;
 }
 
@@ -118,7 +159,7 @@ a:hover {
 }
 
 h1, h2, h3 {
-	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+	font-family: var(--condensed-font);
 	letter-spacing: -.05em;
 	margin: 0;
 	padding: 0;
@@ -138,7 +179,7 @@ h3 {
 }
 
 .smtitle {
-	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+	font-family: var(--condensed-font);
 	font-size: 1em;
 }
 
@@ -169,8 +210,8 @@ ul {
 }
 
 .site-header {
-	background: #2d2c4d;
-	color: #fbfbfd;
+	background: var(--first-alt-color);
+	color: var(--white);
 	padding: 1em;
 	text-align: center;
 	width: 100%;
@@ -203,7 +244,7 @@ ul {
 
 .site-header a:hover,
 .site-footer a:hover {
-	color: #ffb025;
+	color: var(--fourth-color);
 }
 
 .site-title {
@@ -214,25 +255,26 @@ ul {
 
 .site-title::before {
 	animation: hue 10s infinite linear;
-	color: #ffb025;
+	color: var(--fourth-color);
 	content: "[…] ";
 }
 
 @keyframes hue {
-	30% { color: #d72d5c; }
-	60% { color: #0095c6; }
+	30% { color: var(--second-color); }
+	60% { color: var(--third-color); }
 }
 
 .site-main {
-	background: #fbfbfd;
+	background: var(--main-background);
+	color: var(--main-color);
 	margin: 1em 0;
 	padding: 1em;
 	width: 100%;
 }
 
 .site-footer {
-	background: #2d2c4d;
-	color: #fbfbfd;
+	background: var(--first-alt-color);
+	color: var(--white);
 	padding: 1em;
 	width: 100%;
 }
@@ -395,8 +437,8 @@ ul {
 }
 
 article time {
-	color: #9d9da8;
-	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+	color: var(--gray);
+	font-family: var(--condensed-font);
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -407,10 +449,10 @@ article time {
 
 .single-footer {
 	align-items: center;
-	color: #9d9da8;
+	color: var(--gray);
 	display: flex;
 	flex-wrap: wrap;
-	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+	font-family: var(--condensed-font);
 	justify-content: space-between;
 	text-transform: uppercase;
 }
@@ -425,14 +467,8 @@ article time {
 
 .site-single a {
 	text-decoration: underline;
-	-webkit-text-decoration-color: #d72d5c;
-	text-decoration-color: #d72d5c;
-}
-
-.single-tags a,
-figcaption a {
-	-webkit-text-decoration-color: #efaec0 !important;
-	text-decoration-color: #efaec0 !important;
+	-webkit-text-decoration-color: var(--second-color);
+	text-decoration-color: var(--second-color);
 }
 
 .site-single abbr[title],
@@ -442,7 +478,7 @@ figcaption a {
 }
 
 .site-single blockquote {
-	border-left: .5em solid #d72d5c;
+	border-left: .5em solid var(--second-color);
 	margin: 0 0 1em 0;
 	padding-left: 1em;
 }
@@ -453,7 +489,7 @@ figcaption a {
 
 .site-single code,
 .site-single pre {
-	font-family: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+	font-family: var(--mono-font);
 	font-size: .9em;
 }
 
@@ -467,7 +503,7 @@ figcaption a {
 }
 
 .site-single figure figcaption {
-	color: #9d9da8;
+	color: var(--gray);
 	font-size: .8em;
 	font-style: italic;
 	text-align: right;
@@ -535,7 +571,7 @@ figcaption a {
 }
 
 .site-single mark {
-	background: #ffb025;
+	background: var(--fourth-color);
 }
 
 .site-single p {
@@ -573,64 +609,15 @@ figcaption a {
 }
 
 .site-single table thead {
-	background: #d72d5c;
+	background: var(--second-color);
 }
 
 .site-single table th,
 .site-single table td {
-	border-bottom: 1px solid #9d9da8;
+	border-bottom: 1px solid var(--gray);
 	padding: 1em;
 }
 
 .site-single ul {
 	margin: 0 0 1em 1em;
-}
-
-/*******************
-********************
-* Affichage sombre *
-********************
-*******************/
-
-.night {
-	color: #f6f5fa;
-}
-
-.night a:hover {
-	color: #ffb025;
-	text-decoration: underline;
-}
-
-.night img {
-	filter: brightness(75%);
-}
-
-.night .site-header,
-.night .site-footer {
-	background: #1a192d;
-}
-
-.night .site-main {
-	background: #2d2c4d;
-}
-
-.night .site-single a {
-	-webkit-text-decoration-color: #ffb025;
-	text-decoration-color: #ffb025;
-}
-
-.night .single-tags a,
-.night figcaption a {
-	-webkit-text-decoration-color: #d3a451 !important;
-	text-decoration-color: #d3a451 !important;
-}
-
-.night .site-single blockquote {
-	border-left: .5em solid #ffb025;
-	margin: 0 0 1em 0;
-	padding-left: 1em;
-}
-
-.night .site-single table thead {
-	background: #ffb025;
 }
