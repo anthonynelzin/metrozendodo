@@ -115,7 +115,7 @@ time, mark, audio, video {
 **********************/
 
 html {
-	font-size: 100%;
+	font-size: 18px;
 }
 
 body {
@@ -123,8 +123,6 @@ body {
 	color: var(--black);
 	font-size: 1rem;
 	font-family: var(--sans-font);
-	-webkit-hyphens: auto;
-	hyphens: auto;
 	line-height: 1.4;
 	margin: 1em 0;
 }
@@ -185,7 +183,7 @@ h3 {
 
 ol,
 ul {
-	list-style-position: inside;
+	list-style-position: outside;
 }
 
 .unstyled {
@@ -205,7 +203,7 @@ ul {
 ************************/
 
 .site-wrapper {
-	max-width: 60em;
+	max-width: 100ch;
 	margin: 0 auto;
 }
 
@@ -268,7 +266,7 @@ ul {
 	background: var(--main-background);
 	color: var(--main-color);
 	margin: 1em 0;
-	padding: 1em;
+	padding: 1em 1.5em;
 	width: 100%;
 }
 
@@ -300,12 +298,6 @@ ul {
 		.site-footer-tags {
 			grid-column: 1/2;
 			grid-row-start: 1;
-		}
-	}
-	
-	@media (min-width: 60em) {
-		.site-footer-content {
-			grid-column-gap: 5em;
 		}
 	}
 }
@@ -478,7 +470,7 @@ article time {
 }
 
 .site-single blockquote {
-	border-left: .5em solid var(--second-color);
+	border-left: .25em solid var(--second-color);
 	margin: 0 0 1em 0;
 	padding-left: 1em;
 }
@@ -565,6 +557,10 @@ article time {
 	text-decoration: none;
 }
 
+.site-single h2 {
+	margin-top: 2em;
+}
+
 .site-single hr {
 	border: 0;
 	color: inherit;
@@ -619,5 +615,5 @@ article time {
 }
 
 .site-single ul {
-	margin: 0 0 1em 1em;
+	margin: 0 0 1em 0;
 }
