@@ -26,6 +26,7 @@
 	
 	--main-background: #f6f5fa;
 	--main-color: #000e11;
+	--pre-background: #e8e4f1;
 	
 	--black: #000e11;
 	--gray: #9d9da8;
@@ -42,6 +43,7 @@
 
 		--main-background: #1b1528;
 		--main-color: #b3b3bc;
+		--pre-background: #040307;
 
 		--black: #000e11;
 		--gray: #9d9da8;
@@ -483,6 +485,10 @@ article time {
 .site-single pre {
 	font-family: var(--mono-font);
 	font-size: .9em;
+}
+
+.site-single pre {
+	background: var(--pre-background);
 }
 
 .site-single del {
