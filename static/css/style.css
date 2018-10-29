@@ -117,7 +117,13 @@ time, mark, audio, video {
 **********************/
 
 html {
-	font-size: 18px;
+	font-size: 16px;
+}
+
+@media (min-width: 50em) {
+	html {
+		font-size: 18px;
+	}
 }
 
 body {
