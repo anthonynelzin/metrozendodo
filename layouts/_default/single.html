@@ -1,143 +1,141 @@
 {{ define "main" }}
 
-<div class="site-wrapper">
-	<article class="site-single">
-		<header class="single-header">
-		{{ if .Params.Hero }}
-			<figure class="single-hero">
-				<img src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}.jpg" alt="Image d’illustration de l’article {{ .Title }}" />
-				<figcaption>{{ if .Params.Herocredits }}{{ .Params.Herocredits | safeHTML }}{{ else }}Image {{ .Site.Params.Author }}{{ end }}.</figcaption>
-			</figure>
-		{{ end }}
+<article class="site-single">
+	<header class="single-header">
+	{{ if .Params.Hero }}
+		<figure class="single-hero">
+			<img src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}.jpg" alt="Image d’illustration de l’article {{ .Title }}" />
+			<figcaption>{{ if .Params.Herocredits }}{{ .Params.Herocredits | safeHTML }}{{ else }}Image {{ .Site.Params.Author }}{{ end }}.</figcaption>
+		</figure>
+	{{ end }}
+
+		<h1 class="single-title">{{ .Title }}</h1>
+		<time class="single-time" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+	</header>
+
+	<div class="single-content">
+		{{ .Content }}
+	</div>
 	
-			<h1 class="single-title">{{ .Title }}</h1>
-			<time class="single-time" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-		</header>
-	
-		<div class="single-content">
-			{{ .Content }}
-		</div>
-		
-		<div class="single-sidebar">
-			<div class="single-sidebar-even">
-				{{ if .Params.link }}
-				<aside class="single-aside">
-					<h2 class="smtitle">Acheter</h2>
-					<ul class="unstyled">
-			    	{{ range .Params.link }}
-						<li>{{ . | safeHTML }}</li>
-					{{ end }}
-			    	</ul>
-				</aside>
+	<div class="single-sidebar">
+		<div class="single-sidebar-even">
+			{{ if .Params.link }}
+			<aside class="single-aside">
+				<h2 class="smtitle">Acheter</h2>
+				<ul class="unstyled">
+					{{ range .Params.link }}
+					<li>{{ . | safeHTML }}</li>
 				{{ end }}
-				
-				{{ if .Params.prix }}
-				<aside class="single-aside">
-					<h2 class="smtitle">Informations</h2>
-					<ul class="unstyled">
-						{{ if .Params.teinte }}
-						{{ range .Params.teinte }}
-						<li><b>Teinte</b> <a href="{{ "/teinte/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-						{{ end }}
-						{{ end }}
-						
-						{{ if .Params.saturation }}
-						<li><b>Saturation</b> {{ .Params.saturation }}</li>
-						{{ end }}
-						
-						{{ if .Params.nuances }}
-						<li><b>Nuances</b> {{ .Params.nuances }}</li>
-						{{ end }}
-						
-						{{ if .Params.lustre }}
-						<li><b>Lustre</b> {{ .Params.lustre }}</li>
-						{{ end }}
-						
-						{{ if .Params.reseau }}
-						<li><b>Résistance à l’eau</b> {{ .Params.reseau }}</li>
-						{{ end }}
-						
-						{{ if .Params.couleur }}
-						<li><b>Couleur</b> {{ .Params.couleur }}</li>
-						{{ end }}
-						
-						{{ if .Params.modele }}
-						<li><b>Modèle</b> {{ .Params.modele }}</li>
-						{{ end }}
-						
-						{{ if .Params.plume }}
-						<li><b>Plume</b> {{ .Params.plume }}</li>
-						{{ end }}
-						
-						{{ if .Params.capuchon }}
-						<li><b>Capuchon</b> {{ .Params.capuchon }}</li>
-						{{ end }}
-						
-						{{ if .Params.remplissage }}
-						<li><b>Remplissage</b> {{ .Params.remplissage }}</li>
-						{{ end }}
-						
-						{{ if .Params.dimensions }}
-						<li><b>Dimensions</b> {{ .Params.dimensions }}</li>
-						{{ end }}
-						
-						{{ if .Params.poids }}
-						<li><b>Poids</b> {{ .Params.poids }}</li>
-						{{ end }}
-						
-						{{ if .Params.remarques }}
-						<li><b>Remarques</b> {{ .Params.remarques }}</li>
-						{{ end }}
-						
-						{{ if .Params.prix }}
-						<li><b>Prix</b> {{ .Params.prix }}</li>
-						{{ end }}
 					</ul>
-				</aside>
-				{{ end }}
-				
-				{{ $related := .Site.RegularPages.Related . | first 5 }}
-				{{ with $related }}
-				<aside class="single-aside">
-					<div class="aside-widget">
-						<h2 class="smtitle">Similaires</h2>
-						<ul class="unstyled">
-						{{ range . }}
-							<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-						{{ end }}
-					</div>
-				</aside>
-				{{ end }}
-			</div><!-- .single-sidebar-even -->
-			
-			<div class="single-sidebar-odd">
-				{{ if .Params.teinte }}
-				<aside class="single-aside">
-					<h2 class="smtitle">Nuancier</h2>
-					<img src="{{ .Site.BaseURL }}img/{{ .Params.Nuancier }}.jpg" />
-				</aside>
-				{{ end }}
-			</div><!-- .single-sidebar-odd -->
-		</div><!-- .single-sidebar -->
-	
-		<footer class="single-footer">
-			<div class="single-author">
-			{{ if .Params.Author }}
-				<a href="{{ .Params.AuthorURL }}">{{ .Params.Author }}</a>
-			{{ else }}
-				<a href="{{ .Site.Params.AuthorURL }}">{{ .Site.Params.Author }}</a>
+			</aside>
 			{{ end }}
-			</div>
 			
-			{{ if .Params.tags }}
-				<ul class="single-tags unstyled">
-					{{ range .Params.Tags }}
-						<li class="commabar inline"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+			{{ if .Params.prix }}
+			<aside class="single-aside">
+				<h2 class="smtitle">Informations</h2>
+				<ul class="unstyled">
+					{{ if .Params.teinte }}
+					{{ range .Params.teinte }}
+					<li><b>Teinte</b> <a href="{{ "/teinte/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+					{{ end }}
+					
+					{{ if .Params.saturation }}
+					<li><b>Saturation</b> {{ .Params.saturation }}</li>
+					{{ end }}
+					
+					{{ if .Params.nuances }}
+					<li><b>Nuances</b> {{ .Params.nuances }}</li>
+					{{ end }}
+					
+					{{ if .Params.lustre }}
+					<li><b>Lustre</b> {{ .Params.lustre }}</li>
+					{{ end }}
+					
+					{{ if .Params.reseau }}
+					<li><b>Résistance à l’eau</b> {{ .Params.reseau }}</li>
+					{{ end }}
+					
+					{{ if .Params.couleur }}
+					<li><b>Couleur</b> {{ .Params.couleur }}</li>
+					{{ end }}
+					
+					{{ if .Params.modele }}
+					<li><b>Modèle</b> {{ .Params.modele }}</li>
+					{{ end }}
+					
+					{{ if .Params.plume }}
+					<li><b>Plume</b> {{ .Params.plume }}</li>
+					{{ end }}
+					
+					{{ if .Params.capuchon }}
+					<li><b>Capuchon</b> {{ .Params.capuchon }}</li>
+					{{ end }}
+					
+					{{ if .Params.remplissage }}
+					<li><b>Remplissage</b> {{ .Params.remplissage }}</li>
+					{{ end }}
+					
+					{{ if .Params.dimensions }}
+					<li><b>Dimensions</b> {{ .Params.dimensions }}</li>
+					{{ end }}
+					
+					{{ if .Params.poids }}
+					<li><b>Poids</b> {{ .Params.poids }}</li>
+					{{ end }}
+					
+					{{ if .Params.remarques }}
+					<li><b>Remarques</b> {{ .Params.remarques }}</li>
+					{{ end }}
+					
+					{{ if .Params.prix }}
+					<li><b>Prix</b> {{ .Params.prix }}</li>
 					{{ end }}
 				</ul>
+			</aside>
 			{{ end }}
-		</footer><!-- .single-footer -->
-	</article>
-</div>
+			
+			{{ $related := .Site.RegularPages.Related . | first 5 }}
+			{{ with $related }}
+			<aside class="single-aside">
+				<div class="aside-widget">
+					<h2 class="smtitle">Similaires</h2>
+					<ul class="unstyled">
+					{{ range . }}
+						<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+					{{ end }}
+				</div>
+			</aside>
+			{{ end }}
+		</div><!-- .single-sidebar-even -->
+		
+		<div class="single-sidebar-odd">
+			{{ if .Params.teinte }}
+			<aside class="single-aside">
+				<h2 class="smtitle">Nuancier</h2>
+				<img src="{{ .Site.BaseURL }}img/{{ .Params.Nuancier }}.jpg" />
+			</aside>
+			{{ end }}
+		</div><!-- .single-sidebar-odd -->
+	</div><!-- .single-sidebar -->
+
+	<footer class="single-footer">
+		<div class="single-author">
+		{{ if .Params.Author }}
+			<a href="{{ .Params.AuthorURL }}">{{ .Params.Author }}</a>
+		{{ else }}
+			<a href="{{ .Site.Params.AuthorURL }}">{{ .Site.Params.Author }}</a>
+		{{ end }}
+		</div>
+		
+		{{ if .Params.tags }}
+			<ul class="single-tags unstyled">
+				{{ range .Params.Tags }}
+					<li class="commabar inline"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+				{{ end }}
+			</ul>
+		{{ end }}
+	</footer><!-- .single-footer -->
+</article>
 
 {{ end }}

@@ -126,7 +126,8 @@ body {
 	font-size: 1rem;
 	font-family: var(--sans-font);
 	line-height: 1.4;
-	margin: 0 1em;
+	margin: 0 auto;
+	max-width: 100ch;
 }
 
 a {
@@ -197,11 +198,6 @@ ul {
 * Mise en page générale *
 *************************
 ************************/
-
-.site-wrapper {
-	max-width: 100ch;
-	margin: 0 auto;
-}
 
 .site-header {
 	background: var(--first-alt-color);
