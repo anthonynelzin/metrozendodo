@@ -120,12 +120,6 @@ html {
 	font-size: 16px;
 }
 
-@media (min-width: 50em) {
-	html {
-		font-size: 18px;
-	}
-}
-
 body {
 	background: var(--first-color);
 	color: var(--black);
@@ -364,7 +358,7 @@ ul {
 }
 
 .taxonomy-list {
-	font-size: .8em;
+	font-size: .9em;
 }
 
 @supports (display: grid) {
@@ -376,6 +370,12 @@ ul {
 	}
 	
 	@media (min-width: 50em) {
+		.taxonomy-list {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+	
+	@media (min-width: 60em) {
 		.taxonomy-list {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 		}
@@ -532,7 +532,7 @@ article time {
 
 .site-single figure figcaption {
 	color: var(--gray);
-	font-size: .8em;
+	font-size: .9em;
 	font-style: italic;
 	text-align: right;
 }
@@ -547,7 +547,7 @@ article time {
 }
 
 .site-single .footnotes {
-	font-size: .8em;
+	font-size: .9em;
 	margin-top: 5rem;
 }
 
@@ -622,7 +622,7 @@ article time {
 
 .site-single sub,
 .site-single sup {
-	font-size: .8em;
+	font-size: .9em;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
