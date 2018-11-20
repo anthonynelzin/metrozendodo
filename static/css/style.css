@@ -208,7 +208,7 @@ ul {
 }
 
 .site-nav {
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
 
 @supports (display: grid) {
@@ -257,7 +257,7 @@ ul {
 .site-main {
 	background: var(--main-background);
 	color: var(--main-color);
-	margin: 1rem 0;
+	margin: 2rem 0;
 	padding: 2rem;
 	width: 100%;
 }
