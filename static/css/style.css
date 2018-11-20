@@ -384,12 +384,16 @@ ul {
 
 .taxonomy-list li {
 	border-top: 1px solid var(--gray);
+	font-weight: 900;
+	letter-spacing: -.05em;
 	padding: 1em 0;
+	text-transform: uppercase;
 	width: 100%;
 }
 
 .taxonomy-count {
 	color: var(--gray);
+	font-weight: 300;
 	float: right;
 }
 
@@ -460,28 +464,34 @@ ul {
 	width: 100%;
 }
 
-article time {
-	color: var(--gray);
-	font-weight: 600;
+.single-meta {
 	letter-spacing: -.05em;
 	text-transform: uppercase;
+}
+
+article time {
+	color: var(--gray);
+	font-weight: 900;
+	letter-spacing: -.05em;
+	text-transform: uppercase;
+}
+
+.single-time {
+	font-weight: 900;
 }
 
 .single-author {
 	color: var(--gray);
-	font-weight: 300;
-	letter-spacing: -.05em;
-	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.single-tags {
+	color: var(--gray);
+	font-weight: 100;
 }
 
 .single-content {
 	margin-top: 1rem;
-}
-
-.single-footer {
-	color: var(--gray);
-	letter-spacing: -.05em;
-	text-transform: uppercase;
 }
 
 .single-aside {
