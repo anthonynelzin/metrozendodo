@@ -363,6 +363,36 @@ ul {
 	opacity: .5;
 }
 
+.taxonomy-list {
+	font-size: .8em;
+}
+
+@supports (display: grid) {
+	.taxonomy-list {
+		display: grid;
+		grid-column-gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+	
+	@media (min-width: 50em) {
+		.taxonomy-list {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+	}
+}
+
+.taxonomy-list li {
+	border-top: 1px solid var(--gray);
+	padding: 1em 0;
+	width: 100%;
+}
+
+.taxonomy-count {
+	color: var(--gray);
+	float: right;
+}
+
 .site-archive {
 	margin-top: 5em;
 }

@@ -3,6 +3,12 @@
 <div class="site-wrapper">
 	<h1>{{ .Title }}</h1>
 	
+	<ul class="unstyled taxonomy-list">
+		{{ range .Data.Pages }}
+			<li><a href="{{ .Permalink }}">{{ .Title }}</a> <span class="taxonomy-count">{{ len .Data.Pages }}</a></li>
+		{{ end }}
+	</ul>
+	
 	{{ range .Data.Pages }}
 		<section class="site-archive">
 			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
