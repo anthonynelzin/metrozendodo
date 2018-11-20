@@ -132,13 +132,7 @@ body {
 	font-size: 1rem;
 	font-family: var(--sans-font);
 	line-height: 1.4;
-	margin: 1em 0;
-}
-
-@media (min-width: 50em) {
-	body {
-		margin: 1em;
-	}
+	margin: 0 1em;
 }
 
 a {
