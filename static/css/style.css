@@ -476,9 +476,9 @@ article time {
 }
 
 .site-single blockquote {
-	border-left: .25em solid var(--second-color);
-	margin: 0 0 1em 0;
-	padding-left: 1em;
+	border-left: .5em solid var(--second-color);
+	margin: 0 0 1rem 0;
+	padding-left: 1rem;
 }
 
 .site-single blockquote p:last-of-type {
