@@ -11,6 +11,13 @@
 
 		<h1 class="single-title">{{ .Title }}</h1>
 		<time class="single-time" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		<span class="single-author">
+		{{ if .Params.Author }}
+			<a href="{{ .Params.AuthorURL }}">{{ .Params.Author }}</a>
+		{{ else }}
+			<a href="{{ .Site.Params.AuthorURL }}">{{ .Site.Params.Author }}</a>
+		{{ end }}
+		</span>
 	</header>
 
 	<div class="single-content">
@@ -120,14 +127,6 @@
 	</div><!-- .single-sidebar -->
 
 	<footer class="single-footer">
-		<div class="single-author">
-		{{ if .Params.Author }}
-			<a href="{{ .Params.AuthorURL }}">{{ .Params.Author }}</a>
-		{{ else }}
-			<a href="{{ .Site.Params.AuthorURL }}">{{ .Site.Params.Author }}</a>
-		{{ end }}
-		</div>
-		
 		{{ if .Params.tags }}
 			<ul class="single-tags unstyled">
 				{{ range .Params.Tags }}

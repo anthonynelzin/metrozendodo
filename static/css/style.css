@@ -10,8 +10,6 @@
 ******************************
 *****************************/
 
-@import url(../fonts/css/ibm-plex.css);
-
 :root {
 	--first-color: #5f4B8b; /* Purple */
 	--first-alt-color: #322749; /* Dark purple (+20%) */
@@ -19,10 +17,9 @@
 	--third-color: #0095c6; /* Blue */
 	--fourth-color: #ffb025; /* Yellow */
 	
-	--sans-font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-	--serif-font: "IBM Plex Serif", "Georgia", Times, serif;
-	--condensed-font: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
-	--mono-font: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+	--sans-font: system-ui, "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, Open Sans, sans-serif;
+	--serif-font: "Georgia", serif;
+	--mono-font: "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 	
 	--main-background: #f6f5fa;
 	--main-color: #000e11;
@@ -154,8 +151,8 @@ a:hover {
 }
 
 h1, h2, h3 {
-	font-family: var(--condensed-font);
 	letter-spacing: -.05em;
+	font-weight: 900;
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
@@ -174,8 +171,12 @@ h3 {
 }
 
 .smtitle {
-	font-family: var(--condensed-font);
-	font-size: 1em;
+	font-size: 1rem;
+	font-weight: 900;
+	letter-spacing: -.05em;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
 }
 
 ol,
@@ -238,8 +239,11 @@ ul {
 }
 
 .site-title {
-	font-family: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
-	font-weight: bold;
+	font-size: 1rem;
+	font-weight: 900;
+	letter-spacing: -.05em;
+	margin: 0;
+	padding: 0;
 	text-transform: uppercase;
 }
 
@@ -458,8 +462,15 @@ ul {
 
 article time {
 	color: var(--gray);
-	font-family: var(--condensed-font);
-	font-weight: bold;
+	font-weight: 600;
+	letter-spacing: -.05em;
+	text-transform: uppercase;
+}
+
+.single-author {
+	color: var(--gray);
+	font-weight: 300;
+	letter-spacing: -.05em;
 	text-transform: uppercase;
 }
 
@@ -468,56 +479,49 @@ article time {
 }
 
 .single-footer {
-	align-items: center;
 	color: var(--gray);
-	display: flex;
-	flex-wrap: wrap;
-	font-family: var(--condensed-font);
-	justify-content: space-between;
+	letter-spacing: -.05em;
 	text-transform: uppercase;
-}
-
-.single-author {
-	font-weight: bold;
 }
 
 .single-aside {
 	margin-top: 5rem;
 }
 
-.site-single a {
+.single-content a,
+.single-sidebar a {
 	text-decoration: underline;
 	-webkit-text-decoration-color: var(--second-color);
 	text-decoration-color: var(--second-color);
 }
 
-.site-single abbr[title],
-.site-single dfn[title] {
+.single-content abbr[title],
+.single-content dfn[title] {
     border-bottom: 1px dotted;
     cursor: help;
 }
 
-.site-single blockquote {
+.single-content blockquote {
 	border-left: .5em solid var(--second-color);
 	margin: 0 0 1rem 0;
 	padding-left: 1rem;
 }
 
-.site-single blockquote p:last-of-type {
+.single-content blockquote p:last-of-type {
 	margin-bottom: 0;
 }
 
-.site-single code,
-.site-single pre {
+.single-content code,
+.single-content pre {
 	font-family: var(--mono-font);
 	font-size: .9em;
 }
 
-.site-single pre {
+.single-content pre {
 	background: var(--pre-background);
 }
 
-.site-single del {
+.single-content del {
 	text-decoration: line-through;
 }
 
@@ -542,18 +546,18 @@ article time {
 	max-width: 100%;
 }
 
-.site-single .footnotes {
+.single-content .footnotes {
 	font-size: .9em;
 	margin-top: 5rem;
 }
 
 @supports (display: grid) {
-	.site-single .footnotes {
+	.single-content .footnotes {
 		grid-column: 1/2;
 	}
 	
 	@media (min-width: 50em) {
-		.site-single .footnotes {
+		.single-content .footnotes {
 			align-self: end;
 			grid-column: 2/3;
 			grid-row: 1/last-row;
@@ -563,93 +567,96 @@ article time {
 	}
 }
 
-.site-single .footnotes hr::before {
+.single-content .footnotes hr::before {
 	content: "Notes";
-	font-size: 1em;
-	font-weight: bold;
+	font-size: 1rem;
+	font-weight: 900;
+	letter-spacing: -.05em;
+	margin: 0;
+	padding: 0;
 	text-transform: uppercase;
 }
 
-.site-single .footnotes ol {
+.single-content .footnotes ol {
 	counter-reset: section;
 	list-style-type: none;
 }
 
-.site-single .footnotes ol li {
+.single-content .footnotes ol li {
 	margin-bottom: 1em;
 }
 
-.site-single .footnotes ol li::before {
+.single-content .footnotes ol li::before {
 	content: counters(section,".") ". ";
 	counter-increment: section;
 	font-weight: bold;
 }
 
-.site-single .footnotes ol li p {
+.single-content .footnotes ol li p {
 	display: inline;
 }
 
-.site-single ins {
+.single-content ins {
 	text-decoration: none;
 }
 
-.site-single h2 {
+.single-content h2 {
 	margin-top: 2em;
 }
 
-.site-single hr {
+.single-content hr {
 	border: 0;
 	color: inherit;
 }
 
-.site-single mark {
+.single-content mark {
 	background: var(--fourth-color);
 }
 
-.site-single p {
+.single-content p {
 	margin-bottom: 1em;
 }
 
-.site-single pre {
+.single-content pre {
 	white-space: pre-wrap;
 	margin-bottom: 1em;
 	padding: 1em;
 }
 
-.site-single sub,
-.site-single sup {
+.single-contente sub,
+.single-content sup {
 	font-size: .9em;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
 }
 
-.site-single sub {
+.single-content sub {
 	bottom: -.3em;
 }
 
-.site-single sup {
+.single-content sup {
 	top: -.65em;
 	padding-left: .1em;
 }
 
-.site-single table {
+.single-content table {
 	border-collapse: collapse;
 	margin-bottom: 1em;
 	text-align: center;
 	width: 100%;
 }
 
-.site-single table thead {
+.single-content table thead {
 	background: var(--second-color);
 }
 
-.site-single table th,
-.site-single table td {
+.single-content table th,
+.single-content table td {
 	border-bottom: 1px solid var(--gray);
 	padding: 1em;
 }
 
-.site-single ul {
+.single-content ul {
 	margin: 0 0 1em 0;
 }
