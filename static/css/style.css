@@ -219,11 +219,6 @@ ul {
 
 .site-nav {
 	margin-top: 1em;
-	text-transform: uppercase;
-}
-
-.site-nav ul li:not(:last-of-type) {
-	margin-right: 1rem;
 }
 
 @supports (display: grid) {
@@ -242,6 +237,7 @@ ul {
 	}
 }
 
+.site-nav a,
 .site-footer a {
 	text-decoration: underline;
 }
