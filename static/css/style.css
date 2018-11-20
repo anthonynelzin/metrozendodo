@@ -194,7 +194,7 @@ ul {
 	padding: 0;
 }
 
-.inline li {
+.inline {
 	display: inline;
 }
 
@@ -219,6 +219,11 @@ ul {
 
 .site-nav {
 	margin-top: 1em;
+	text-transform: uppercase;
+}
+
+.site-nav ul li:not(:last-of-type) {
+	margin-right: 1rem;
 }
 
 @supports (display: grid) {
@@ -237,7 +242,6 @@ ul {
 	}
 }
 
-.site-nav a,
 .site-footer a {
 	text-decoration: underline;
 }
@@ -267,7 +271,7 @@ ul {
 .site-main {
 	background: var(--main-background);
 	color: var(--main-color);
-	margin: 1em 0;
+	margin: 1rem 0;
 	padding: 1em 1.5em;
 	width: 100%;
 }
@@ -275,12 +279,12 @@ ul {
 .site-footer {
 	background: var(--first-alt-color);
 	color: var(--white);
-	padding: 1em;
+	padding: 1rem;
 	width: 100%;
 }
 
 .site-footer-content nav {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 
 @supports (display: grid) {
