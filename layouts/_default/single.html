@@ -20,8 +20,6 @@
 				<a href="{{ .Site.Params.AuthorURL }}">{{ .Site.Params.Author }}</a>
 			{{ end }}
 			</span>
-			
-			<span class="single-tags">{{ if .Params.tags }}{{ range .Params.Tags }}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }} </a>{{ end }}{{ end }}</span>
 		</div>
 	</header>
 
@@ -126,6 +124,19 @@
 			<aside class="single-aside">
 				<h2 class="smtitle">Nuancier</h2>
 				<img src="{{ .Site.BaseURL }}img/{{ .Params.Nuancier }}.jpg" />
+			</aside>
+			{{ end }}
+			
+			{{ if .Params.tags }}
+			<aside class="single-aside">
+				<div class="aside-widget">
+					<h2 class="smtitle">Mots-clefs</h2>
+					<ul class="unstyled">
+						{{ range .Params.tags }}
+							<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+						{{ end }}
+					</ul>
+				</div>
 			</aside>
 			{{ end }}
 		</div><!-- .single-sidebar-odd -->

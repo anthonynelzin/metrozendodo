@@ -512,30 +512,21 @@ ul {
 	width: 100%;
 }
 
-.single-meta {
-	letter-spacing: -.05em;
-	text-transform: uppercase;
-}
-
 article time {
-	color: var(--gray);
-	font-weight: 900;
+	font-weight: bold;
 	letter-spacing: -.05em;
 	text-transform: uppercase;
-}
-
-.single-time {
-	font-weight: 900;
 }
 
 .single-author {
 	color: var(--gray);
-	font-weight: 600;
+	font-weight: bold;
+	letter-spacing: -.05em;
+	text-transform: uppercase;
 }
 
 .single-tags {
 	color: var(--gray);
-	font-weight: 100;
 }
 
 .single-content {
