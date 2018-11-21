@@ -555,6 +555,7 @@ article time {
 	font-size: .9em;
 }
 
+.single-content p code,
 .single-content pre {
 	background: var(--pre-background);
 }
