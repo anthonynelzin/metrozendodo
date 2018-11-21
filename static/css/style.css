@@ -446,7 +446,7 @@ ul {
 }
 
 .site-archive {
-	margin-top: 2rem;
+	margin-top: 6rem;
 }
 
 @supports (display: grid) {
@@ -461,7 +461,6 @@ ul {
 	@media (min-width: 50em) {
 		.site-archive-content {
 			grid-column-gap: 2rem;
-			grid-row-gap: 2rem;
 			grid-template-columns: 1fr 1fr;
 		}
 	}
