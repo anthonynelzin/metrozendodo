@@ -526,10 +526,6 @@ ul {
 	}
 }
 
-.single-hero {
-	padding-bottom: 2rem;
-}
-
 .single-hero img {
 	width: 100%;
 }
@@ -544,9 +540,12 @@ article time {
 	color: var(--gray);
 }
 
-.single-content,
-.single-aside {
+.single-content {
 	margin-top: 2rem;
+}
+
+.single-aside {
+	margin-top: 5rem;
 }
 
 .single-content a,
@@ -610,7 +609,7 @@ article time {
 
 .single-content .footnotes {
 	font-size: .9em;
-	margin-top: 2rem;
+	margin-top: 5rem;
 }
 
 @supports (display: grid) {
