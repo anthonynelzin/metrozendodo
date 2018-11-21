@@ -380,7 +380,7 @@ ul {
 
 @media (min-width: 50em) {
 	.index article img {
-		width: 35em;
+		width: 75%;
 	}
 }
 
