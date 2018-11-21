@@ -12,12 +12,14 @@
 	<section class="site-archive">
 		<h2>{{ .Key }}</h2>
 	
-		{{ range .Pages }}
-		<article>
-			<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>	
-			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-		</article>
-		{{ end }}
+		<div class="site-archive-content">
+			{{ range .Pages }}
+			<article>
+				<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>	
+				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+			</article>
+			{{ end }}
+		</div>
 	</section>
 {{ end }}
 

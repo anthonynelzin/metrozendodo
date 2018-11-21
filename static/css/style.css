@@ -159,15 +159,15 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 1.953em;
+	font-size: 2em;
 }
 
 h2 {
-	font-size: 1.563em;
+	font-size: 1.5em;
 }
 
 h3 {
-	font-size: 1.25em;
+	font-size: 1em;
 }
 
 .smtitle {
@@ -449,9 +449,33 @@ ul {
 	margin-top: 2rem;
 }
 
-.site-archive:nth-child(odd) {
-	text-align: right;
+@supports (display: grid) {
+	.site-archive-content {
+		display: grid;
+		grid-column-gap: 1rem;
+		grid-row-gap: 1rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+	}
+	
+	@media (min-width: 50em) {
+		.site-archive-content {
+			grid-column-gap: 2rem;
+			grid-row-gap: 2rem;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	
+	@media (min-width: 60em) {
+		.site-archive-content {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
 }
+
+/*.site-archive:nth-child(odd) {
+	text-align: right;
+}*/
 
 .site-archive article {
 	margin-bottom: 1rem;
