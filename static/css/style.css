@@ -17,7 +17,7 @@
 	--third-color: #0095c6; /* Blue */
 	--fourth-color: #ffb025; /* Yellow */
 	
-	--sans-font: system-ui, "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, Open Sans, sans-serif;
+	--sans-font: system-ui, -apple-system, "Helvetica Neue", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Arial, sans-serif;
 	--serif-font: "Georgia", serif;
 	--mono-font: "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 	
