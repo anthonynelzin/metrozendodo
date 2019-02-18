@@ -11,40 +11,39 @@
 *****************************/
 
 :root {
-	--first-color: #5f4B8b; /* Purple */
-	--first-alt-color: #322749; /* Dark purple (+20%) */
-	--second-color: #d72d5c; /* Pink */
-	--third-color: #0095c6; /* Blue */
-	--fourth-color: #ffb025; /* Yellow */
+	--first-color: hsl(260, 30%, 40%); /* Ultra Violet purple */
+	--first-alt-color: hsl(270, 30%, 20%); /* Dark purple */
+	--second-color: hsl(340, 80%, 50%); /* Pink */
+	--third-color: hsl(195, 100%, 40%); /* Blue */
+	--fourth-color: hsl(35, 100%, 60%); /* Yellow */
 	
 	--sans-font: system-ui, -apple-system, "Helvetica Neue", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Arial, sans-serif;
 	--serif-font: "Georgia", serif;
 	--mono-font: "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 	
-	--main-background: #f6f5fa;
-	--main-color: #000e11;
-	--pre-background: #e8e4f1;
+	--main-background: var(--white);
+	--main-color: var(--black);
+	--pre-background: hsl(260, 30%, 90%); /* Light purple */
 	
-	--black: #000e11;
-	--gray: #687575;
-	--white: #f6f5fa;
+	--black: hsl(260, 30%, 2%);
+	--gray: hsl(260, 5%, 50%);
+	--white: hsl(260, 30%, 98%);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--first-color: #322749; /* Purple */
-		--first-alt-color: #040307; /* Dark purple (+20%) */
-		--second-color: #ffb025; /* Yellow */
-		--third-color: #d72d5c; /* Pink */
-		--fourth-color: #0095c6; /* Blue */
+		--first-color: hsl(260, 30%, 30%); /* Darker purple */
+		--first-alt-color: hsl(270, 30%, 10%); /* Darkest purple */
+		--second-color: hsl(35, 100%, 50%); /* Dark yellow */
+		--third-color: hsl(340, 70%, 50%); /* Muted pink */
+		--fourth-color: hsl(195, 100%, 40%); /* Blue */
 
-		--main-background: #1b1528;
-		--main-color: #b3b3bc;
-		--pre-background: #040307;
+		--main-background: var(--first-alt-color);
+		--main-color: var(--white);
+		--pre-background: var(--first-color);
 
-		--black: #000e11;
-		--gray: #9d9da8;
-		--white: #b3b3bc;
+		--gray: hsl(260, 5%, 60%);
+		--white: hsl(260, 10%, 85%);
 	}
 	
 	img {
@@ -58,12 +57,12 @@
 
 ::-moz-selection {
 	background: var(--third-color);
-	color: #fefcfe;
+	color: var(--white);
 }
 
 ::selection {
 	background: var(--third-color);
-	color: #fefcfe;
+	color: var(--white);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -119,7 +118,7 @@ html {
 
 body {
 	background: var(--first-color);
-	color: var(--black);
+	color: var(--main-color);
 	font-size: 1rem;
 	font-family: var(--sans-font);
 	line-height: 1.4;
