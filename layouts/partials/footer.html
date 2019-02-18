@@ -1,5 +1,5 @@
-<footer class="site-footer">
-	<div class="site-footer-content">
+<footer class="footer">
+	<div class="footer-content">
 		<nav aria-label="Navigation principale">
 			<h1 class="smtitle">{{ .Site.Title }}</h1>
 			<ul class="unstyled">
@@ -18,7 +18,7 @@
 			</ul>
 		</nav>
 		
-		<nav class="site-footer-tags">
+		<nav class="footer-tags">
 			<h1 class="smtitle">Mots-clefs</h1>
 			<ul class="unstyled" aria-label="Liste des mots-clefs">
 			{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
@@ -27,7 +27,7 @@
 			</ul>
 		</nav>
 	
-		<p class="site-footer-colophon">
+		<p class="footer-colophon">
 			{{ if .Site.Params.Motto }}
 				{{ .Site.Params.Motto }}
 			{{ end }}
