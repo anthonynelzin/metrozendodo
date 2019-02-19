@@ -2,26 +2,28 @@
 
 <div class="site-wrapper">
 	<div class="index">
-	{{ range first 10 .Data.Pages }}
+	{{ range first 5 .Data.Pages }}
 		<article>
-		{{ if .Params.Hero }}
 			<a href="{{ .Permalink }}">
-				<img src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}.jpg" alt="{{ .Title }}" />
-				<h1>{{ .Title }}</h1>
+				{{ if .Params.Hero }}
+					<img src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}.jpg" alt="{{ .Title }}" />
+					<h1>{{ .Title }}</h1>
+				{{ else }}
+					<h1>{{ .Title }}</h1>
+				{{ end }}
+					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 			</a>
-		{{ else }}
-			<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>	
-		{{ end }}
-			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</article>
 	{{ end }}
 	
 	{{ $items := (where .Pages "Section" "!=" "") }}
-	{{ if gt $items 10 }}
-		{{ range first 25 (after 10 .Data.Pages) }}
+	{{ if gt $items 5 }}
+		{{ range first 25 (after 5 .Data.Pages) }}
 			<article>
-				<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>	
-				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+				<a href="{{ .Permalink }}">
+					<h1>{{ .Title }}</h1>	
+					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+				</a>
 			</article>
 		{{ end }}
 	{{ end }}
