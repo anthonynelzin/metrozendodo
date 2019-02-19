@@ -113,7 +113,7 @@ time, mark, audio, video {
 **********************/
 
 html {
-	font-size: 18px;
+	font-size: 16px;
 }
 
 body {
@@ -350,23 +350,23 @@ ul {
 **************************/
 
 .index article {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 
 .index article:nth-child(-n+20) {
-	margin-bottom: 2em;
+	margin-bottom: 2rem;
 }
 
 .index article:nth-child(-n+15) {
-	margin-bottom: 3em;
+	margin-bottom: 3rem;
 }
 
 .index article:nth-child(-n+10) {
-	margin-bottom: 4em;
+	margin-bottom: 4rem;
 }
 
 .index article:nth-child(-n+5) {
-	margin-bottom: 5em;
+	margin-bottom: 5rem;
 }
 
 .index article:nth-child(even) {
