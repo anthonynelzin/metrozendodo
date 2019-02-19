@@ -122,7 +122,7 @@ body {
 	font-family: var(--font-sans);
 	line-height: 1.5;
 	margin: 0 auto;
-	max-width: 100ch;
+	max-width: 66rem;
 }
 
 a {
@@ -172,7 +172,7 @@ h3 {
 }
 
 .smtitle {
-	border-bottom: 1px solid;
+	border-bottom: 1px solid var(--color-gray);
 	font-size: 1rem;
 	font-weight: 900;
 	letter-spacing: 0;
@@ -214,7 +214,7 @@ ul {
 	width: 100%;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 66rem) {
 	.header {
 		margin-top: 5rem;
 		padding: 0;
@@ -267,7 +267,7 @@ ul {
 	width: 100%;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 66rem) {
 	.main {
 		padding: 2rem;
 	}
@@ -280,7 +280,7 @@ ul {
 	width: 100%;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 66rem) {
 	.footer {
 		padding: 2rem;
 	}
@@ -315,7 +315,7 @@ ul {
 		grid-column: 1/4;
 	}
 	
-	@media (min-width: 56rem) {
+	@media (min-width: 66rem) {
 		.footer-tags {
 			grid-column: 1/2;
 			grid-row-start: 1;
@@ -331,7 +331,7 @@ ul {
 	text-align: center;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 66rem) {
 	.footer-colophon {
 		margin-top: 2rem;
 	}
@@ -375,7 +375,7 @@ ul {
 	width: 100%;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 66rem) {
 	.index article img {
 		width: 75%;
 	}
@@ -390,7 +390,7 @@ ul {
 	padding-top: 1rem;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 66rem) {
 	.taxonomy-list {
 		padding-top: 2rem;
 	}
@@ -413,7 +413,7 @@ ul {
 		grid-template-rows: auto;
 	}
 	
-	@media (min-width: 56rem) {
+	@media (min-width: 66rem) {
 		.taxonomy-list {
 			grid-column-gap: 2rem;
 			grid-template-columns: 1fr 1fr 1fr;
@@ -455,7 +455,7 @@ ul {
 		grid-template-rows: auto;
 	}
 	
-	@media (min-width: 56rem) {
+	@media (min-width: 66rem) {
 		.site-archive-content {
 			grid-column-gap: 2rem;
 			grid-template-columns: 1fr 1fr;
@@ -508,7 +508,7 @@ ul {
 		grid-column: 1/2;
 	}
 		
-	@media (min-width: 56rem) {
+	@media (min-width: 66rem) {
 		.single-sidebar-odd {
 			grid-column: 2/3;
 		}
@@ -614,7 +614,7 @@ article time {
 		grid-column: 1/2;
 	}
 	
-	@media (min-width: 56rem) {
+	@media (min-width: 66rem) {
 		.single-content .footnotes {
 			align-self: end;
 			grid-column: 2/3;
