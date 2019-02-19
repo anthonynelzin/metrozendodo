@@ -13,7 +13,9 @@
 :root {
 	--color-background: hsl(30, 30%, 95%);
 	--color-white: hsl(0, 0%, 100%);
+	--color-whitish: hsl(260, 5%, 90%);
 	--color-gray: hsl(260, 5%, 50%);
+	--color-blackish: hsl(260, 30%, 20%);
 	--color-black: hsl(260, 30%, 2%);
 
 	--color-first: hsl(260, 30%, 40%); /* Ultra Violet purple */
@@ -237,7 +239,7 @@ ul {
 	font-size: 1.25rem;
 	font-weight: 600;
 	letter-spacing: .025rem;
-	justify-self: end; /* Remplacer par bouton […] par défaut. Déporter l’astuce de la couleur dessus. */
+	justify-self: end; /* Remplacer par bouton […] par défaut. */
 }
 
 .navigation li {
@@ -269,8 +271,8 @@ ul {
 }
 
 .footer {
-	background: var(--color-first-dark);
-	color: var(--color-white);
+	background: var(--color-blackish);
+	color: var(--color-whitish);
 	margin-bottom: 1rem;
 	padding: 1rem;
 	width: 100%;
