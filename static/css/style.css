@@ -40,7 +40,6 @@
 		--color-second: hsl(35, 100%, 50%); /* Dark yellow */
 		--color-third: hsl(340, 70%, 50%); /* Muted pink */
 		--color-fourth: hsl(195, 100%, 40%); /* Blue */
-		
 	}
 	
 	img {
@@ -146,8 +145,11 @@ a:hover {
 	content: " | ";
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	font-weight: 900;
+	letter-spacing: .025rem;
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
@@ -168,7 +170,6 @@ h3 {
 .smtitle {
 	font-size: 1rem;
 	font-weight: 900;
-	letter-spacing: -.05em;
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
@@ -196,50 +197,51 @@ ul {
 ************************/
 
 .header {
-	background: var(--color-first-dark);
 	color: var(--color-white);
-	margin-top: 1rem;
-	padding: 1rem;
-	text-align: center;
+	margin: 1rem 0 1rem 0;
+	display: grid;
+		align-items: center;
+		grid-column-gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
 	width: 100%;
+}
+
+.header:before {
+	background: var(--color-first);
+	content: "";
+	height: 30rem;
+	position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	z-index: -9999;
+}
+
+.site-title {
+	font-size: 1.5rem;
+	font-style: italic;
+	font-weight: 900;
+	justify-self: start;
+	letter-spacing: .025rem;
+	text-transform: uppercase;
+}
+
+.navigation {
+	font-size: 1.25rem;
+	font-weight: 600;
+	letter-spacing: .025rem;
+	justify-self: end; /* Remplacer par bouton […] par défaut. Déporter l’astuce de la couleur dessus. */
+}
+
+.navigation li {
+	padding-left: 1rem;
 }
 
 @media (min-width: 56rem) {
 	.header {
-		margin-top: 2rem;
-		padding: 2rem;
+		margin-top: 5rem;
 	}
-}
-
-.navigation {
-	margin-top: 1rem;
-}
-
-@media (min-width: 56rem) {
-	.navigation {
-		margin-top: 2rem;
-	}
-}
-
-@supports (display: grid) {
-	@media (min-width: 56rem) {
-		.header-content {
-			display: grid;
-			grid-column-gap: 1rem;
-			grid-template-columns: max-content 1fr;
-			grid-template-rows: auto;
-		}
-		
-		.navigation {
-			margin: 0;
-			text-align: right;
-		}
-	}
-}
-
-.navigation a,
-.footer a {
-	text-decoration: underline;
 }
 
 .header a:hover,
@@ -247,16 +249,7 @@ ul {
 	color: var(--color-fourth);
 }
 
-.site-title {
-	font-size: 1rem;
-	font-weight: 900;
-	letter-spacing: -.05em;
-	margin: 0;
-	padding: 0;
-	text-transform: uppercase;
-}
-
-.site-title::before {
+.title::before {
 	animation: hue 10s infinite linear;
 	color: var(--color-fourth);
 	content: "[…] ";
@@ -268,16 +261,14 @@ ul {
 }
 
 .main {
-	background: var(--main-background);
-	color: var(--main-color);
-	margin: 1rem 0;
+	background: var(--color-white);
+	color: var(--color-black);
 	padding: 1rem;
 	width: 100%;
 }
 
 @media (min-width: 56rem) {
 	.main {
-		margin: 2rem 0;
 		padding: 2rem;
 	}
 }
