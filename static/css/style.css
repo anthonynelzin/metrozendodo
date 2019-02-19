@@ -10,40 +10,37 @@
 ******************************
 *****************************/
 
+@import url(fonts.css);
+
 :root {
-	--first-color: hsl(260, 30%, 40%); /* Ultra Violet purple */
-	--first-alt-color: hsl(270, 30%, 20%); /* Dark purple */
-	--second-color: hsl(340, 80%, 50%); /* Pink */
-	--third-color: hsl(195, 100%, 40%); /* Blue */
-	--fourth-color: hsl(35, 100%, 60%); /* Yellow */
+	--color-background: hsl(30, 30%, 95%);
+	--color-white: hsl(0, 0%, 100%);
+	--color-gray: hsl(260, 5%, 50%);
+	--color-black: hsl(260, 30%, 2%);
+
+	--color-first: hsl(260, 30%, 40%); /* Ultra Violet purple */
+	--color-first-light: hsl(260, 30%, 90%); /* Light purple */
+	--color-first-dark: hsl(270, 30%, 20%); /* Dark purple */
+	--color-second: hsl(340, 80%, 50%); /* Pink */
+	--color-third: hsl(195, 100%, 40%); /* Blue */
+	--color-fourth: hsl(35, 100%, 60%); /* Yellow */
 	
-	--sans-font: system-ui, -apple-system, "Helvetica Neue", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Arial, sans-serif;
-	--serif-font: "Georgia", serif;
-	--mono-font: "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
-	
-	--main-background: var(--white);
-	--main-color: var(--black);
-	--pre-background: hsl(260, 30%, 90%); /* Light purple */
-	
-	--black: hsl(260, 30%, 2%);
-	--gray: hsl(260, 5%, 50%);
-	--white: hsl(260, 30%, 98%);
+	--font-sans: "Alegreya Sans", sans-serif;
+	--font-mono: "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--first-color: hsl(260, 30%, 30%); /* Darker purple */
-		--first-alt-color: hsl(270, 30%, 10%); /* Darkest purple */
-		--second-color: hsl(35, 100%, 50%); /* Dark yellow */
-		--third-color: hsl(340, 70%, 50%); /* Muted pink */
-		--fourth-color: hsl(195, 100%, 40%); /* Blue */
-
-		--main-background: var(--first-alt-color);
-		--main-color: var(--white);
-		--pre-background: var(--first-color);
-
-		--gray: hsl(260, 5%, 60%);
-		--white: hsl(260, 10%, 85%);
+		--color-white: hsl(260, 10%, 85%);
+		--color-gray: hsl(260, 5%, 60%);
+	
+		--color-first: hsl(260, 30%, 30%); /* Darker purple */
+		--color-first-light: var(--color-first);
+		--color-first-dark: hsl(270, 30%, 10%); /* Darkest purple */
+		--color-second: hsl(35, 100%, 50%); /* Dark yellow */
+		--color-third: hsl(340, 70%, 50%); /* Muted pink */
+		--color-fourth: hsl(195, 100%, 40%); /* Blue */
+		
 	}
 	
 	img {
@@ -56,13 +53,13 @@
 }
 
 ::-moz-selection {
-	background: var(--third-color);
-	color: var(--white);
+	background: var(--color-third);
+	color: var(--color-white);
 }
 
 ::selection {
-	background: var(--third-color);
-	color: var(--white);
+	background: var(--color-third);
+	color: var(--color-white);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -113,15 +110,15 @@ time, mark, audio, video {
 **********************/
 
 html {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 body {
-	background: var(--first-color);
+	background: var(--color-background);
 	color: var(--main-color);
 	font-size: 1rem;
-	font-family: var(--sans-font);
-	line-height: 1.4;
+	font-family: var(--font-sans);
+	line-height: 1.5;
 	margin: 0 auto;
 	max-width: 100ch;
 }
@@ -132,7 +129,7 @@ a {
 }
 
 a:hover {
-	color: var(--second-color);
+	color: var(--color-second);
 	text-decoration: underline;
 }
 
@@ -142,15 +139,14 @@ a:hover {
 }
 
 .comma:not(:last-of-type):after {
-	content: ", ";
+	content: ", ";
 }
 
 .commabar:not(:last-of-type):after {
-	content: " | ";
+	content: " | ";
 }
 
 h1, h2, h3 {
-	letter-spacing: -.05em;
 	font-weight: 900;
 	margin: 0;
 	padding: 0;
@@ -200,8 +196,8 @@ ul {
 ************************/
 
 .header {
-	background: var(--first-alt-color);
-	color: var(--white);
+	background: var(--color-first-dark);
+	color: var(--color-white);
 	margin-top: 1rem;
 	padding: 1rem;
 	text-align: center;
@@ -248,7 +244,7 @@ ul {
 
 .header a:hover,
 .footer a:hover {
-	color: var(--fourth-color);
+	color: var(--color-fourth);
 }
 
 .site-title {
@@ -262,13 +258,13 @@ ul {
 
 .site-title::before {
 	animation: hue 10s infinite linear;
-	color: var(--fourth-color);
-	content: "[…] ";
+	color: var(--color-fourth);
+	content: "[…] ";
 }
 
 @keyframes hue {
-	30% { color: var(--second-color); }
-	60% { color: var(--third-color); }
+	30% { color: var(--color-second); }
+	60% { color: var(--color-third); }
 }
 
 .main {
@@ -287,8 +283,8 @@ ul {
 }
 
 .footer {
-	background: var(--first-alt-color);
-	color: var(--white);
+	background: var(--color-first-dark);
+	color: var(--color-white);
 	margin-bottom: 1rem;
 	padding: 1rem;
 	width: 100%;
@@ -403,7 +399,7 @@ ul {
 }
 
 .taxonomy-list li {
-	border-top: 1px solid var(--gray);
+	border-top: 1px solid var(--color-gray);
 	font-weight: 900;
 	letter-spacing: -.05em;
 	padding: 1em 0;
@@ -442,7 +438,7 @@ ul {
 }
 
 .taxonomy-count {
-	color: var(--gray);
+	color: var(--color-gray);
 	float: right;
 	font-weight: normal;
 	text-align: right;
@@ -540,7 +536,7 @@ article time {
 }
 
 .single-author {
-	color: var(--gray);
+	color: var(--color-gray);
 }
 
 .single-content {
@@ -554,8 +550,8 @@ article time {
 .single-content a,
 .single-sidebar a {
 	text-decoration: underline;
-	-webkit-text-decoration-color: var(--second-color);
-	text-decoration-color: var(--second-color);
+	-webkit-text-decoration-color: var(--color-second);
+	text-decoration-color: var(--color-second);
 }
 
 .single-content abbr[title],
@@ -565,7 +561,7 @@ article time {
 }
 
 .single-content blockquote {
-	border-left: .5em solid var(--second-color);
+	border-left: .5em solid var(--color-second);
 	margin: 0 0 1rem 0;
 	padding-left: 1rem;
 }
@@ -576,13 +572,13 @@ article time {
 
 .single-content code,
 .single-content pre {
-	font-family: var(--mono-font);
+	font-family: var(--font-mono);
 	font-size: .9em;
 }
 
 .single-content p code,
 .single-content pre {
-	background: var(--pre-background);
+	background: var(--color-first-light);
 }
 
 .single-content del {
@@ -595,7 +591,7 @@ article time {
 }
 
 .single figure figcaption {
-	color: var(--gray);
+	color: var(--color-gray);
 	font-size: .9em;
 	font-style: italic;
 	text-align: right;
@@ -674,7 +670,7 @@ article time {
 }
 
 .single-content mark {
-	background: var(--fourth-color);
+	background: var(--color-fourth);
 }
 
 .single-content p {
@@ -712,12 +708,12 @@ article time {
 }
 
 .single-content table thead {
-	background: var(--second-color);
+	background: var(--color-second);
 }
 
 .single-content table th,
 .single-content table td {
-	border-bottom: 1px solid var(--gray);
+	border-bottom: 1px solid var(--color-gray);
 	padding: 1em;
 }
 
