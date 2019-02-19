@@ -275,14 +275,12 @@ ul {
 .footer {
 	background: var(--color-blackish);
 	color: var(--color-whitish);
-	margin-bottom: 1rem;
 	padding: 1rem;
 	width: 100%;
 }
 
 @media (min-width: 56rem) {
 	.footer {
-		margin-bottom: 2rem;
 		padding: 2rem;
 	}
 }
