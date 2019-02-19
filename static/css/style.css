@@ -125,11 +125,12 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
+	transition: all .25s;
 }
 
 a:hover {
-	color: var(--color-second);
-	text-decoration: underline;
+	background: var(--color-second);
+	color: var(--color-white);
 }
 
 .comma,
@@ -207,6 +208,12 @@ ul {
 	width: 100%;
 }
 
+@media (min-width: 56rem) {
+	.header {
+		margin-top: 5rem;
+	}
+}
+
 .header:before {
 	background: var(--color-first);
 	content: "";
@@ -236,17 +243,6 @@ ul {
 
 .navigation li {
 	padding-left: 1rem;
-}
-
-@media (min-width: 56rem) {
-	.header {
-		margin-top: 5rem;
-	}
-}
-
-.header a:hover,
-.footer a:hover {
-	color: var(--color-fourth);
 }
 
 .title::before {
@@ -286,6 +282,14 @@ ul {
 		margin-bottom: 2rem;
 		padding: 2rem;
 	}
+}
+
+.footer a {
+	text-decoration: underline;
+}
+
+.footer a:hover {
+	text-decoration: none;
 }
 
 .footer-content nav {
