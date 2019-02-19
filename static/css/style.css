@@ -13,9 +13,10 @@
 :root {
 	--color-background: hsl(30, 30%, 95%);
 	--color-white: hsl(0, 0%, 100%);
-	--color-whitish: hsl(260, 5%, 90%);
+	--color-whitish: hsl(270, 30%, 90%);
+	--color-ghost: hsl(270, 15%, 60%);
 	--color-gray: hsl(260, 5%, 50%);
-	--color-blackish: hsl(260, 30%, 20%);
+	--color-blackish: hsl(270, 30%, 20%);
 	--color-black: hsl(260, 30%, 2%);
 
 	--color-first: hsl(260, 30%, 40%); /* Ultra Violet purple */
@@ -285,6 +286,10 @@ ul {
 	}
 }
 
+.footer .smtitle {
+	border-color: var(--color-ghost);
+}
+
 .footer a {
 	text-decoration: underline;
 }
@@ -318,7 +323,10 @@ ul {
 	}
 }
 
-.footer-colophon {
+.colophon {
+	color: var(--color-ghost);
+	font-size: .8em;
+	grid-column: 1/4;
 	margin-top: 1rem;
 	text-align: center;
 }
@@ -326,12 +334,6 @@ ul {
 @media (min-width: 56rem) {
 	.footer-colophon {
 		margin-top: 2rem;
-	}
-}
-
-@supports (display: grid) {
-	.footer-colophon {
-		grid-column: 1/4;
 	}
 }
 
