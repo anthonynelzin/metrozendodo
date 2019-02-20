@@ -351,12 +351,12 @@ ul {
 
 @media (min-width: 66rem) {
 	.index article {
-		grid-column: 1/4;
+		grid-column: 1/5;
 	}
 
 	.index article:nth-child(even) {
 		align-self: end;
-		grid-column: 3/6;
+		grid-column: 2/6;
 		text-align: right;
 	}
 }
