@@ -1,7 +1,7 @@
 <footer class="footer">
 	<nav class="footer-tags">
-		<h1 class="smtitle">Mots-clefs</h1>
-		<div class="footer-tags-wrapper" aria-label="Liste des mots-clefs">
+		<h1 class="smtitle">Mots-clés</h1>
+		<div class="footer-tags-wrapper" aria-label="Liste des mots-clés">
 		{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
 			<p><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></p>
 		{{ end }}
