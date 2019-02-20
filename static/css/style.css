@@ -120,7 +120,7 @@ body {
 	color: var(--main-color);
 	font-size: 1rem;
 	font-family: var(--font-sans);
-	line-height: 1.5;
+	line-height: 1.4;
 	margin: 0 auto;
 	max-width: 64rem;
 }
@@ -148,15 +148,15 @@ h3 {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 1.66rem;
 }
 
 h2 {
-	font-size: 1.5em;
+	font-size: 1.3rem;
 }
 
 h3 {
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 .smtitle {
@@ -228,7 +228,7 @@ ul {
 }
 
 .site-title {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	font-style: italic;
 	font-weight: 900;
 	justify-self: start;
@@ -237,7 +237,7 @@ ul {
 }
 
 .navigation {
-	font-size: 1.25rem;
+	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: .025rem;
 	justify-self: end; /* Remplacer par bouton […] par défaut. */
