@@ -12,6 +12,9 @@
 
 :root {
 	--color-background: hsl(30, 30%, 95%);
+	--color-main: var(--color-white);
+	--color-text: var(--color-black);
+	
 	--color-white: hsl(0, 0%, 100%);
 	--color-whitish: hsl(270, 30%, 90%);
 	--color-ghost: hsl(270, 15%, 60%);
@@ -34,15 +37,25 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-white: hsl(260, 10%, 85%);
-		--color-gray: hsl(260, 5%, 60%);
+		--color-background: hsl(200, 5%, 15%);
+		--color-main: hsl(200, 5%, 20%);
+		--color-text: var(--color-white);
+		
+		--color-white: hsl(200, 5%, 85%);
+		--color-whitish: hsl(200, 5%, 80%);
+		--color-ghost: hsl(200, 5%, 40%);
+		--color-gray: hsl(200, 5%, 60%);
+		--color-blackish: hsl(200, 5%, 10%);
+		--color-black: hsl(200, 5%, 2%);
 	
-		--color-first: hsl(260, 30%, 30%); /* Darker purple */
-		--color-first-light: var(--color-first);
-		--color-first-dark: hsl(270, 30%, 10%); /* Darkest purple */
-		--color-second: hsl(35, 100%, 50%); /* Dark yellow */
-		--color-third: hsl(340, 70%, 50%); /* Muted pink */
-		--color-fourth: hsl(195, 100%, 40%); /* Blue */
+		--color-first: hsl(275, 25%, 30%); /* Deep purple */
+		--color-first-light: hsl(275, 25%, 40%); /* Light purple */
+		--color-first-dark: hsl(275, 25%, 10%); /* Dark purple */
+		--color-first-blue: hsl(230, 25%, 30%);
+		--color-first-red: hsl(300, 25%, 30%);
+		--color-second: hsl(340, 60%, 50%); /* Pink */
+		--color-third: hsl(195, 80%, 50%); /* Blue */
+		--color-fourth: hsl(35, 80%, 60%); /* Yellow */
 	}
 	
 	img {
@@ -248,8 +261,8 @@ ul {
 }
 
 .main {
-	background: var(--color-white);
-	color: var(--color-black);
+	background: var(--color-main);
+	color: var(--color-text);
 	padding: 1rem;
 	width: 100%;
 }
