@@ -15,18 +15,18 @@
 	--color-main: var(--color-white);
 	--color-text: var(--color-black);
 	
-	--color-white: hsl(0, 0%, 100%);
-	--color-whitish: hsl(270, 30%, 90%);
-	--color-ghost: hsl(270, 15%, 60%);
-	--color-gray: hsl(260, 5%, 50%);
-	--color-blackish: hsl(270, 30%, 20%);
+	--color-white: hsl(290, 5%, 100%);
+	--color-whitish: hsl(290, 5%, 90%);
+	--color-ghost: hsl(290, 5%, 80%);
+	--color-gray: hsl(290, 5%, 50%);
+	--color-blackish: hsl(290, 20%, 20%);
 	--color-black: hsl(260, 30%, 2%);
 
-	--color-first: hsl(260, 30%, 40%); /* Ultra Violet purple */
-	--color-first-light: hsl(260, 30%, 90%); /* Light purple */
-	--color-first-dark: hsl(270, 30%, 20%); /* Dark purple */
-	--color-first-blue: hsl(230, 30%, 40%);
-	--color-first-red: hsl(300, 30%, 40%);
+	--color-first: hsl(290, 55%, 30%); /* Purple */
+	--color-first-light: hsl(290, 55%, 90%); /* Light purple */
+	--color-first-dark: hsl(290, 55%, 20%); /* Dark purple */
+	--color-first-blue: hsl(230, 55%, 40%);
+	--color-first-red: hsl(350, 75%, 40%);
 	--color-second: hsl(340, 80%, 50%); /* Pink */
 	--color-third: hsl(195, 100%, 40%); /* Blue */
 	--color-fourth: hsl(35, 100%, 60%); /* Yellow */
@@ -222,9 +222,9 @@ ul {
 }
 
 .header:before {
-	animation: gradient 60s ease infinite;
+	animation: gradient 30s ease infinite;
 	background: linear-gradient(to bottom right, var(--color-first-blue), var(--color-first), var(--color-first-red));
-	background-size: 600% 600%;
+	background-size: 150% 150%;
 	content: "";
 	height: 30rem;
 	position: absolute;
