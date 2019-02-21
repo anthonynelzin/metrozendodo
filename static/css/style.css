@@ -48,14 +48,18 @@
 		--color-blackish: hsl(200, 5%, 10%);
 		--color-black: hsl(200, 5%, 2%);
 	
-		--color-first: hsl(275, 25%, 30%); /* Deep purple */
-		--color-first-light: hsl(275, 25%, 40%); /* Light purple */
-		--color-first-dark: hsl(275, 25%, 10%); /* Dark purple */
+		--color-first: hsl(275, 35%, 40%); /* Deep purple */
+		--color-first-light: hsl(275, 35%, 50%); /* Light purple */
+		--color-first-dark: hsl(275, 35%, 40%); /* Dark purple */
 		--color-first-blue: hsl(230, 25%, 30%);
 		--color-first-red: hsl(300, 25%, 30%);
-		--color-second: hsl(340, 60%, 50%); /* Pink */
-		--color-third: hsl(195, 80%, 50%); /* Blue */
+		--color-third: hsl(340, 80%, 50%); /* Pink */
+		--color-second: hsl(195, 80%, 50%); /* Blue */
 		--color-fourth: hsl(35, 80%, 60%); /* Yellow */
+	}
+	
+	a:hover {
+		color: var(--color-main) !important;
 	}
 	
 	img {
