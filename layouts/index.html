@@ -1,7 +1,6 @@
 {{ define "main" }}
 
-<div class="site-wrapper">
-	<div class="index">
+<div class="index">
 	{{ range first 5 .Data.Pages }}
 		<article>
 			<a href="{{ .Permalink }}">
@@ -27,7 +26,6 @@
 			</article>
 		{{ end }}
 	{{ end }}
-	</div>	
 </div>
 
 {{ end }}

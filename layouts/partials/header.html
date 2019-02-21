@@ -1,11 +1,9 @@
-<header class="header">
-	<a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+<a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 		
-	<nav class="navigation" aria-label="Navigation principale">
-		<ul class="unstyled">
-		{{ range .Site.Menus.main }}
-			<li class="inline"><a href="{{ .URL }}">{{ .Name }}</a></li>
-		{{ end }}
-		</ul>
-	</nav>
-</header>
+<nav class="navigation" aria-label="Navigation principale">
+	<ul class="unstyled">
+	{{ range .Site.Menus.main }}
+		<li class="inline"><a href="{{ .URL }}">{{ .Name }}</a></li>
+	{{ end }}
+	</ul>
+</nav>

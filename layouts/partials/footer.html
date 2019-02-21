@@ -1,38 +1,36 @@
-<footer class="footer">
-	<nav class="footer-tags">
-		<h1 class="smtitle">Mots-clés</h1>
-		<div class="footer-tags-wrapper" aria-label="Liste des mots-clés">
-		{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-			<p><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></p>
-		{{ end }}
-		</div>
-	</nav>
+<nav class="footer-tags">
+	<h1 class="smtitle">Mots-clés</h1>
+	<div class="footer-tags-wrapper" aria-label="Liste des mots-clés">
+	{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+		<p><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></p>
+	{{ end }}
+	</div>
+</nav>
 
-	<nav aria-label="Navigation principale" class="footer-internal">
-		<h1 class="smtitle">{{ .Site.Title }}</h1>
-		<ul class="unstyled">
-		{{ range .Site.Menus.main }}
-			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-		{{ end }}
-		</ul>
-	</nav>
+<nav aria-label="Navigation principale" class="footer-internal">
+	<h1 class="smtitle">{{ .Site.Title }}</h1>
+	<ul class="unstyled">
+	{{ range .Site.Menus.main }}
+		<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+	{{ end }}
+	</ul>
+</nav>
 
-	<nav aria-label="Liens externes" class="footer-external">
-		<h1 class="smtitle">{{ .Site.Params.Menutitle }}</h1>
-		<ul class="unstyled">
-		{{ range .Site.Menus.external }}
-			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-		{{ end }}
-		</ul>
-	</nav>
+<nav aria-label="Liens externes" class="footer-external">
+	<h1 class="smtitle">{{ .Site.Params.Menutitle }}</h1>
+	<ul class="unstyled">
+	{{ range .Site.Menus.external }}
+		<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+	{{ end }}
+	</ul>
+</nav>
 
-	<p class="colophon">
-		{{ if .Site.Params.Motto }}
-			{{ .Site.Params.Motto }}
-		{{ end }}
-		
-		{{ if .Site.Params.Colophon }}
-			{{ .Site.Params.Colophon | safeHTML }}
-		{{ end }}
-	</p>
-</footer>
+<p class="colophon">
+	{{ if .Site.Params.Motto }}
+		{{ .Site.Params.Motto }}
+	{{ end }}
+	
+	{{ if .Site.Params.Colophon }}
+		{{ .Site.Params.Colophon | safeHTML }}
+	{{ end }}
+</p>
