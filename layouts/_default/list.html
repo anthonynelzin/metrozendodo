@@ -4,13 +4,13 @@
 	
 <ul class="unstyled taxonomy-list">
 	{{ range (.Data.Pages.GroupByDate "2006") }}
-		<li>{{ .Key }} <span class="taxonomy-count">{{ len .Pages }}</li>
+		<li><a href="#{{ .Key }}">{{ .Key }}</a> <span class="taxonomy-count">{{ len .Pages }}</li>
 	{{ end }}
 </ul>
 
 {{ range (.Data.Pages.GroupByDate "2006") }}
 	<section class="site-archive">
-		<h2>{{ .Key }}</h2>
+		<h2 id="{{ .Key }}">{{ .Key }}</h2>
 	
 		<div class="site-archive-content">
 			{{ range .Pages }}

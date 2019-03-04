@@ -445,7 +445,7 @@ ul {
 	border-top: 1px solid var(--color-gray);
 	display: grid;
 		grid-column-gap: 2rem;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: auto 1fr;
 		justify-content: space-between;
 	font-weight: 900;
 	letter-spacing: -.05em;
