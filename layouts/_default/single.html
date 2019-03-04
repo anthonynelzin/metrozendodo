@@ -1,29 +1,29 @@
 {{ define "main" }}
 
-<article class="single">
+<article class="h-entry single">
 	<header class="single-header">
 	{{ if .Params.Hero }}
 		<figure class="single-hero">
-			<img src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}.jpg" alt="Image d’illustration de l’article {{ .Title }}" />
+			<img class="u-featured" src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}.jpg" alt="Image d’illustration de l’article {{ .Title }}" />
 			<figcaption>{{ if .Params.Herocredits }}{{ .Params.Herocredits | safeHTML }}{{ else }}Image {{ .Site.Params.Author }}{{ end }}.</figcaption>
 		</figure>
 	{{ end }}
 
-		<h1 class="single-title">{{ .Title }}</h1>
+		<h1 class="p-name single-title">{{ .Title }}</h1>
 		<div class="single-meta">
-			<time class="single-time" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+			<time class="dt-published single-time" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 			
 			<span class="h-card single-author">
 			{{ if .Params.Author }}
-				<a class="p-name u-url" href="{{ .Params.AuthorURL }}">{{ .Params.Author }}</a>
+				<a class="p-author p-name u-url" href="{{ .Params.AuthorURL }}">{{ .Params.Author }}</a>
 			{{ else }}
-				<a class="p-name u-url" href="{{ .Site.Params.AuthorURL }}">{{ .Site.Params.Author }}</a>
+				<a class="p-author p-name u-url" href="{{ .Site.Params.AuthorURL }}">{{ .Site.Params.Author }}</a>
 			{{ end }}
 			</span>
 		</div>
 	</header>
 
-	<div class="single-content">
+	<div class="e-content single-content">
 		{{ .Content }}
 	</div>
 	
@@ -133,7 +133,7 @@
 					<h2 class="smtitle">Mots-clefs</h2>
 					<ul class="unstyled">
 						{{ range .Params.tags }}
-							<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+							<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
 						{{ end }}
 					</ul>
 				</div>
