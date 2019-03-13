@@ -1,6 +1,6 @@
 <nav class="footer-tags">
 	<h1 class="smtitle">Mots-clés</h1>
-	<div class="footer-tags-wrapper" aria-label="Liste des mots-clés">
+	<div aria-label="Liste des mots-clés" class="footer-tags-wrapper">
 	{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
 		<p><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></p>
 	{{ end }}
@@ -28,7 +28,7 @@
 	</ul>
 </nav>
 
-<p class="colophon">
+<p aria-label="Colophon" class="colophon">
 	{{ if .Site.Params.Motto }}
 		{{ .Site.Params.Motto }}
 	{{ end }}
