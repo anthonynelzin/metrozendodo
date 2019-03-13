@@ -110,8 +110,8 @@ time, mark, audio, video {
  }
 
 .skip:focus {
-	background: var(--color-light);
-	color: var(--color-dark);
+	background: var(--color-black);
+	color: var(--color-white);
 	clip: auto !important;
 	display: block;
 	top: 1em;
