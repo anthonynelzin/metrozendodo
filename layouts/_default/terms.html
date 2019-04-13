@@ -3,14 +3,14 @@
 <h1>{{ .Title }}</h1>
 	
 <ul class="unstyled taxonomy-list">
-	{{ range .Data.Pages }}
-		<li><a href="{{ .Permalink }}">{{ .Title }}</a> <span class="taxonomy-count">{{ len .Data.Pages }}</li>
+	{{ range .Data.Terms.Alphabetical }}
+		<li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="taxonomy-count">{{ .Count }}</span></li>
 	{{ end }}
 </ul>
 
-{{ range .Data.Pages }}
+{{ range .Data.Terms.Alphabetical }}
 	<section class="site-archive">
-		<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+		<h2><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h2>
 	
 		<div class="site-archive-content">
 			{{ range .Pages }}

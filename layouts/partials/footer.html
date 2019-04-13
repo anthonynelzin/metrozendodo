@@ -1,8 +1,8 @@
 <nav class="footer-tags">
 	<h1 class="smtitle">Mots-clés</h1>
 	<div aria-label="Liste des mots-clés" class="footer-tags-wrapper">
-	{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-		<p><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></p>
+	{{ range .Site.Taxonomies.tags }}
+		<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></p>
 	{{ end }}
 	</div>
 </nav>
