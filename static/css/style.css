@@ -153,9 +153,32 @@ a:hover {
 	color: var(--color-white);
 }
 
+.comma:not(:last-of-type)::after {
+	content: ", ";
+}
+
+.grid {
+	display: grid;
+		align-items: start;
+		grid-column-gap: 1rem;
+		grid-row-gap: 2rem;
+}
+
+.grid-auto {
+	grid-template-columns: repeat(auto-fit,minmax(140px, 1fr));
+}
+
+.grid-index {
+	align-items: stretch;
+	grid-template-columns: repeat(5, 1fr);
+}
+
 h1,
 h2,
-h3 {
+h3,
+.h1,
+.h2,
+.h3 {
 	font-weight: 900;
 	hyphens: auto;
 	letter-spacing: -.05rem;
@@ -177,6 +200,19 @@ h2 {
 
 h3 {
 	font-size: 1rem;
+}
+
+figure img,
+img,
+figure audio,
+audio
+figure video,
+video {
+	max-width: 100%;
+}
+
+.light {
+	color: var(--color-gray);
 }
 
 .smtitle {
@@ -236,9 +272,13 @@ ul {
 }
 
 .header:before {
+	/*
+	Nice, but CPU- and energy-intensive:
 	animation: gradient 30s ease infinite;
+	background-size: 100% 100%;
+	*/
 	background: linear-gradient(to bottom right, var(--color-first-blue), var(--color-first), var(--color-first-red));
-	background-size: 150% 150%;
+	background-size: 100% 100%;
 	content: "";
 	height: 50vh;
 		min-height: 20rem;
@@ -383,23 +423,16 @@ ul {
 ***************************
 **************************/
 
-.index {
-	display: grid;
-		align-items: stretch;
-		grid-gap: 2rem;
-		grid-template-columns: repeat(5, 1fr);
-}
-
-.index article {
+.grid-index article {
 	grid-column: 1/-1;
 }
 
 @media (min-width: 48rem) {
-	.index article {
+	.grid-index article {
 		grid-column: 1/5;
 	}
 
-	.index article:nth-child(even) {
+	.grid-index article:nth-child(even) {
 		align-self: end;
 		grid-column: 2/6;
 		text-align: right;
@@ -416,6 +449,10 @@ ul {
 
 .index article a:hover img {
 	opacity: .5;
+}
+
+.index article a:hover .light {
+	color: inherit;
 }
 
 .taxonomy-list {
@@ -503,13 +540,14 @@ ul {
 	grid-template-rows: auto;
 }
 
+.single-header,
 .single-content,
-.single-sidebar {
+.single-sidebar,
+.single-footer {
 	grid-column: 1/-1;
 }
 
 .single-header {
-	grid-column: 1/-1;
 	grid-row: 1/2;
 }
 
@@ -548,7 +586,8 @@ article time {
 }
 
 .single-content,
-.single-aside {
+.single-aside,
+.single-footer {
 	margin-top: 2rem;
 }
 
@@ -600,15 +639,6 @@ article time {
 	font-size: .9em;
 	font-style: italic;
 	text-align: right;
-}
-
-.single figure img,
-.single img,
-.single figure audio,
-.single audio
-.single figure video,
-.single video {
-	max-width: 100%;
 }
 
 .single-content .footnotes {
