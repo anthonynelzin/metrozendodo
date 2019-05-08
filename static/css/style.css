@@ -139,7 +139,7 @@ body {
 	font-family: var(--font-sans);
 	line-height: 1.4;
 	margin: 0 auto;
-	max-width: 66rem;
+	max-width: 64rem;
 }
 
 a {
@@ -165,7 +165,7 @@ a:hover {
 }
 
 .grid-auto {
-	grid-template-columns: repeat(auto-fit,minmax(150px, min-content));
+	grid-template-columns: repeat(auto-fit,minmax(14.25rem, min-content));
 }
 
 .grid-index {
