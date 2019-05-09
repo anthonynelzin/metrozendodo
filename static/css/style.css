@@ -165,7 +165,7 @@ a:hover {
 }
 
 .grid-auto {
-	grid-template-columns: repeat(auto-fit,minmax(14.25rem, min-content));
+	grid-template-columns: repeat(auto-fill,minmax(14.25rem, 1fr));
 }
 
 .grid-index {
