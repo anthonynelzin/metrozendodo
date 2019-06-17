@@ -581,8 +581,8 @@ article time {
 	text-transform: uppercase;
 }
 
-.single-author {
-	color: var(--color-gray);
+.single-time {
+	font-weight: bold;
 }
 
 .single-content,
@@ -691,7 +691,8 @@ article time {
 	background: var(--color-fourth);
 }
 
-.single-content p {
+.single-content p,
+.single-content ul li {
 	margin-bottom: 1em;
 }
 
