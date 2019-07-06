@@ -11,10 +11,6 @@
 *****************************/
 
 @media (prefers-color-scheme: dark) {
-	a:hover {
-		color: var(--color-main) !important;
-	}
-	
 	img {
 		filter: brightness(75%);
 	}
@@ -101,6 +97,7 @@ a {
 	transition: all .25s;
 }
 
+a:focus,
 a:hover {
 	background: var(--color-second);
 	color: var(--color-white);
@@ -304,6 +301,7 @@ ul {
 	text-decoration: underline;
 }
 
+.footer a:focus,
 .footer a:hover {
 	text-decoration: none;
 }
@@ -388,10 +386,12 @@ ul {
 	width: 100%;
 }
 
+.indx article a:focus img,
 .index article a:hover img {
 	opacity: .5;
 }
 
+.index article a:focus .light,
 .index article a:hover .light {
 	color: inherit;
 }
