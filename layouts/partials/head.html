@@ -40,12 +40,6 @@
         --font-mono: {{ .Site.Params.FontMono | default "'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;" | safeCSS }};
     }
 
-    {{ if .Params.CustomColor }}
-        .header:before { background: {{ .Params.CustomColor | safeCSS }}; }
-    {{ else }}
-        .header:before { background: linear-gradient(to bottom right, var(--color-first-left), var(--color-first), var(--color-first-right)); }
-    {{ end }}
-
     @media (prefers-color-scheme: dark) {
         :root {
             --color-background: {{ .Site.Params.DarkColors.ColorBackground | default "hsl(200, 5%, 15%)" | safeCSS }};
@@ -69,6 +63,25 @@
             --color-fourth: {{ .Site.Params.Colors.DarkColorFourth | default "hsl(35, 80%, 60%)" | safeCSS }}; /* Default: Yellow */
         }
     }
+
+    {{ if .Params.CustomColor }}
+        .header:before { background: {{ .Params.CustomColor | safeCSS }}; }
+    {{ else }}
+        .header:before { background: linear-gradient(to bottom right, var(--color-first-left), var(--color-first), var(--color-first-right)); }
+    {{ end }}
+
+    {{ if .Site.Params.AnimateHeader }}
+        .header:before {
+            animation: gradient 30s ease infinite;
+	        background-size: 100% 100%;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    {{ end }}
 </style>
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
 

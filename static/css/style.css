@@ -225,11 +225,6 @@ ul {
 }
 
 .header:before {
-	/*
-	Nice, but CPU- and energy-intensive:
-	animation: gradient 30s ease infinite;
-	background-size: 100% 100%;
-	*/
 	background-size: 100% 100%;
 	content: "";
 	height: 50vh;
@@ -240,12 +235,6 @@ ul {
 		right: 0;
 	z-index: -9999;
 }
-
-/*@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}*/
 
 .site-title {
 	font-size: 1.3rem;
