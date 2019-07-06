@@ -10,54 +10,7 @@
 ******************************
 *****************************/
 
-:root {
-	--color-background: hsl(30, 30%, 95%);
-	--color-main: var(--color-white);
-	--color-text: var(--color-black);
-	
-	--color-white: hsl(290, 5%, 100%);
-	--color-whitish: hsl(290, 5%, 90%);
-	--color-ghost: hsl(290, 5%, 80%);
-	--color-gray: hsl(290, 5%, 50%);
-	--color-blackish: hsl(260, 30%, 20%);
-	--color-black: hsl(260, 30%, 2%);
-
-	--color-first: hsl(290, 55%, 30%); /* Purple */
-	--color-first-light: hsl(290, 55%, 90%); /* Light purple */
-	--color-first-dark: hsl(290, 55%, 20%); /* Dark purple */
-	--color-first-blue: hsl(230, 55%, 40%);
-	--color-first-red: hsl(350, 75%, 40%);
-	--color-second: hsl(340, 80%, 50%); /* Pink */
-	--color-third: hsl(195, 100%, 40%); /* Blue */
-	--color-fourth: hsl(35, 100%, 60%); /* Yellow */
-	
-	--font-sans: system-ui, -apple-system, "Helvetica Neue", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Arial, sans-serif;
-	--font-mono: "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
-}
-
 @media (prefers-color-scheme: dark) {
-	:root {
-		--color-background: hsl(200, 5%, 15%);
-		--color-main: hsl(200, 5%, 20%);
-		--color-text: var(--color-white);
-		
-		--color-white: hsl(200, 5%, 85%);
-		--color-whitish: hsl(200, 5%, 80%);
-		--color-ghost: hsl(200, 5%, 40%);
-		--color-gray: hsl(200, 5%, 60%);
-		--color-blackish: hsl(200, 5%, 10%);
-		--color-black: hsl(200, 5%, 2%);
-	
-		--color-first: hsl(275, 35%, 40%); /* Deep purple */
-		--color-first-light: hsl(275, 35%, 50%); /* Light purple */
-		--color-first-dark: hsl(275, 35%, 40%); /* Dark purple */
-		--color-first-blue: hsl(230, 25%, 30%);
-		--color-first-red: hsl(300, 25%, 30%);
-		--color-third: hsl(340, 80%, 50%); /* Pink */
-		--color-second: hsl(195, 80%, 50%); /* Blue */
-		--color-fourth: hsl(35, 80%, 60%); /* Yellow */
-	}
-	
 	a:hover {
 		color: var(--color-main) !important;
 	}
