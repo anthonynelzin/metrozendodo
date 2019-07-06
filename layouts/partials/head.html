@@ -43,7 +43,7 @@
     {{ if .Params.CustomColor }}
         .header:before { background: {{ .Params.CustomColor | safeCSS }}; }
     {{ else }}
-    .header:before { background: linear-gradient(to bottom right, var(--color-first-left), var(--color-first), var(--color-first-right)); }
+        .header:before { background: linear-gradient(to bottom right, var(--color-first-left), var(--color-first), var(--color-first-right)); }
     {{ end }}
 
     @media (prefers-color-scheme: dark) {
