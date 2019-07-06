@@ -10,7 +10,7 @@
 <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml">
 
 <!-- Mobile devices-->
-<meta name="theme-color" content="#692277">
+<meta name="theme-color" content='{{ .Site.Params.Colors.ColorFirst | default "hsl(290, 55%, 30%)" | safeCSS }}'>
 <meta name="viewport" content="width=device-width">
 
 <!-- CSS -->
@@ -40,7 +40,11 @@
         --font-mono: {{ .Site.Params.FontMono | default "'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;" | safeCSS }};
     }
 
+    {{ if .Params.CustomColor }}
+        .header:before { background: {{ .Params.CustomColor | safeCSS }}; }
+    {{ else }}
     .header:before { background: linear-gradient(to bottom right, var(--color-first-left), var(--color-first), var(--color-first-right)); }
+    {{ end }}
 
     @media (prefers-color-scheme: dark) {
         :root {
@@ -73,4 +77,4 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#692277">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color='{{ .Site.Params.Colors.ColorFirst | default "hsl(290, 55%, 30%)" | safeCSS }}'>
