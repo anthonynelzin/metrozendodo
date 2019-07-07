@@ -83,7 +83,7 @@ html {
 
 body {
 	background: var(--color-background);
-	color: var(--main-color);
+	color: var(--color-main);
 	font-size: 1rem;
 	font-family: var(--font-sans);
 	line-height: 1.4;
