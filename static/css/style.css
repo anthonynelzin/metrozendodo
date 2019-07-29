@@ -483,6 +483,7 @@ ul {
 
 .single-header,
 .single-content,
+.single-contact,
 .single-sidebar,
 .single-footer {
 	grid-column: 1/-1;
@@ -530,6 +531,14 @@ article time {
 .single-aside,
 .single-footer {
 	margin-top: 2rem;
+}
+
+.single-contact {
+	border-top: 1px solid var(--color-gray);
+	font-size: .9rem;
+	font-style: italic;
+	margin-top: 2rem;
+	padding-top: 1rem;
 }
 
 .single-content a,
