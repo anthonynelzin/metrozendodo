@@ -37,7 +37,7 @@
         --color-fourth: {{ .Site.Params.Colors.ColorFourth | default "hsl(35, 100%, 60%)" | safeCSS }}; /* Default: Yellow */
         
         --font-sans: {{ .Site.Params.FontSans | default "system-ui, -apple-system, 'Helvetica Neue', sans-serif;" | safeCSS }};
-        --font-serif: {{ .Site.Params.FontSerif | default "Times, 'Times New Roman', serif" | safeCSS }}
+        --font-serif: {{ .Site.Params.FontSerif | default "Times, 'Times New Roman', serif;" | safeCSS }}
         --font-mono: {{ .Site.Params.FontMono | default "Monaco, 'Courier New', Courier, monospace;" | safeCSS }};
     }
 
