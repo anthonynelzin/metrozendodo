@@ -4,8 +4,8 @@
 	<header class="single-header">
 	{{ if .Params.Hero }}
 		<figure class="single-hero">
-			<img class="u-featured" src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}.jpg" alt="Image d’illustration de l’article {{ .Title }}" />
-			<figcaption>{{ if .Params.Herocredits }}{{ .Params.Herocredits | safeHTML }}{{ else }}Image {{ .Site.Params.Author }}{{ end }}.</figcaption>
+			<img class="u-featured" src="{{ .Site.BaseURL }}img/{{ .Params.Hero }}.jpg" alt='{{ T "alt_image" }} {{ .Title }}' />
+			<figcaption>{{ if .Params.Herocredits }}{{ .Params.Herocredits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author }}{{ end }}.</figcaption>
 		</figure>
 	{{ end }}
 
@@ -109,7 +109,7 @@
 			{{ with $related }}
 			<aside class="single-aside">
 				<div class="aside-widget">
-					<h2 class="smtitle">Similaires</h2>
+					<h2 class="smtitle">{{ T "related" }}</h2>
 					<ul class="unstyled">
 					{{ range . }}
 						<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
@@ -131,7 +131,7 @@
 			{{ if .Params.tags }}
 			<aside class="single-aside">
 				<div class="aside-widget">
-					<h2 class="smtitle">Mots-clefs</h2>
+					<h2 class="smtitle">{{ T "tags" }}</h2>
 					<ul class="unstyled">
 						{{ range .Params.tags }}
 							<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>

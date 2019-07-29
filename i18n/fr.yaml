@@ -1,0 +1,20 @@
+skip_link:
+    other: "Aller directement au contenu principal"
+
+alt_image:
+    other: "Image d’illustration de l’article"
+image:
+    other: "Image"
+related:
+    other: "Similaires"
+tags:
+    other: "Mots-clés"
+     
+tags_list:
+    other: "Liste des mots-clés"
+nav_main:
+    other: "Navigation principale"
+nav_other:
+    other: "Liens externes"
+colophon:
+    other: "Colophon"

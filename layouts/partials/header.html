@@ -1,6 +1,6 @@
 <a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 		
-<nav aria-label="Navigation principale" class="navigation">
+<nav aria-label='{{ T "nav_main" }}' class="navigation">
 	<ul class="unstyled">
 	{{ range .Site.Menus.main }}
 		<li class="inline"><a href="{{ .URL }}">{{ .Name }}</a></li>
