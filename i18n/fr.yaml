@@ -6,7 +6,7 @@ alt_image:
 image:
     other: "Image"
 contact:
-    other: "Vous avez envie de discuter ? Envoyez-moi <a href='mailto:anthony@nelzin.fr'>un courrier électronique</i></a>. Vous voulez poursuivre la lecture ? Consultez <a href='https://metrozendodo.fr/a-propos/'>la page « À propos »</a>. Vous vous sentez l’âme généreuse ? <a href='https://amzn.to/314n2cO'>Offrez-moi un livre !</a>"
+    other: "Vous avez envie de discuter ? Envoyez-moi <a href='mailto:anthony@nelzin.fr'>un courrier électronique</i></a>. Vous voulez poursuivre la lecture ? <a href='https://metrozendodo.fr/commencez-ici/'>Commencez ici</a>. Vous vous sentez l’âme généreuse ? <a href='https://amzn.to/314n2cO'>Offrez-moi un livre !</a>"
 related:
     other: "Similaires"
 tags:
