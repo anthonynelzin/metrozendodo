@@ -13,11 +13,11 @@
 		<div class="single-meta">
 			<time class="dt-published single-time" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 			
-			<span class="h-card single-author" rel="author">
+			<span class="h-card single-author">
 			{{ if .Params.Author }}
-				<a class="p-author p-name u-url" href="{{ .Params.AuthorURL }}">{{ .Params.Author }}</a>
+				<a class="p-author p-name u-url" href="{{ .Params.AuthorURL }}" rel="author">{{ .Params.Author }}</a>
 			{{ else }}
-				<a class="p-author p-name u-url" href="{{ .Site.Params.AuthorURL }}">{{ .Site.Params.Author }}</a>
+				<a class="p-author p-name u-url" href="{{ .Site.Params.AuthorURL }}" rel="author">{{ .Site.Params.Author }}</a>
 			{{ end }}
 			</span>
 		</div>
