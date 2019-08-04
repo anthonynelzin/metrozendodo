@@ -4,7 +4,7 @@
 	
 <ul class="unstyled taxonomy-list">
 	{{ range .Data.Terms.Alphabetical }}
-		<li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="taxonomy-count">{{ .Count }}</span></li>
+	<li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="taxonomy-count">{{ len .Pages }}</span></li>
 	{{ end }}
 </ul>
 
