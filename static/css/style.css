@@ -652,40 +652,43 @@ article time {
 	padding: 1em;
 }
 
-.single-contente sub,
+.single-content sub,
 .single-content sup {
-	font-size: .75em;
+	font-size: .8rem;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
 }
 
 .single-content sub {
-	bottom: -.3em;
+	bottom: -.3rem;
 }
 
 .single-content sup {
-	top: -.65em;
-	padding-left: .1em;
+	top: -.3rem;
 }
 
 .single-content table {
 	border-collapse: collapse;
-	margin-bottom: 1em;
-	text-align: center;
+	margin-bottom: 1rem;
+	text-align: left;
 	width: 100%;
 }
 
 .single-content table thead {
-	background: var(--color-second);
+	background: var(--color-first-light);
+	border-bottom: 1px solid var(--color-gray);
 }
 
 .single-content table th,
 .single-content table td {
-	border-bottom: 1px solid var(--color-gray);
-	padding: 1em;
+	padding: .5rem;
+}
+
+.single-content table tr:nth-child(even) {
+	background: var(--color-whitish);
 }
 
 .single-content ul {
-	margin: 0 0 1em 0;
+	margin: 0 0 1rem 0;
 }
