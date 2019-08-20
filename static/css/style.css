@@ -636,6 +636,18 @@ article time {
 .single-content hr {
 	border: 0;
 	color: inherit;
+	margin: 0;
+	padding: 0 0 1rem 0;
+	text-align: center;
+}
+
+.single-content hr::before {
+	content: "❧";
+	font-size: 2rem;
+}
+
+.single-content .footnotes hr::before {
+	content: "";
 }
 
 .single-content mark {
