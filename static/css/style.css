@@ -129,6 +129,7 @@ h3,
 .h1,
 .h2,
 .h3 {
+	font-family: var(--font-sans);
 	font-weight: 900;
 	hyphens: auto;
 	letter-spacing: -.05rem;
@@ -351,7 +352,8 @@ ul {
 
 .colophon {
 	color: var(--color-ghost);
-	font-size: .8em;
+	font-family: var(--font-serif);
+	font-size: .9em;
 	grid-column: 1/-1;
 	margin-top: 2rem;
 	text-align: center;
@@ -518,14 +520,14 @@ ul {
 	width: 100%;
 }
 
-.single-meta,
-article time {
-	letter-spacing: -.05em;
-	text-transform: uppercase;
+.single-author {
+	font-family: var(--font-serif);
+	font-weight: bold;
 }
 
-.single-time {
-	font-weight: bold;
+time {
+	font-family: var(--font-serif);
+	font-style: italic;
 }
 
 .single-content,
@@ -540,6 +542,10 @@ article time {
 	font-style: italic;
 	margin-top: 2rem;
 	padding-top: 1rem;
+}
+
+.single-content {
+	font-family: var(--font-serif);
 }
 
 .single-content a,
@@ -587,6 +593,7 @@ article time {
 
 .single figure figcaption {
 	color: var(--color-gray);
+	font-family: var(--font-serif);
 	font-size: .9em;
 	font-style: italic;
 	text-align: right;
