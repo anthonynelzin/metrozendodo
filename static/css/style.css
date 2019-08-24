@@ -92,6 +92,20 @@ body {
 	color: var(--color-main);
 	font-size: 1rem;
 	font-family: var(--font-sans);
+	-webkit-hyphens: auto;
+	-ms-hypens: auto;
+	hyphens: auto;
+	-webkit-hyphenate-limit-before: 3;
+	-webkit-hyphenate-limit-after: 2;
+	-ms-hyphenate-limit-chars: 5 3 2;
+	hyphenate-limit-chars: 5 3 2;
+	-webkit-hyphenate-limit-lines: 3;
+	-ms-hyphenate-limit-lines: 3;
+	hyphenate-limit-lines: 3;
+	-ms-hyphenate-limit-zone: 6%;
+	hyphenate-limit-zone: 6%;
+	-ms-hyphenate-limit-last: always;
+	hyphenate-limit-last: always;
 	line-height: 1.6;
 	margin: 0 auto;
 	max-width: 64rem;
@@ -138,6 +152,9 @@ h3,
 .smtitle {
 	font-family: var(--font-sans);
 	font-weight: 900;
+	-webkit-hyphens: none;
+	-ms-hypens: none;
+	hyphens: none;
 	letter-spacing: -.05rem;
 	line-height: 1.4;
 	margin: 0;
