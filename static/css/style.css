@@ -92,7 +92,7 @@ body {
 	color: var(--color-main);
 	font-size: 1rem;
 	font-family: var(--font-sans);
-	line-height: 1.5;
+	line-height: 1.6;
 	margin: 0 auto;
 	max-width: 64rem;
 }
@@ -134,11 +134,12 @@ h2,
 h3,
 .h1,
 .h2,
-.h3 {
+.h3,
+.smtitle {
 	font-family: var(--font-sans);
 	font-weight: 900;
-	hyphens: auto;
 	letter-spacing: -.05rem;
+	line-height: 1.4;
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
@@ -160,6 +161,13 @@ h3 {
 	margin: .5rem 0 0 0;
 }
 
+.smtitle {
+	border-bottom: 1px solid var(--color-gray);
+	font-size: 1rem;
+	margin: 0 0 .5rem 0;
+	padding: 0 0 .25rem 0;
+}
+
 figure img,
 img,
 figure audio,
@@ -171,16 +179,6 @@ video {
 
 .light {
 	color: var(--color-gray);
-}
-
-.smtitle {
-	border-bottom: 1px solid var(--color-gray);
-	font-size: 1rem;
-	font-weight: 900;
-	letter-spacing: 0;
-	margin: 0 0 .5rem 0;
-	padding: 0 0 .25rem 0;
-	text-transform: uppercase;
 }
 
 ol,
