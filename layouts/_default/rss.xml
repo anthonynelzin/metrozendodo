@@ -21,6 +21,8 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Content | html }}</description>
+      <slug>{{ .Slug }}</slug>
+      <tags>{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}</tags>
     </item>
     {{ end }}
   </channel>
