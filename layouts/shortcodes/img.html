@@ -1,0 +1,10 @@
+{{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $figcaption := .Get 1 }}
+
+{{ .Scratch.Set "processed" ($image.Resize "675x q85") }}
+
+{{ $image := .Scratch.Get "processed" }}
+<figure>
+	<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" />
+	<figcaption>{{ $figcaption | safeHTML }}</figcaption>
+</figure>   
