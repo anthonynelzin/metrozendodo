@@ -1,8 +1,8 @@
 <div class="site-title">
 {{ if .IsHome }}
-<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-{{ else }}
 {{ .Site.Title }}
+{{ else }}
+<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 {{ end }}
 </div>
 		
