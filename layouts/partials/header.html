@@ -1,4 +1,10 @@
-<a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+<div class="site-title">
+{{ if .IsHome }}
+<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+{{ else }}
+{{ .Site.Title }}
+{{ end }}
+</div>
 		
 <nav aria-label='{{ T "nav_main" }}' class="navigation">
 	<ul class="unstyled">
