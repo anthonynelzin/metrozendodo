@@ -406,14 +406,14 @@ ul {
 	}
 }
 
-.index article a:focus,
-.index article a:hover {
+.index article:focus,
+.index article:hover {
 	background: var(--color-second);
 	color: var(--color-white);
 }
 
-.index article a:focus img,
-.index article a:hover img {
+.index article:focus img,
+.index article:hover img {
 	opacity: .5;
 }
 
