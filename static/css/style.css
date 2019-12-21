@@ -400,20 +400,27 @@ ul {
 		grid-column: 2/6;
 		text-align: right;
 	}
-	
+}
+
+.index article a {
+	display: inline-block;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
 	.index article a {
-		display: inline-block;
+		width: auto;
 	}
 }
 
-.index article:focus,
-.index article:hover {
+.index article a:focus,
+.index article a:hover {
 	background: var(--color-second);
 	color: var(--color-white);
 }
 
-.index article:focus img,
-.index article:hover img {
+.index article a:focus img,
+.index article a:hover img {
 	opacity: .5;
 }
 
