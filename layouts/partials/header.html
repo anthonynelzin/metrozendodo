@@ -1,12 +1,12 @@
-<div class="site-title">
+<div class="header_title">
 {{ if .IsHome }}
-{{ .Site.Title }}
+	{{ .Site.Title }}
 {{ else }}
-<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+	<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 {{ end }}
 </div>
-		
-<nav aria-label='{{ T "nav_main" }}' class="navigation">
+	
+<nav aria-label='{{ T "nav_main" }}' class="header_navigation">
 	<ul class="unstyled">
 	{{ range .Site.Menus.main }}
 		<li class="inline"><a href="{{ .URL }}">{{ .Name }}</a></li>

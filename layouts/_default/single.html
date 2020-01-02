@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<article class="h-entry single">
+<article class="h-entry main_content single">
 	<header class="single-header">
 		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 			{{ $image := $hero.Resize "1155x q85" }}

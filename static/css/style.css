@@ -81,14 +81,8 @@ html {
 	font-size: 16px;
 }
 
-@media (min-width: 768px) {
-	html {
-		font-size: 18px;
-	}
-}
-
 body {
-	background: var(--color-background);
+	background: var(--color-main);
 	color: var(--color-main);
 	font-size: 1rem;
 	font-family: var(--font-sans);
@@ -106,9 +100,7 @@ body {
 	hyphenate-limit-zone: 6%;
 	-ms-hyphenate-limit-last: always;
 	hyphenate-limit-last: always;
-	line-height: 1.6;
-	margin: 0 auto;
-	max-width: 64rem;
+	line-height: 1.8;
 }
 
 a {
@@ -212,40 +204,24 @@ ul {
 ************************/
 
 .header {
+	background: var(--color-first);
 	color: var(--color-white);
-	display: grid;
-		align-items: end;
-		grid-template-rows: auto;
-	margin: 2rem 0 1rem 0;
-	padding: 0 1rem;
-	width: 100%;
+	display: flex;
+		align-items: center;
+		justify-content: space-between;
+	padding: 5rem 1rem 1rem 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.header {
-		grid-column-gap: 1rem;
-		grid-template-columns: 1fr 1fr;
-		margin: 4rem 0 2rem 0;
-		padding: 0 2rem;
+		display: block;
+		padding: 1rem;
+		position: fixed;
+			top: 0;
+			bottom: 0;
+			width: 20%;
+		text-align: center;
 	}
-}
-
-@media (min-width: 1155px) {
-	.header {
-		padding: 0;
-	}
-}
-
-.header:before {
-	background-size: 100% 100%;
-	content: "";
-	height: 50vh;
-		min-height: 20rem;
-	position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-	z-index: -9999;
 }
 
 .header a:focus,
@@ -254,50 +230,53 @@ ul {
 	color: var(--color-text);
 }
 
-.site-title {
-	font-size: 1.3rem;
+.header_title {
+	font-size: 1rem;
 	font-style: italic;
 	font-weight: 900;
-	justify-self: start;
 	letter-spacing: -.025rem;
 	text-transform: uppercase;
 }
 
-.navigation {
+.header_navigation {
 	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: .025rem;
 }
 
-.navigation li {
+.header_navigation li {
 	padding: 0 1rem 0 0;
 }
 
-@media (min-width: 768px) {
-	.navigation ul {
-		justify-self: end;
-		text-align: right;
+@media (min-width: 60rem) {
+	.header_navigation ul {
 	}
 	
-	.navigation li {
-		padding: 0 0 0 1rem;
+	.header_navigation li {
+		display: block;
+		padding: 0;
 	}
 }
 
 .main {
-	background: var(--color-main);
 	color: var(--color-text);
 	padding: 1rem;
-	width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.main {
-		padding: 2rem;
+		float: right;
+		width: 80%;
 	}
 }
 
+.main_content {
+	margin: 0 auto;
+	max-width: 36rem;
+}
+
 .footer {
+	clear: both;
 	background: var(--color-black);
 	color: var(--color-whitish);
 	display: grid;
@@ -307,9 +286,11 @@ ul {
 	padding: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.footer {
-		padding: 2rem;
+		float: right;
+		padding: 1rem;
+		width: 80%;
 	}
 }
 
@@ -331,7 +312,7 @@ ul {
 		grid-template-columns: 1fr 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.footer-tags-wrapper {
 		grid-column-gap: 2rem;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -390,7 +371,7 @@ ul {
 	grid-column: 1/-1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.grid-index article {
 		grid-column: 1/5;
 	}
@@ -407,7 +388,7 @@ ul {
 	width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.index article a {
 		width: auto;
 	}
@@ -441,7 +422,7 @@ ul {
 	padding-top: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.taxonomy-list {
 		grid-column-gap: 2rem;
 		grid-template-columns: repeat(3, 1fr);
@@ -491,7 +472,7 @@ ul {
 	grid-template-rows: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.site-archive-content {
 		grid-gap: 2rem;
 		grid-template-columns: 1fr 1fr;
@@ -520,8 +501,6 @@ ul {
 *****************************
 ****************************/
 
-.single,
-.single-content,
 .single-sidebar {
 	display: grid;
 	grid-column-gap: 2rem;
@@ -529,25 +508,17 @@ ul {
 	grid-template-rows: auto;
 }
 
-.single-header,
-.single-content,
-.single-contact,
 .single-sidebar,
 .single-footer {
 	grid-column: 1/-1;
 }
 
-.single-content > *,
 .single-sidebar-even,
 .single-sidebar-odd {
 	grid-column: 1/-1;
 }
 	
-@media (min-width: 768px) {
-	.single-content > * {
-		grid-column: 1/2;
-	}
-
+@media (min-width: 60rem) {
 	.single-sidebar-even {
 		grid-column: 1/2;
 	}
@@ -643,7 +614,7 @@ time {
 	grid-column: 1/-1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 60rem) {
 	.single .footnotes {
 		align-self: end;
 		grid-column: -2/-1;

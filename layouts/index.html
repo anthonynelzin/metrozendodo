@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<div class="grid grid-index index">
+<div class="grid grid-index index main_content">
 	{{ range first 5 .Site.RegularPages }}
 		<article class="h-entry">
 			<a href="{{ .Permalink }}">
@@ -15,7 +15,7 @@
 		</article>
 	{{ end }}
 	
-	{{ range first 25 (after 5 .Site.RegularPages) }}
+	{{ range first 25 .Site.RegularPages) }}
 			<article class="h-entry">
 				<a href="{{ .Permalink }}">
 					<h1 class="p-name">{{ .Title }}</h1>	
