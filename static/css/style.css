@@ -374,13 +374,17 @@ ul {
 	border: 10px solid var(--color-first);
 }
 
+.index_article-hero:focus,
+.index_article-hero:hover {
+	border: 10px solid var(--color-second);
+}
+
 .index_article-hero + .index_article-simple {
 	border: none;
 }
 
-.index_article-hero:focus,
-.index_article-hero:hover {
-	border: 10px solid var(--color-second);
+.index_article-hero + .index_article-hero {
+	margin: 1rem 0 0 0;
 }
 
 .index_article-hero_content {
