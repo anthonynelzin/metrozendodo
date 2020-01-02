@@ -1,28 +1,33 @@
 {{ define "main" }}
 
-<div class="grid grid-index index main_content">
-	{{ range first 5 .Site.RegularPages }}
-		<article class="h-entry">
+<div class="main_content index">
+	{{ range first 50 .Site.RegularPages }}
+	{{ $hero := .Resources.GetMatch "hero.jpg" }}
+	
+	{{ if $hero }}
+		{{ $image := $hero.Resize "860x q85" }}
+		<article class="h-entry index_article index_article-hero">
 			<a href="{{ .Permalink }}">
-					{{ $hero := .Resources.GetMatch "hero.jpg" }}
-					{{ with $hero }}
-						{{ $image := $hero.Resize "860x q85" }}
-						<img class="u-featured" src="{{ $image.RelPermalink }}" alt='{{ T "alt_image" }} {{ .Title }}' width="{{ $image.Width }}" />
-					{{ end }}
+				<div class="h-entry index_article-hero_content" style="background-image: url({{ $image.RelPermalink }})">
 					<h1 class="p-name">{{ .Title }}</h1>
+					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>	
+				</div>
 			</a>
+		</article>
+			
+	{{ else }}
+		<article class="h-entry index_article index_article-simple">		
+			<a href="{{ .Permalink }}">
+				<h1 class="p-name">{{ .Title }}</h1>	
+			</a>
+			
 			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</article>
 	{{ end }}
-	
-	{{ range first 25 .Site.RegularPages) }}
-			<article class="h-entry">
-				<a href="{{ .Permalink }}">
-					<h1 class="p-name">{{ .Title }}</h1>	
-				</a>
-				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-			</article>
-		{{ end }}
+			
+			
+		
+	{{ end }}
 </div>
 
 {{ end }}
