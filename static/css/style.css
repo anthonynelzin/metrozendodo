@@ -361,21 +361,21 @@ ul {
 ***************************
 **************************/
 
-.index_article {
-	border-top: 1px solid var(--color-gray);
-}
-
-.index_article:last-of-type {
-	border-bottom: 1px solid var(--color-gray);
-}
-
 .index_article-simple {
+	border-top: 1px solid var(--color-gray);
 	padding: 1rem 0;
+}
+
+.index_article-simple:last-of-type {
+	border-bottom: 1px solid var(--color-gray);
 }
 
 .index_article-hero {
 	border: 10px solid var(--color-first);
-	display: block;
+}
+
+.index_article-hero + .index_article-simple {
+	border: none;
 }
 
 .index_article-hero:focus,

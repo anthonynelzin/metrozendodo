@@ -6,8 +6,8 @@
 	
 	{{ if $hero }}
 		{{ $image := $hero.Resize "860x q85" }}
-		<article class="h-entry index_article">
-			<a href="{{ .Permalink }}" class="index_article-hero">
+		<article class="h-entry index_article-hero">
+			<a href="{{ .Permalink }}">
 				<div class="h-entry index_article-hero_content" style="background-image: url({{ $image.RelPermalink }})">
 					<div class="index_article-hero_meta">
 						<h1 class="p-name index_article-hero_title">{{ .Title }}</h1>
@@ -18,7 +18,7 @@
 		</article>
 			
 	{{ else }}
-		<article class="h-entry index_article index_article-simple">		
+		<article class="h-entry index_article-simple">		
 			<a href="{{ .Permalink }}">
 				<h1 class="p-name index_article_title">{{ .Title }}</h1>	
 			</a>
