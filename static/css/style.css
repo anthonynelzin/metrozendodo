@@ -403,6 +403,7 @@ ul {
 .index_article-hero_meta {
 	background: var(--color-first);
 	color: var(--color-white);
+	max-width: 90%;
 	padding: .25rem .5rem;
 	position: absolute;
 		bottom: 3rem;
