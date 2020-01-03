@@ -28,82 +28,6 @@
 	
 	<div class="single_sidebar">
 		<div class="single_sidebar_left">
-			{{ if .Params.link }}
-			<aside class="single_sidebar_aside">
-				<h2 class="smtitle">Acheter</h2>
-				<ul class="unstyled">
-					{{ range .Params.link }}
-					<li>{{ . | safeHTML }}</li>
-				{{ end }}
-					</ul>
-			</aside>
-			{{ end }}
-			
-			{{ if .Params.prix }}
-			<aside class="single_sidebar_aside">
-				<h2 class="smtitle">Informations</h2>
-				<ul class="unstyled">
-					{{ if .Params.teinte }}
-					{{ range .Params.teinte }}
-					<li><b>Teinte</b> <a href="{{ "/teinte/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-					{{ end }}
-					{{ end }}
-					
-					{{ if .Params.saturation }}
-					<li><b>Saturation</b> {{ .Params.saturation }}</li>
-					{{ end }}
-					
-					{{ if .Params.nuances }}
-					<li><b>Nuances</b> {{ .Params.nuances }}</li>
-					{{ end }}
-					
-					{{ if .Params.lustre }}
-					<li><b>Lustre</b> {{ .Params.lustre }}</li>
-					{{ end }}
-					
-					{{ if .Params.reseau }}
-					<li><b>Résistance à l’eau</b> {{ .Params.reseau }}</li>
-					{{ end }}
-					
-					{{ if .Params.couleur }}
-					<li><b>Couleur</b> {{ .Params.couleur }}</li>
-					{{ end }}
-					
-					{{ if .Params.modele }}
-					<li><b>Modèle</b> {{ .Params.modele }}</li>
-					{{ end }}
-					
-					{{ if .Params.plume }}
-					<li><b>Plume</b> {{ .Params.plume }}</li>
-					{{ end }}
-					
-					{{ if .Params.capuchon }}
-					<li><b>Capuchon</b> {{ .Params.capuchon }}</li>
-					{{ end }}
-					
-					{{ if .Params.remplissage }}
-					<li><b>Remplissage</b> {{ .Params.remplissage }}</li>
-					{{ end }}
-					
-					{{ if .Params.dimensions }}
-					<li><b>Dimensions</b> {{ .Params.dimensions }}</li>
-					{{ end }}
-					
-					{{ if .Params.poids }}
-					<li><b>Poids</b> {{ .Params.poids }}</li>
-					{{ end }}
-					
-					{{ if .Params.remarques }}
-					<li><b>Remarques</b> {{ .Params.remarques }}</li>
-					{{ end }}
-					
-					{{ if .Params.prix }}
-					<li><b>Prix</b> {{ .Params.prix }}</li>
-					{{ end }}
-				</ul>
-			</aside>
-			{{ end }}
-			
 			{{ $related := .Site.RegularPages.Related . | first 5 }}
 			{{ with $related }}
 			<aside class="single_sidebar_aside">
@@ -118,14 +42,6 @@
 		</div><!-- .single_sidebar_left -->
 		
 		<div class="single_sidebar_right">
-			{{ if $nuancier := .Resources.GetMatch "nuancier.jpg" }}
-			<aside class="single_sidebar_aside">
-				<h2 class="smtitle">Nuancier</h2>
-				{{ $image := $nuancier.Resize "400x q85" }}
-				<img src="{{ $image.RelPermalink }}" alt='Nuancier {{ .Title }}' width="{{ $image.Width }}" />
-			</aside>
-			{{ end }}
-			
 			{{ if .Params.tags }}
 			<aside class="single_sidebar_aside">
 				<h2 class="smtitle">{{ T "tags" }}</h2>
