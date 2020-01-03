@@ -334,6 +334,15 @@ ul {
 	border-bottom: 3px solid var(--color-whitish);
 }
 
+.index_article-simple a {
+	display: block;
+}
+
+.index_article-simple a:hover,
+.index_article-simple a:focus {
+	color: var(--color-white);
+}
+
 .index_article-hero {
 	border: 9px solid var(--color-first);
 }
