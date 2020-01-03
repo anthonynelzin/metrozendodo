@@ -232,10 +232,12 @@ ul {
 }
 
 .header_title {
+	border-bottom: 3px solid;
 	font-style: italic;
 	font-weight: 900;
 	letter-spacing: -.025rem;
 	padding: 0 1rem 0 0;
+	margin: 0 0 1rem 0;
 	text-transform: uppercase;
 }
 
