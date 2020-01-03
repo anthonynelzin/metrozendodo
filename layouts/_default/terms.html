@@ -1,26 +1,28 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
+<div class="main_content archive">
+	<h1>{{ .Title }}</h1>
 	
-<ul class="unstyled taxonomy-list">
-	{{ range .Data.Terms.Alphabetical }}
-	<li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="taxonomy-count">{{ len .Pages }}</span></li>
-	{{ end }}
-</ul>
+	<ul class="unstyled archive_list">
+		{{ range .Data.Terms.Alphabetical }}
+		<li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="archive_list_count">{{ len .Pages }}</span></li>
+		{{ end }}
+	</ul>
 
-{{ range .Data.Terms.Alphabetical }}
-	<section class="site-archive">
-		<h2><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h2>
+	{{ range .Data.Terms.Alphabetical }}
+		<section class="archive_articles">
+			<h2><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h2>
 	
-		<div class="site-archive-content">
-			{{ range .Pages }}
-			<article>
-				<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>	
-				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-			</article>
-			{{ end }}
-		</div>
-	</section>
-{{ end }}
+			<div class="archive_articles_content">
+				{{ range .Pages }}
+				<article>
+					<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>	
+					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+				</article>
+				{{ end }}
+			</div>
+		</section>
+	{{ end }}
+</div>
 
 {{ end }}
