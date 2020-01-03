@@ -596,7 +596,8 @@ time {
 	text-decoration: none;
 }
 
-.single h2 {
+.single h2,
+.single h3 {
 	margin-top: 2rem;
 }
 
@@ -656,7 +657,7 @@ time {
 }
 
 .single table thead {
-	border-bottom: 1px solid var(--color-gray);
+	border-bottom: 3px solid var(--color-whitish);
 }
 
 .single table th,
@@ -665,7 +666,7 @@ time {
 }
 
 .single table tr {
-	border-bottom: 1px solid var(--color-gray);
+	border-bottom: 1px solid var(--color-whitish);
 }
 
 .single ul {
