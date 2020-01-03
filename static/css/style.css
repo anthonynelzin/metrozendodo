@@ -150,7 +150,7 @@ h1 {
 }
 
 h2 {
-	border-bottom: 1px solid var(--color-gray);
+	border-bottom: 3px solid;
 	font-size: 1.3rem;
 	margin: 0 0 .5rem 0;
 	padding: 0 0 .25rem 0;
@@ -162,7 +162,7 @@ h3 {
 }
 
 .smtitle {
-	border-bottom: 1px solid var(--color-gray);
+	border-bottom: 3px solid;
 	font-size: 1rem;
 	margin: 0 0 .5rem 0;
 	padding: 0 0 .25rem 0;
@@ -242,9 +242,6 @@ ul {
 @media (min-width: 60rem) {
 	.header_title {
 		padding: 0;
-	}
-	
-	.header_navigation ul {
 	}
 	
 	.header_navigation li {
@@ -328,21 +325,21 @@ ul {
 **************************/
 
 .index_article-simple {
-	border-top: 1px solid var(--color-whitish);
+	border-top: 3px solid var(--color-whitish);
 	padding: 1rem 0;
 }
 
 .index_article-simple:last-of-type {
-	border-bottom: 1px solid var(--color-whitish);
+	border-bottom: 3px solid var(--color-whitish);
 }
 
 .index_article-hero {
-	border: 10px solid var(--color-first);
+	border: 9px solid var(--color-first);
 }
 
 .index_article-hero:focus,
 .index_article-hero:hover {
-	border: 10px solid var(--color-second);
+	border: 9px solid var(--color-second);
 }
 
 .index_article-hero + .index_article-simple {
@@ -515,7 +512,7 @@ time {
 }
 
 .single-contact {
-	border-top: 1px solid var(--color-gray);
+	border-top: 3px solid var(--color-whitish);
 	font-size: .9rem;
 	font-style: italic;
 	margin-top: 2rem;
@@ -564,7 +561,7 @@ time {
 }
 
 .single figure {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 	max-width: 100%;
 }
 
@@ -577,17 +574,9 @@ time {
 }
 
 .single .footnotes {
+	border-top: 3px solid var(--color-whitish);
 	font-size: .9em;
-	grid-column: 1/-1;
-}
-
-@media (min-width: 60rem) {
-	.single .footnotes {
-		align-self: end;
-		grid-column: -2/-1;
-		grid-row: 1/-1;
-		grid-row-start: span 1987;
-	}
+	margin-top: 2rem;
 }
 
 .single .footnotes ol {
