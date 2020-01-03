@@ -16,6 +16,10 @@
 			{{ block "main" . }}{{ end }}
 		</main>
 		
+		<section class="contact">
+			<p class="main_content single">{{ T "contact" . | safeHTML }}</p>
+		</section>
+		
 		<footer class="footer">
 			{{ partial "footer.html" . }}
 		</footer>
