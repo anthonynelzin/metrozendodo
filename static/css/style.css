@@ -364,16 +364,15 @@ time {
 }
 
 .index_article-hero_content {
-	background-color: var(--color-first);
-  		background-blend-mode: screen;
-  		background-position: center center;
-  		background-size: cover;
+	background-position: center center;
+  	background-size: cover;
 	height: 25rem;
 	position: relative;
 }
 
 .index_article-hero_content:focus,
 .index_article-hero_content:hover {
+	background-blend-mode: screen;
 	background-color: var(--color-second);
 }
 
@@ -448,10 +447,8 @@ time {
 ****************************/
 
 .single_header-hero_content {
-	background-color: var(--color-first);
-  		background-blend-mode: screen;
-  		background-position: center center;
-  		background-size: cover;
+	background-position: center center;
+  	background-size: cover;
   	height: 25rem;
 	position: relative;
 }
