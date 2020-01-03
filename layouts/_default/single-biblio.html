@@ -1,16 +1,26 @@
 {{ define "main" }}
 
 <article class="h-entry main_content single">
-	<header class="single_header single_header-simple">
-		<figure>
-			<img class="u-featured" src="{{ .Site.BaseURL }}img/{{ .Params.Slug }}.jpg" alt="Couverture du livre {{ .Title }}" />
-		</figure>
-				
+{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+	{{ $image := $hero.Resize "1155x q85" }}
+	<header class="single_header single_header-hero">
+		<div class="u-featured single_header-hero_content" style="background-image: url({{ $image.RelPermalink }})">
+			<div class="single_header-hero_meta">
+				<h1 class="p-name single_header-hero_title">{{ range .Params.Auteurs }}<span class="comma">{{ . }}</span>{{ end }} — {{ .Title }}</h1>
+				<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+			</div>
+		</div>
+	</header>
+	<p class="figcaption">{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author }}{{ end }}.</p>
+
+{{ else }}
+	<header class="single_header single_header-simple">	
 		<div class="single_header-simple_meta">	
 			<h1 class="p-name single_header-simple_title">{{ range .Params.Auteurs }}<span class="comma">{{ . }}</span>{{ end }} — {{ .Title }}</h1>	
 			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</div>
 	</header>
+{{ end }}
 
 	<div class="e-content single_content">
 		{{ .Content }}
