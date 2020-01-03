@@ -16,12 +16,11 @@
 <!-- CSS -->
 <style type="text/css">
     :root {
-        --color-background: {{ .Site.Params.Colors.ColorBackground | default "hsl(290, 5%, 94%)" | safeCSS }}; /* Default: bluish white */
         --color-main: var(--color-white);
         --color-text: var(--color-black);
         
         --color-white: {{ .Site.Params.Colors.ColorWhite | default "hsl(290, 5%, 98%)" | safeCSS }};
-        --color-whitish: {{ .Site.Params.Colors.ColorWhitish | default "hsl(290, 5%, 95%)" | safeCSS }};
+        --color-whitish: {{ .Site.Params.Colors.ColorWhitish | default "hsl(290, 5%, 90%)" | safeCSS }};
         --color-gray: {{ .Site.Params.Colors.ColorGray | default "hsl(290, 3%, 50%)" | safeCSS }};
         --color-black: {{ .Site.Params.Colors.ColorBlack | default "hsl(290, 30%, 12%)" | safeCSS }};
 
@@ -59,13 +58,13 @@
     }
 
     {{ if .Params.CustomColor }}
-        .header:before { background: {{ .Params.CustomColor | safeCSS }}; }
+        .header { background: {{ .Params.CustomColor | safeCSS }}; }
     {{ else }}
-        .header:before { background: linear-gradient(to bottom right, var(--color-first-left), var(--color-first), var(--color-first-right)); }
+        .header { background: linear-gradient(to bottom right, var(--color-first-left), var(--color-first), var(--color-first-right)); }
     {{ end }}
 
     {{ if .Site.Params.AnimateHeader }}
-        .header:before {
+        .header {
             animation: gradient 30s ease infinite;
 	        background-size: 100% 100%;
         }
