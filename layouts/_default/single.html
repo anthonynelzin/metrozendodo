@@ -1,19 +1,19 @@
 {{ define "main" }}
 
 <article class="h-entry main_content single">
-	<header class="single-header">
+	<header class="single_header">
 		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 			{{ $image := $hero.Resize "1155x q85" }}
-			<figure class="single-hero">
+			<figure class="single_header_hero">
 				<img class="u-featured" src="{{ $image.RelPermalink }}" alt='{{ T "alt_image" }} {{ .Title }}' width="{{ $image.Width }}" />
 				<figcaption>{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author }}{{ end }}.</figcaption>
 			</figure>
 		{{ end }}
 
-		<h1 class="p-name single-title">{{ .Title }}</h1>
+		<h1 class="p-name single_title">{{ .Title }}</h1>
 		
-		<div class="single-meta">
-			<span class="h-card single-author">
+		<div class="single_meta">
+			<span class="h-card single_meta_author">
 			{{ if .Params.Author }}
 				<a class="p-author p-name u-url" href="{{ .Params.AuthorURL }}" rel="author">{{ .Params.Author }}</a>
 			{{ else }}
@@ -24,18 +24,18 @@
 		</div>
 	</header>
 
-	<div class="e-content single-content">
+	<div class="e-content single_content">
 		{{ .Content }}
 
-		<div class="single-contact">
+		<div class="single_contact">
 			<p>{{ T "contact" . | safeHTML }}</p>
 		</div>
 	</div>
 	
-	<div class="single-sidebar">
-		<div class="single-sidebar-even">
+	<div class="single_sidebar">
+		<div class="single_sidebar_left">
 			{{ if .Params.link }}
-			<aside class="single-aside">
+			<aside class="single_sidebar_aside">
 				<h2 class="smtitle">Acheter</h2>
 				<ul class="unstyled">
 					{{ range .Params.link }}
@@ -46,7 +46,7 @@
 			{{ end }}
 			
 			{{ if .Params.prix }}
-			<aside class="single-aside">
+			<aside class="single_sidebar_aside">
 				<h2 class="smtitle">Informations</h2>
 				<ul class="unstyled">
 					{{ if .Params.teinte }}
@@ -112,22 +112,20 @@
 			
 			{{ $related := .Site.RegularPages.Related . | first 5 }}
 			{{ with $related }}
-			<aside class="single-aside">
-				<div class="aside-widget">
-					<h2 class="smtitle">{{ T "related" }}</h2>
-					<ul class="unstyled">
-					{{ range . }}
-						<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-					{{ end }}
-					</ul>
-				</div>
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">{{ T "related" }}</h2>
+				<ul class="unstyled">
+				{{ range . }}
+					<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+				{{ end }}
+				</ul>
 			</aside>
 			{{ end }}
-		</div><!-- .single-sidebar-even -->
+		</div><!-- .single_sidebar_left -->
 		
-		<div class="single-sidebar-odd">
+		<div class="single_sidebar_right">
 			{{ if $nuancier := .Resources.GetMatch "nuancier.jpg" }}
-			<aside class="single-aside">
+			<aside class="single_sidebar_aside">
 				<h2 class="smtitle">Nuancier</h2>
 				{{ $image := $nuancier.Resize "400x q85" }}
 				<img src="{{ $image.RelPermalink }}" alt='Nuancier {{ .Title }}' width="{{ $image.Width }}" />
@@ -135,19 +133,17 @@
 			{{ end }}
 			
 			{{ if .Params.tags }}
-			<aside class="single-aside">
-				<div class="aside-widget">
-					<h2 class="smtitle">{{ T "tags" }}</h2>
-					<ul class="unstyled">
-						{{ range .Params.tags }}
-							<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-						{{ end }}
-					</ul>
-				</div>
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">{{ T "tags" }}</h2>
+				<ul class="unstyled">
+					{{ range .Params.tags }}
+						<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+				</ul>
 			</aside>
 			{{ end }}
-		</div><!-- .single-sidebar-odd -->
-	</div><!-- .single-sidebar -->
+		</div><!-- .single_sidebar_right -->
+	</div><!-- .single_sidebar -->
 </article>
 
 {{ end }}
