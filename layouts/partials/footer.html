@@ -1,7 +1,7 @@
 <div class="footer_content">
 	<nav class="footer_tags">
 		<h1 class="smtitle">{{ T "tags" }}</h1>
-		<div aria-label='{{ T "tags_list" }}' class="footer-tags-wrapper">
+		<div aria-label='{{ T "tags_list" }}' class="footer_tags_content">
 		{{ range .Site.Taxonomies.tags }}
 			<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></p>
 		{{ end }}

@@ -297,12 +297,6 @@ ul {
 	grid-column: 1/-1;
 }
 
-.footer-tags-wrapper {
-	display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 1rem;
-}
-
 @media (min-width: 60rem) {
 	.footer_left {
 		grid-column: 1;
@@ -311,6 +305,12 @@ ul {
 	.footer_right {
 		grid-column: 2;
 	}
+}
+
+.footer_tags_content {
+	display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 1rem;
 }
 
 .footer_colophon {
