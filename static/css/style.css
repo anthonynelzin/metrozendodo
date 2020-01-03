@@ -317,7 +317,6 @@ ul {
 .footer_colophon {
 	font-family: var(--font-serif);
 	font-size: .9em;
-	margin-top: 2rem;
 	text-align: center;
 	width: 100%;
 }
@@ -454,15 +453,16 @@ time {
 }
 
 .single_content,
-.single_sidebar_aside {
-	margin-top: 2rem;
+.single_sidebar {
+	margin-top: 3rem;
 }
 
 .single_sidebar {
 	display: grid;
-		grid-column-gap: 2rem;
+		grid-column-gap: 1rem;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto;
+		grid-row-gap: 3rem;
 }
 
 .single_sidebar_left,
