@@ -1,10 +1,8 @@
 {{ define "main" }}
 
 <div class="main_content index">
-	{{ range first 250 .Site.RegularPages }}
-	{{ $hero := .Resources.GetMatch "hero.jpg" }}
-	
-	{{ if $hero }}
+	{{ range first 25 .Site.RegularPages }}
+	{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 		{{ $image := $hero.Resize "860x q85" }}
 		<article class="h-entry index_article-hero">
 			<a href="{{ .Permalink }}">
