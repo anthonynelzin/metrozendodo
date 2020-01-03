@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+<article class="h-entry main_content single">
+	<header class="single_header single_header-simple">
+		<figure>
+			<img class="u-featured" src="{{ .Site.BaseURL }}img/{{ .Params.Slug }}.jpg" alt="Couverture du livre {{ .Title }}" />
+		</figure>
+				
+		<div class="single_header-simple_meta">	
+			<h1 class="p-name single_header-simple_title">{{ range .Params.Auteurs }}<span class="comma">{{ . }}</span>{{ end }} — {{ .Title }}</h1>	
+			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		</div>
+	</header>
+
+	<div class="e-content single_content">
+		{{ .Content }}
+	</div>
+	
+	<div class="single_sidebar">
+		<div class="single_sidebar_left">
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">Informations</h2>
+				<ul class="unstyled">
+					<li>{{ range .Params.Auteurs }}<span class="comma"><a href="{{ "/auteurs/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></span>{{ end }}</li>
+					<li><b>Éditeur</b> {{ range .Params.Editeurs }}<a href="{{ "/editeurs/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}</li>
+					<li><b>Année</b> {{ with .Params.Annee }}{{ . }}{{ end }}</li>
+					<li><b>Pagination</b> {{ with .Params.Pages }}{{ . }} p.{{ end }}</li>
+					<li><b>ISBN</b> {{ .Params.ISBN }}</li>
+				</ul>
+			</aside>
+		
+			{{ $related := .Site.RegularPages.Related . | first 5 }}
+			{{ with $related }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">{{ T "related" }}</h2>
+				<ul class="unstyled">
+				{{ range . }}
+					<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+				{{ end }}
+				</ul>
+			</aside>
+			{{ end }}
+		</div><!-- .single_sidebar_left -->
+		
+		<div class="single_sidebar_right">
+			{{ with .Params.AchatDate }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">Achat</h2>
+				<ul class="unstyled">
+					<li>{{ . }}{{ end }}{{ with .Params.AchatLieu }} chez {{ . }}{{ end }} {{ with .Params.AchatPrix }}({{ . }}){{ end }}{{ with .Params.AchatDate }}</li>
+				</ul>
+			</aside>
+			{{ end }}
+			
+			{{ with .Params.LectureFin }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">Lecture</h2>
+				<ul class="unstyled">
+					<li>{{ end }}{{ with .Params.LectureDebut }}{{ . }}{{ end }}{{ with .Params.LectureFin }} — {{ . }}</li>
+				</ul>
+			</aside>
+			{{ end }}
+			
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">Conservation</h2>
+				<ul class="unstyled">
+					{{ range .Params.Localisations }}<li><a href="{{ "/localisations/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>{{ end }}
+				</ul>
+			</aside>
+		
+			{{ if .Params.tags }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">{{ T "tags" }}</h2>
+				<ul class="unstyled">
+					{{ range .Params.tags }}
+						<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+				</ul>
+			</aside>
+			{{ end }}
+		</div><!-- .single_sidebar_right -->
+	</div><!-- .single_sidebar -->
+</article>
+
+{{ end }}
