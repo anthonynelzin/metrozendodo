@@ -203,6 +203,7 @@ ul {
 ************************/
 
 .header {
+	color: var(--color-white);
 	display: flex;
 		align-items: center;
 		flex-flow: wrap;
@@ -219,12 +220,6 @@ ul {
 			left: 1rem;
 		text-align: center;
 	}
-}
-
-.header a:focus,
-.header a:hover {
-	background: var(--color-white);
-	color: var(--color-text);
 }
 
 .header_title {
@@ -251,7 +246,7 @@ ul {
 }
 
 .main {
-	background: var(--color-white);
+	background: var(--color-main);
 	color: var(--color-text);
 	padding: 1rem;
 }
