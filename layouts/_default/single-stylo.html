@@ -1,0 +1,143 @@
+{{ define "main" }}
+
+<article class="h-entry main_content single">
+{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+	{{ $image := $hero.Resize "1155x q85" }}
+	<header class="single_header single_header-hero">
+		<div class="u-featured single_header-hero_content" style="background-image: url({{ $image.RelPermalink }})">
+			<div class="single_header-hero_meta">
+				<h1 class="p-name single_header-hero_title">{{ .Title }}</h1>
+				<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+			</div>
+		</div>
+	</header>
+	<p class="figcaption">{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author }}{{ end }}.</p>
+
+{{ else }}
+	<header class="single_header single_header-simple">	
+		<div class="single_header-simple_meta">	
+			<h1 class="p-name single_header-simple_title">{{ .Title }}</h1>	
+			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		</div>
+	</header>
+{{ end }}
+
+	<div class="e-content single_content">
+		{{ .Content }}
+	</div>
+	
+	<div class="single_sidebar">
+		<div class="single_sidebar_left">
+			{{ if .Params.link }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">Acheter</h2>
+				<ul class="unstyled">
+					{{ range .Params.link }}
+					<li>{{ . | safeHTML }}</li>
+				{{ end }}
+					</ul>
+			</aside>
+			{{ end }}
+			
+			{{ if .Params.prix }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">Informations</h2>
+				<ul class="unstyled">
+					{{ if .Params.teinte }}
+					{{ range .Params.teinte }}
+					<li><b>Teinte</b> <a href="{{ "/teinte/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+					{{ end }}
+					
+					{{ if .Params.saturation }}
+					<li><b>Saturation</b> {{ .Params.saturation }}</li>
+					{{ end }}
+					
+					{{ if .Params.nuances }}
+					<li><b>Nuances</b> {{ .Params.nuances }}</li>
+					{{ end }}
+					
+					{{ if .Params.lustre }}
+					<li><b>Lustre</b> {{ .Params.lustre }}</li>
+					{{ end }}
+					
+					{{ if .Params.reseau }}
+					<li><b>Résistance à l’eau</b> {{ .Params.reseau }}</li>
+					{{ end }}
+					
+					{{ if .Params.couleur }}
+					<li><b>Couleur</b> {{ .Params.couleur }}</li>
+					{{ end }}
+					
+					{{ if .Params.modele }}
+					<li><b>Modèle</b> {{ .Params.modele }}</li>
+					{{ end }}
+					
+					{{ if .Params.plume }}
+					<li><b>Plume</b> {{ .Params.plume }}</li>
+					{{ end }}
+					
+					{{ if .Params.capuchon }}
+					<li><b>Capuchon</b> {{ .Params.capuchon }}</li>
+					{{ end }}
+					
+					{{ if .Params.remplissage }}
+					<li><b>Remplissage</b> {{ .Params.remplissage }}</li>
+					{{ end }}
+					
+					{{ if .Params.dimensions }}
+					<li><b>Dimensions</b> {{ .Params.dimensions }}</li>
+					{{ end }}
+					
+					{{ if .Params.poids }}
+					<li><b>Poids</b> {{ .Params.poids }}</li>
+					{{ end }}
+					
+					{{ if .Params.remarques }}
+					<li><b>Remarques</b> {{ .Params.remarques }}</li>
+					{{ end }}
+					
+					{{ if .Params.prix }}
+					<li><b>Prix</b> {{ .Params.prix }}</li>
+					{{ end }}
+				</ul>
+			</aside>
+			{{ end }}
+			
+			{{ if .Params.tags }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">{{ T "tags" }}</h2>
+				<ul class="unstyled">
+					{{ range .Params.tags }}
+						<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+				</ul>
+			</aside>
+			{{ end }}
+		</div><!-- .single_sidebar_left -->
+		
+		<div class="single_sidebar_right">
+			{{ if $nuancier := .Resources.GetMatch "nuancier.jpg" }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">Nuancier</h2>
+				{{ $image := $nuancier.Resize "400x q85" }}
+				<img src="{{ $image.RelPermalink }}" alt='Nuancier {{ .Title }}' width="{{ $image.Width }}" />
+			</aside>
+			{{ end }}
+			
+			{{ $related := .Site.RegularPages.Related . | first 5 }}
+			{{ with $related }}
+			<aside class="single_sidebar_aside">
+				<h2 class="smtitle">{{ T "related" }}</h2>
+				<ul class="unstyled">
+				{{ range . }}
+					<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+				{{ end }}
+				</ul>
+			</aside>
+			{{ end }}
+		</div><!-- .single_sidebar_right -->
+	</div><!-- .single_sidebar -->
+</article>
+
+{{ end }}
