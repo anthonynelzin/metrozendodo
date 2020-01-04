@@ -14,7 +14,6 @@
 				</div>
 			</a>
 		</article>
-			
 	{{ else }}
 		<article class="h-entry index_article-simple">		
 			<a href="{{ .Permalink }}">
@@ -24,9 +23,6 @@
 			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</article>
 	{{ end }}
-			
-			
-		
 	{{ end }}
 </div>
 

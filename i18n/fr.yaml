@@ -5,6 +5,8 @@ alt_image:
     other: "Image d’illustration de l’article"
 image:
     other: "Image"
+by:
+    other: "par"
 contact:
     other: "Vous avez envie de discuter ? Envoyez-moi <a href='mailto:Anthony%20 Nelzin-Santos%20<anthony@nelzin.fr>?subject=Commentaire%20sur%20l’article%20«%20{{ .Title }}%20»'>un courrier électronique</a>.
             <br/>
