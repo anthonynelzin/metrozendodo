@@ -77,7 +77,7 @@ html {
 
 body {
 	background: var(--color-main);
-	color: var(--color-main);
+	color: var(--color-text);
 	font-size: 1rem;
 	font-family: var(--font-sans);
 	-webkit-hyphens: auto;
@@ -113,6 +113,14 @@ a:hover {
 	a:hover {
 	    color: var(--color-black) !important;
     }
+}
+
+.header a:focus,
+.header a:hover,
+.footer a:focus,
+.footer a:hover {
+	background: var(--color-white);
+	color: var(--color-black);
 }
 
 .comma:not(:last-of-type)::after {
@@ -167,12 +175,6 @@ audio
 figure video,
 video {
 	max-width: 100%;
-}
-
-@media (prefers-color-scheme: dark) {
-	img {
-		filter: brightness(75%);
-	}
 }
 
 .inline {
@@ -247,7 +249,6 @@ time {
 }
 
 .main {
-	background: var(--color-main);
 	color: var(--color-text);
 	padding: 1rem;
 }
@@ -327,16 +328,20 @@ time {
 }
 
 .index_article-simple a {
+	display: inline-block;
+}
+
+.index_article-simple time {
 	display: block;
 }
 
-.index_article-hero,
-.single_header-hero {
+.index_article-hero a {
 	border: 9px solid var(--color-first);
+	display: block;
 }
 
-.index_article-hero:focus,
-.index_article-hero:hover {
+.index_article-hero a:focus,
+.index_article-hero a:hover {
 	border: 9px solid var(--color-second);
 }
 
@@ -355,20 +360,26 @@ time {
 	position: relative;
 }
 
-.index_article-hero_content:focus,
-.index_article-hero_content:hover {
-	background-blend-mode: screen;
+.index_article-hero a:focus .index_article-hero_content,
+.index_article-hero a:hover .index_article-hero_content {
+	background-blend-mode: multiply;
 	background-color: var(--color-second);
 }
 
 .index_article-hero_meta,
 .single_header-hero_meta {
 	background: var(--color-first);
-	color: var(--color-white);
 	max-width: 90%;
 	padding: .25rem .5rem;
 	position: absolute;
 		bottom: 3rem;
+}
+
+@media (prefers-color-scheme: light) {
+	.index_article-hero_meta,
+	.single_header-hero_meta {
+		color: var(--color-white);
+	}
 }
 
 .index_article-hero:focus .index_article-hero_meta,
@@ -430,6 +441,10 @@ time {
 * Mise en page des articles *
 *****************************
 ****************************/
+
+.single_header-hero {
+	border: 9px solid var(--color-first);
+}
 
 .single_header-hero_content {
 	background-position: center center;
@@ -518,7 +533,7 @@ time {
 
 .single figure figcaption,
 .single .figcaption {
-	color: var(--color-gray);
+	color: var(--color-whitish);
 	font-family: var(--font-serif);
 	font-size: .9em;
 	font-style: italic;
@@ -527,6 +542,7 @@ time {
 
 .single .footnotes {
 	border-top: 3px solid var(--color-whitish);
+	color: var(--color-whitish);
 	font-size: .9em;
 	margin-top: 2rem;
 }
