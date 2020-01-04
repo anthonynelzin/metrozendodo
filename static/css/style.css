@@ -15,13 +15,23 @@
 }
 
 ::-moz-selection {
-	background: var(--color-first);
+	background: var(--color-second);
 	color: var(--color-white);
 }
 
 ::selection {
-	background: var(--color-first);
+	background: var(--color-second);
 	color: var(--color-white);
+}
+
+@media (prefers-color-scheme: dark) {
+	::-moz-selection {
+		color: var(--color-black);
+	}
+
+	::selection {
+		color: var(--color-black);
+	}
 }
 
 html, body, div, span, applet, object, iframe,
