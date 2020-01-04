@@ -179,10 +179,6 @@ video {
 	display: inline;
 }
 
-.light {
-	color: var(--color-gray);
-}
-
 ol,
 ul {
 	list-style-position: inside;
