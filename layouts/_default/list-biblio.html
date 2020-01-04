@@ -15,10 +15,19 @@
 	
 			<div class="archive_articles_content">
 				{{ range .Pages }}
-				<article>
-					<h3><a href="{{ .Permalink }}">{{ range .Params.Auteurs }}<span class="comma">{{ . }}</span>{{ end }} — {{ .Title }}</a></h3>	
-					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+				{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+				{{ $image := $hero.Resize "860x q85" }}
+				<article class="h-entry index_article-hero">
+					<a href="{{ .Permalink }}">
+						<div class="h-entry index_article-hero_content" style="background-image: url({{ $image.RelPermalink }})">
+							<div class="index_article-hero_meta">
+								<h3 class="p-name index_article-hero_title">{{ range .Params.Auteurs }}<span class="comma">{{ . }}</span>{{ end }} — {{ .Title }}</h3>
+								<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+							</div>
+						</div>
+					</a>
 				</article>
+				{{ end }}
 				{{ end }}
 			</div>
 		</section>

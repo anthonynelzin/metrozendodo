@@ -458,6 +458,10 @@ time {
 	}
 }
 
+.archive_articles_content .index_article-hero + .index_article-hero {
+	margin: 0 0 0 0;
+}
+
 /****************************
 *****************************
 * Mise en page des articles *
