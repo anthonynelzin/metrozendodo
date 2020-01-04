@@ -119,17 +119,6 @@ a:hover {
 	content: ", ";
 }
 
-.grid {
-	display: grid;
-		align-items: start;
-		grid-column-gap: 2rem;
-		grid-row-gap: 2rem;
-}
-
-.grid-auto {
-	grid-template-columns: repeat(auto-fill,minmax(12rem, 1fr));
-}
-
 h1,
 h2,
 h3,
