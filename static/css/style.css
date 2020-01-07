@@ -562,7 +562,6 @@ time {
 	font-family: var(--font-serif);
 	font-size: .9em;
 	font-style: italic;
-	text-align: right;
 }
 
 .single .footnotes {
@@ -669,4 +668,103 @@ time {
 
 .single ul {
 	margin: 0 0 1rem 0;
+}
+
+@media print {
+	@page {
+		margin: 2cm 1cm;
+	}
+
+	html {
+		font-size: 12pt;
+	}
+
+	body {
+		background: white;
+		color: black !important;
+		font-family: "Times New Roman", Times, serif;
+		-webkit-hyphens: none;
+		-ms-hypens: none;
+		hyphens: none;
+		line-height: 1.4;
+	}
+	
+	.header,
+	.figcaption,
+	.single_sidebar_right,
+	.contact,
+	.footer {
+		display: none;
+	}
+	
+	.main_content {
+		margin: 0;
+		max-width: 100%;
+	}
+	
+	.single_header-hero {
+		border: none;
+		border-bottom: 3px solid;
+		position: unset;
+		width: 100%;
+	}
+	
+	.single_header-hero_content,
+	.single_header-hero_meta {
+		color: inherit;
+		position: unset;
+	}
+	
+	.single_header-hero_content {
+		background-image: unset !important;
+		height: auto;
+	}
+	
+	.single_header-hero_meta {
+		background: none;
+		padding: 0 0 .5rem 0;
+	}
+	
+	.single {
+		font-family: "Times New Roman", Times, serif;
+	}
+	
+	.single a {
+		text-decoration: none;
+		word-wrap: break-word;
+	}
+	
+	.single a[href^=http]:before,
+	.single a[href^=https]:before {
+		color: var(--color-gray);
+		content: "[";
+	}
+	
+	.single a[href^=http]:after,
+	.single a[href^=https]:after {
+		color: var(--color-gray);
+		content: "](" attr(href) ")";
+	}
+	
+	.single figure {
+		break-inside: avoid;
+	}
+	
+	.single figure iframe {
+		display: none;
+		height: 0;
+		width: 0;	
+	}
+	
+	.single h2,
+	.single h3 {
+   		break-after: avoid-page;
+   	}
+}
+
+@media print and (color) {
+	* {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
 }

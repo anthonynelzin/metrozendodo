@@ -54,6 +54,17 @@
     {{ else }}
         .header { background: var(--color-first); }
     {{ end }}
+    
+    {{ if .IsPage }}
+    	@media print {
+    		.main_content:before {
+    			border: 1px solid;
+    			content: "{{ T "print_credits" . | safeHTML }}";
+    			display: block;
+    			padding: .5rem;
+    		}
+    	}
+	{{ end }}
 </style>
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
 
