@@ -25,8 +25,10 @@
         --color-grayer: {{ .Site.Params.Colors.ColorGrayer | default "hsl(280, 5%, 80%)" | safeCSS }};
         --color-black: {{ .Site.Params.Colors.ColorBlack | default "hsl(280, 30%, 20%)" | safeCSS }};
 
-        --color-first: {{ .Site.Params.Colors.ColorFirst | default "hsl(280, 55%, 30%)" | safeCSS }}; /* Default: Purple */
-        --color-second: {{ .Site.Params.Colors.ColorSecond | default "hsl(180, 50%, 40%)" | safeCSS }}; /* Default: Green */
+        --color-first: {{ .Site.Params.Colors.ColorFirst | default "hsl(280, 55%, 30%)" | safeCSS }}; /* Default: purple */
+        --color-first-before: {{ .Site.Params.Colors.ColorFirst | default "hsl(250, 55%, 30%)" | safeCSS }}; /* Default: bluish purple */
+        --color-first-after: {{ .Site.Params.Colors.ColorFirst | default "hsl(310, 55%, 30%)" | safeCSS }}; /* Default: reddish purple */
+        --color-second: {{ .Site.Params.Colors.ColorSecond | default "hsl(180, 50%, 40%)" | safeCSS }}; /* Default: green */
         
         --font-sans: {{ .Site.Params.FontSans | default "system-ui, -apple-system, 'Helvetica Neue', sans-serif;" | safeCSS }};
         --font-serif: {{ .Site.Params.FontSerif | default "Georgia, 'Cambria', 'Lucida Bright', serif;" | safeCSS }}
@@ -44,15 +46,32 @@
             --color-grayer: {{ .Site.Params.Colors.ColorGrayer | default "hsl(250, 5%, 12.5%)" | safeCSS }};
             --color-black: {{ .Site.Params.DarkColors.ColorBlack | default "hsl(250, 5%, 5%)" | safeCSS }};
 
-            --color-first: {{ .Site.Params.DarkColors.ColorFirst | default "hsl(250, 35%, 40%)" | safeCSS }}; /* Default: Almost blue */
-            --color-second: {{ .Site.Params.Colors.DarkColorThird | default "hsl(350, 80%, 60%)" | safeCSS }}; /* Default: Hot pink */
+            --color-first: {{ .Site.Params.DarkColors.ColorFirst | default "hsl(250, 35%, 40%)" | safeCSS }}; /* Default: bluish purple */
+            --color-first-before: {{ .Site.Params.Colors.ColorFirst | default "hsl(220, 35%, 30%)" | safeCSS }}; /* Default : blue */
+        	--color-first-after: {{ .Site.Params.Colors.ColorFirst | default "hsl(280, 35%, 30%)" | safeCSS }}; /* Default : purple */
+            --color-second: {{ .Site.Params.Colors.DarkColorThird | default "hsl(350, 80%, 60%)" | safeCSS }}; /* Default: pink */
         }
     }
 
     {{ if .Params.CustomColor }}
         .header { background: {{ .Params.CustomColor | safeCSS }}; }
+    {{ else if .Site.Params.HeaderGradient }}
+        .header { background: linear-gradient(to bottom right, var(--color-first-before), var(--color-first), var(--color-first-after)); }
     {{ else }}
-        .header { background: var(--color-first); }
+    	.header { background: var(--color-first); }
+    {{ end }}
+    
+    {{ if .Site.Params.HeaderAnimation }}
+        .header {
+            animation: gradient 30s ease infinite;
+	        background-size: 300% 300%;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 50% 0%; }
+            50% { background-position: 50% 100%; }
+            100% { background-position: 50% 0%; }
+        }
     {{ end }}
     
     {{ if .IsPage }}
