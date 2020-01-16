@@ -3,7 +3,7 @@
 <div class="main_content index archive_articles_content">
 	{{ range first 24 .Site.RegularPages }}
 	{{ if $hero := .Resources.GetMatch "hero.jpg" }}
-		{{ $image := $hero.Resize "860x q85" }}
+		{{ $image := $hero.Resize "300x q85" }}
 		<article class="h-entry index_article-hero">
 			<a href="{{ .Permalink }}">
 				<div class="h-entry index_article-hero_content" style="background-image: url({{ $image.RelPermalink }})">

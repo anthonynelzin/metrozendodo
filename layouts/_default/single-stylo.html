@@ -2,7 +2,7 @@
 
 <article class="h-entry main_content single">
 {{ if $hero := .Resources.GetMatch "hero.jpg" }}
-	{{ $image := $hero.Resize "1155x q85" }}
+	{{ $image := $hero.Resize "600x q85" }}
 	<header class="single_header single_header-hero">
 		<div class="u-featured single_header-hero_content" style="background-image: url({{ $image.RelPermalink }})">
 			<div class="single_header-hero_meta">
