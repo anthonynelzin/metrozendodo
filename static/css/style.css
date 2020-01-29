@@ -197,18 +197,13 @@ video {
 	display: inline;
 }
 
-ol,
-ul {
-	list-style-position: inside;
-}
-
 time {
 	font-family: var(--font-serif);
 	font-style: italic;
 }
 
 .unstyled {
-	list-style-type: none;
+	list-style: none !important;
 	margin: 0 !important;
 	padding: 0;
 }
@@ -538,9 +533,9 @@ time {
 }
 
 .single blockquote {
-	border-left: .5em solid var(--color-second);
+	border-left: .5rem solid var(--color-second);
 	margin: 0 0 1rem 0;
-	padding-left: 1rem;
+	padding: 0 0 0 1rem;
 }
 
 .single blockquote p:last-of-type {
@@ -673,7 +668,8 @@ time {
 }
 
 .single ul {
-	margin: 0 0 1rem 0;
+	list-style: outside square;
+	margin: 0 0 1rem 1rem;
 }
 
 @media print {
