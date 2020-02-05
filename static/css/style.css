@@ -451,7 +451,7 @@ time {
 	display: flex;
 		align-items: center;
 		justify-content: space-between;
-	font-weight: 900;
+	font-weight: 800;
 	letter-spacing: -.05em;
 	padding: 1rem 0;
 }
@@ -600,7 +600,7 @@ time {
 .single .footnotes ol li::before {
 	content: counters(section,".") ". ";
 	counter-increment: section;
-	font-weight: 900;
+	font-weight: 800;
 }
 
 .single .footnotes ol li p {
