@@ -217,12 +217,26 @@ time {
 *************************
 ************************/
 
+@media screen and (min-width: 45rem) and (min-height: 30rem) {
+	body {
+		display: grid;
+			grid-template-columns: max-content max-content 1fr;
+		position: fixed;
+			top: 0;
+			bottom: 0;
+	}
+}
+
+.site-header {
+	display: grid;
+	margin: 1rem 1rem 0 1rem;
+}
+
 .header {
 	color: var(--color-white);
 	display: grid;
 		align-items: center;
 		grid-template-columns: 1fr auto;
-	margin: 1rem;
 	padding: 1rem;
 }
 
@@ -232,22 +246,38 @@ time {
 
 .header_nav {
 	align-self: end;
-	text-align: center;
 }
 
 .header_brand_logo {
 	font-weight: 900;
 }
 
-@media screen and (min-width: 45rem) and (min-height: 20rem) {
+.site-menu {
+	display: grid;
+		align-items: start;
+		grid-template-columns: 1fr 1fr;
+	margin: 0 1rem;
+	padding: 1rem 0 0 0;
+}
+
+.menu_pages {
+	text-align: right;
+}
+
+@media screen and (min-width: 45rem) and (min-height: 30rem) {
+	.site-header {
+		margin: 1rem 0 1rem 1rem;
+	}
+	
 	.header {
 		grid-template-columns: 1fr;
 		grid-row-columns: 1fr auto;
-		padding: 1rem;
-		position: fixed;
-			top: 1rem;
-			bottom: 1rem;
-			left: 1rem;
+		text-align: center;
+	}
+	
+	.header_brand {
+		margin: 0 auto;
+		max-width: 2rem;
 	}
 	
 	.header_brand_title {
@@ -255,16 +285,37 @@ time {
 			text-orientation: sideways;
 		padding: .5rem 0 0 0;
 	}
+	
+	.site-menu {
+		display: grid;
+			grid-template-columns: 1fr;
+			grid-row-columns: 2fr 1fr;
+		margin: 1rem 0;
+		padding: 1rem 4rem 1rem 1rem;
+	}
+	
+	.menu_pages {
+		align-self: end;
+		text-align: left;
+	}
 }
 
-.main {
+.site-main {
 	color: var(--color-text);
-	padding: 1rem;
+	margin: 0 1rem;
+	padding: 1rem 0 0 0;
 }
 
-.main_content {
-	margin: 0 auto;
-	max-width: 36rem;
+@media screen and (min-width: 45rem) and (min-height: 30rem) {
+	.site-main {
+		margin:  1rem 1rem 2rem 0;
+		padding: 1rem 1rem 0 0;
+		overflow-y: scroll;
+	}
+	
+	.main_content {
+		max-width: 66ch;
+	}
 }
 
 .contact {

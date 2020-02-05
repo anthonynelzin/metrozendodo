@@ -1,15 +1,17 @@
-<div class="header_brand">
-{{ if .IsHome }}
-	<span class="header_brand_logo">{{ .Site.Params.Menutitle }}</span>
-	<span class="header_brand_title">{{ .Site.Title }}</span>
-{{ else }}
-	<a href="{{ .Site.BaseURL }}">
+<div class="header">
+	<div class="header_brand">
+	{{ if .IsHome }}
 		<span class="header_brand_logo">{{ .Site.Params.Menutitle }}</span>
 		<span class="header_brand_title">{{ .Site.Title }}</span>
-	</a>
-{{ end }}
-</div>
+	{{ else }}
+		<a href="{{ .Site.BaseURL }}">
+			<span class="header_brand_logo">{{ .Site.Params.Menutitle }}</span>
+			<span class="header_brand_title">{{ .Site.Title }}</span>
+		</a>
+	{{ end }}
+	</div>
 
-<div class="header_nav">
-	–
+	<div class="header_nav">
+		–
+	</div>
 </div>

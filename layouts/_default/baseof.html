@@ -8,20 +8,16 @@
 	<body>
 		<a href="#main" class="skip">{{ T "skip_link" }}</a>
 	
-		<header class="header">
+		<header class="site-header">
 			{{ partial "header.html" . }}
 		</header>
 		
-		<main class="main" id="main">
+		<nav class="site-menu">
+			{{ partial "menu.html" . }}
+		</nav>
+		
+		<main class="site-main" id="main">
 			{{ block "main" . }}{{ end }}
 		</main>
-		
-		<section class="contact">
-			<p class="main_content single">{{ T "contact" . | safeHTML }}</p>
-		</section>
-		
-		<footer class="footer">
-			{{ partial "footer.html" . }}
-		</footer>
 	</body>
 </html>
