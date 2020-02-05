@@ -239,7 +239,7 @@ time {
 	font-weight: 900;
 }
 
-@media (min-width: 45rem) {
+@media screen and (min-width: 45rem) and (min-height: 20rem) {
 	.header {
 		grid-template-columns: 1fr;
 		grid-row-columns: 1fr auto;
