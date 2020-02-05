@@ -163,19 +163,18 @@ h3,
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 1.75rem;
 }
 
 h2 {
 	border-bottom: 3px solid;
 	font-size: 1.5rem;
-	margin: 0 0 .5rem 0;
+	margin: 4rem 0 .5rem 0;
 	padding: 0 0 .25rem 0;
 }
 
 h3 {
 	font-size: 1rem;
-	margin: .5rem 0 0 0;
 }
 
 .smtitle {
@@ -610,11 +609,6 @@ time {
 
 .single ins {
 	text-decoration: none;
-}
-
-.single h2,
-.single h3 {
-	margin-top: 2rem;
 }
 
 .single hr {
