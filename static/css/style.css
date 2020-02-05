@@ -180,7 +180,7 @@ h3 {
 .smtitle {
 	border-bottom: 3px solid;
 	font-size: 1rem;
-	margin: 0 0 .5rem 0;
+	margin: 4rem 0 .5rem 0;
 	padding: 0 0 .25rem 0;
 }
 
@@ -291,7 +291,7 @@ time {
 .site-main {
 	background: var(--color-main);
 	margin: 0 1rem 1rem 1rem;
-	padding: 1rem;
+	padding: 4rem 1rem 1rem 1rem;
 }
 
 @media screen and (min-width: 45rem) and (min-height: 30rem) {
@@ -512,10 +512,8 @@ time {
 .single_sidebar {
 	display: grid;
 		grid-column-gap: 1rem;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 3fr 2fr;
 		grid-template-rows: auto;
-		grid-row-gap: 3rem;
-	margin: 4rem 0 0 0;
 }
 
 .single_sidebar_left,
