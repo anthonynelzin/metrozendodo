@@ -152,12 +152,11 @@ h3,
 .h2,
 .h3,
 .smtitle {
-	font-family: var(--font-sans);
-	font-weight: 900;
+	font-weight: 800;
 	-webkit-hyphens: none;
 	-ms-hypens: none;
 	hyphens: none;
-	letter-spacing: -.01rem;
+	letter-spacing: -.05rem;
 	line-height: 1.4;
 	margin: 0;
 	padding: 0;
@@ -200,8 +199,7 @@ video {
 }
 
 time {
-	font-family: var(--font-serif);
-	font-style: italic;
+	color: var(--color-gray);
 }
 
 .unstyled {
@@ -243,7 +241,7 @@ time {
 }
 
 .header_brand_logo {
-	font-weight: 900;
+	font-weight: 800;
 }
 
 .site-menu {
@@ -305,7 +303,7 @@ time {
 	}
 	
 	.main_content {
-		margin: 0 auto;
+		margin: 0 auto 1rem auto;
 		max-width: 66ch;
 	}
 }
@@ -509,7 +507,7 @@ time {
 }
 
 .single_content {
-	margin-top: 1rem;
+	margin: 1rem 0 0 0;
 }
 
 .single_sidebar {
@@ -518,7 +516,7 @@ time {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto;
 		grid-row-gap: 3rem;
-	margin-top: 3rem;
+	margin: 4rem 0 0 0;
 }
 
 .single_sidebar_left,
@@ -534,10 +532,6 @@ time {
 	.single_sidebar_right {
 		grid-column: 2/3;
 	}
-}
-
-.single {
-	font-family: var(--font-serif);
 }
 
 .single a {
