@@ -30,7 +30,7 @@
         --color-first-after: {{ .Site.Params.Colors.ColorFirst | default "hsl(310, 55%, 30%)" | safeCSS }}; /* Default: reddish purple */
         --color-second: {{ .Site.Params.Colors.ColorSecond | default "hsl(180, 50%, 40%)" | safeCSS }}; /* Default: green */
         
-        --font-sans: {{ .Site.Params.FontSans | default "system-ui, -apple-system, 'Helvetica Neue', sans-serif;" | safeCSS }};
+        --font-sans: {{ .Site.Params.FontSans | default "Inter, system-ui, -apple-system, 'Helvetica Neue', sans-serif;" | safeCSS }};
         --font-serif: {{ .Site.Params.FontSerif | default "Georgia, 'Cambria', 'Lucida Bright', serif;" | safeCSS }}
         --font-mono: {{ .Site.Params.FontMono | default "Monaco, 'Courier New', Courier, monospace;" | safeCSS }};
     }

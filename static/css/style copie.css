@@ -10,8 +10,6 @@
 ******************************
 *****************************/
 
-@import url("https://rsms.me/inter/inter.css");
-
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -98,7 +96,6 @@ body {
 	color: var(--color-text);
 	font-size: 1rem;
 	font-family: var(--font-sans);
-		font-feature-settings: 'ss01' 1, 'ss02' 1;
 	-webkit-hyphens: auto;
 	-ms-hypens: auto;
 	hyphens: auto;
@@ -158,7 +155,7 @@ h3,
 	-webkit-hyphens: none;
 	-ms-hypens: none;
 	hyphens: none;
-	letter-spacing: -.01rem;
+	letter-spacing: -.05rem;
 	line-height: 1.4;
 	margin: 0;
 	padding: 0;
@@ -219,41 +216,63 @@ time {
 
 .header {
 	color: var(--color-white);
-	display: grid;
+	display: flex;
 		align-items: center;
-		grid-template-columns: 1fr auto;
-	margin: 1rem;
-	padding: 1rem;
+		flex-flow: wrap;
+		justify-content: space-between;
+	padding: 3rem 1rem 1rem 1rem;
 }
 
-.header_brand {
-	align-self: start;
-}
-
-.header_nav {
-	align-self: end;
-	text-align: center;
-}
-
-.header_brand_logo {
-	font-weight: 900;
-}
-
-@media (min-width: 45rem) {
+@media (min-width: 70rem) {
 	.header {
-		grid-template-columns: 1fr;
-		grid-row-columns: 1fr auto;
+		display: block;
+		max-width: 15rem;
 		padding: 1rem;
 		position: fixed;
 			top: 1rem;
-			bottom: 1rem;
 			left: 1rem;
+		text-align: center;
+	}
+}
+
+.header_title {
+	font-style: italic;
+	font-weight: 900;
+	letter-spacing: -.025rem;
+	padding: 0 1rem 0 0;
+	text-transform: uppercase;
+}
+
+.header_signature {
+	display: none;
+}
+
+.header_navigation li {
+	padding: 0 1rem 0 0;
+}
+
+@media (min-width: 70rem) {
+	.header_title {
+		line-height: 1;
+		margin: 0;
+		padding: 0;
 	}
 	
-	.header_brand_title {
-		writing-mode: vertical-rl;
-			text-orientation: sideways;
-		padding: .5rem 0 0 0;
+	.header_signature {
+		display: unset;
+		font-family: var(--font-serif);
+		font-size: .8rem;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.header_navigation {
+		margin: 3rem 0 0 0;
+	}
+	
+	.header_navigation li {
+		display: block;
+		padding: 0;
 	}
 }
 

@@ -1,17 +1,15 @@
-<div class="header_title">
+<div class="header_brand">
 {{ if .IsHome }}
-	{{ .Site.Title }}
+	<span class="header_brand_logo">{{ .Site.Params.Menutitle }}</span>
+	<span class="header_brand_title">{{ .Site.Title }}</span>
 {{ else }}
-	<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+	<a href="{{ .Site.BaseURL }}">
+		<span class="header_brand_logo">{{ .Site.Params.Menutitle }}</span>
+		<span class="header_brand_title">{{ .Site.Title }}</span>
+	</a>
 {{ end }}
 </div>
-	
-<p class="header_signature">{{ T "by" }} {{ .Site.Params.Author }}</p>
-	
-<nav aria-label='{{ T "nav_main" }}' class="header_navigation">
-	<ul class="unstyled">
-	{{ range .Site.Menus.main }}
-		<li class="inline"><a href="{{ .URL }}">{{ .Name }}</a></li>
-	{{ end }}
-	</ul>
-</nav>
+
+<div class="header_nav">
+	–
+</div>
