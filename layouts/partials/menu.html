@@ -1,11 +1,11 @@
 <div class="menu_categories">
-	<p>Blog</p>
-	<p>Photo</p>
-	<p>Stylo</p>
-	<p>Biblio</p>
+	{{ range .Site.Menus.main }}
+		<p><a href="{{ .URL }}" class="{{ if ( $.Page.IsMenuCurrent "main" .) ( $.Page.HasMenuCurrent "main" .) }}active{{ end }}">{{ .Name }}</a></p>
+	{{ end }}
 </div>
 
 <div class="menu_pages">
-	<p>A propos</p>
-	<p>Mentions légales</p>
+	{{ range .Site.Menus.navigation }}
+		<p><a href="{{ .URL }}">{{ .Name }}</a></p>
+	{{ end }}
 </div>
