@@ -22,6 +22,11 @@ related:
     other: "Similaires"
 tags:
     other: "Mots-clés"
+    
+by_tag:
+    other: "Par sujet"
+by_year:
+    other: "Par année"
      
 tags_list:
     other: "Liste des mots-clés"
