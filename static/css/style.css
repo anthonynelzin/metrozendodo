@@ -94,7 +94,6 @@ html {
 }
 
 body {
-	background: var(--color-main);
 	color: var(--color-text);
 	font-size: 1rem;
 	font-family: var(--font-sans);
@@ -218,28 +217,20 @@ time {
 ************************/
 
 @media screen and (min-width: 45rem) and (min-height: 30rem) {
-	body {
+	.site-wrapper {
 		display: grid;
 			grid-template-columns: max-content max-content 1fr;
 			justify-content: space-between;
-		position: fixed;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+		height: 100vh;
 	}
 }
 
 .site-header {
-	display: grid;
-	margin: 1rem 1rem 0 1rem;
-}
-
-.header {
-	color: var(--color-white);
+	background: var(--color-main);
 	display: grid;
 		align-items: center;
 		grid-template-columns: 1fr auto;
+	margin: 1rem 1rem 0 1rem;
 	padding: 1rem;
 }
 
@@ -256,11 +247,12 @@ time {
 }
 
 .site-menu {
+	background: var(--color-main);
 	display: grid;
 		align-items: start;
 		grid-template-columns: 1fr 1fr;
 	margin: 0 1rem;
-	padding: 1rem 0 0 0;
+	padding: 0 1rem;
 }
 
 .menu_pages {
@@ -269,17 +261,13 @@ time {
 
 @media screen and (min-width: 45rem) and (min-height: 30rem) {
 	.site-header {
-		margin: 1rem 0 1rem 1rem;
-	}
-	
-	.header {
 		grid-template-columns: 1fr;
 		grid-row-columns: 1fr auto;
+		margin: 1rem 0 1rem 1rem;
 		text-align: center;
 	}
 	
 	.header_brand {
-		margin: 0 auto;
 		max-width: 2rem;
 	}
 	
@@ -294,7 +282,7 @@ time {
 			grid-template-columns: 1fr;
 			grid-row-columns: 2fr 1fr;
 		margin: 1rem 0;
-		padding: 1rem;
+		padding: 1rem 1rem 1rem 0;
 	}
 	
 	.menu_pages {
@@ -304,15 +292,15 @@ time {
 }
 
 .site-main {
-	color: var(--color-text);
-	margin: 0 1rem;
-	padding: 1rem 0 0 0;
+	background: var(--color-main);
+	margin: 0 1rem 1rem 1rem;
+	padding: 1rem;
 }
 
 @media screen and (min-width: 45rem) and (min-height: 30rem) {
 	.site-main {
-		margin:  1rem 1rem 2rem 0;
-		padding: 1rem 1rem 0 0;
+		margin:  1rem 1rem 1rem 0;
+		padding: 1rem 1rem 1rem 0;
 		overflow-y: scroll;
 	}
 	

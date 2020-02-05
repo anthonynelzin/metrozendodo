@@ -7,17 +7,19 @@
 	
 	<body>
 		<a href="#main" class="skip">{{ T "skip_link" }}</a>
-	
-		<header class="site-header">
-			{{ partial "header.html" . }}
-		</header>
 		
-		<nav class="site-menu">
-			{{ partial "menu.html" . }}
-		</nav>
+		<div class="site-wrapper">
+			<header class="site-header">
+				{{ partial "header.html" . }}
+			</header>
 		
-		<main class="site-main" id="main">
-			{{ block "main" . }}{{ end }}
-		</main>
+			<nav class="site-menu">
+				{{ partial "menu.html" . }}
+			</nav>
+		
+			<main class="site-main" id="main">
+				{{ block "main" . }}{{ end }}
+			</main>
+		</div>
 	</body>
 </html>

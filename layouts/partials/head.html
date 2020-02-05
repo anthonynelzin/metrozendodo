@@ -54,15 +54,15 @@
     }
 
     {{ if .Params.CustomColor }}
-        .header { background: {{ .Params.CustomColor | safeCSS }}; }
+        body { background: {{ .Params.CustomColor | safeCSS }}; }
     {{ else if .Site.Params.HeaderGradient }}
-        .header { background: linear-gradient(to bottom right, var(--color-first-before), var(--color-first), var(--color-first-after)); }
+        body { background: linear-gradient(to bottom right, var(--color-first-before), var(--color-first), var(--color-first-after)); }
     {{ else }}
-    	.header { background: var(--color-first); }
+    	body { background: var(--color-first); }
     {{ end }}
     
     {{ if .Site.Params.HeaderAnimation }}
-        .header {
+        body {
             animation: gradient 30s ease infinite;
 	        background-size: 300% 300%;
         }
