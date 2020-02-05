@@ -1,26 +1,20 @@
 {{ define "main" }}
 
 <article class="h-entry main_content single">
-{{ if $hero := .Resources.GetMatch "hero.jpg" }}
-	{{ $image := $hero.Resize "600x q85" }}
-	<header class="single_header single_header-hero">
-		<div class="u-featured single_header-hero_content" style="background-image: url({{ $image.RelPermalink }})">
-			<div class="single_header-hero_meta">
-				<h1 class="p-name single_header-hero_title">{{ .Title }}</h1>
-				<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-			</div>
-		</div>
-	</header>
-	<p class="figcaption">{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author }}{{ end }}.</p>
+	<header class="single_header">
+		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+			{{ $image := $hero.Resize "800x q85" }}
+				<figure>
+					<img src="{{ $image.RelPermalink }}" class="u-featured" />
+					<figcaption>{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author }}{{ end }}.</figcaption>
+				</figure>
+		{{ end }}
 
-{{ else }}
-	<header class="single_header single_header-simple">	
-		<div class="single_header-simple_meta">	
-			<h1 class="p-name single_header-simple_title">{{ .Title }}</h1>	
+		<div class="single_header_meta">	
+			<h1 class="p-name single_header_title">{{ .Title }}</h1>	
 			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</div>
 	</header>
-{{ end }}
 
 	<div class="e-content single_content">
 		{{ .Content }}

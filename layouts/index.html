@@ -1,32 +1,8 @@
 {{ define "main" }}
 
 <div class="main_content index">
-	{{ range first 5 .Site.RegularPages }}
-	{{ if $hero := .Resources.GetMatch "hero.jpg" }}
-		{{ $image := $hero.Resize "600x q85" }}
-		<article class="h-entry index_article-hero">
-			<a href="{{ .Permalink }}">
-				<div class="h-entry index_article-hero_content" style="background-image: url({{ $image.RelPermalink }})">
-					<div class="index_article-hero_meta">
-						<h1 class="p-name index_article-hero_title">{{ .Title }}</h1>
-						<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-					</div>
-				</div>
-			</a>
-		</article>
-	{{ else }}
-		<article class="h-entry index_article-simple">		
-			<a href="{{ .Permalink }}">
-				<h1 class="p-name index_article_title">{{ .Title }}</h1>	
-			</a>
-			
-			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-		</article>
-	{{ end }}
-	{{ end }}
-	
-	{{ range first 20 (after 5 .Site.RegularPages) }}
-		<article class="h-entry index_article-simple">		
+	{{ range first 25 (where .Site.RegularPages "Section" "blog") }}
+		<article class="h-entry index_article">		
 			<a href="{{ .Permalink }}">
 				<h1 class="p-name index_article_title">{{ .Title }}</h1>	
 			</a>
