@@ -104,11 +104,11 @@
 			</aside>
 			{{ end }}
 			
-			{{ if .Params.tags }}
+			{{ if .Params.stylo_tags }}
 			<aside class="single_sidebar_aside">
 				<h2 class="smtitle">{{ T "tags" }}</h2>
 				<ul class="unstyled">
-					{{ range .Params.tags }}
+					{{ range .Params.stylo_tags }}
 						<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
 					{{ end }}
 				</ul>

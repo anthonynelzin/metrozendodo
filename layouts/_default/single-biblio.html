@@ -69,11 +69,11 @@
 				</ul>
 			</aside>
 		
-			{{ if .Params.tags }}
+			{{ if .Params.biblio_tags }}
 			<aside class="single_sidebar_aside">
 				<h2 class="smtitle">{{ T "tags" }}</h2>
 				<ul class="unstyled">
-					{{ range .Params.tags }}
+					{{ range .Params.biblio_tags }}
 						<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
 					{{ end }}
 				</ul>

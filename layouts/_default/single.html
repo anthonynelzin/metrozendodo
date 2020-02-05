@@ -36,12 +36,12 @@
 		</div><!-- .single_sidebar_left -->
 		
 		<div class="single_sidebar_right">
-			{{ if .Params.tags }}
+			{{ if .Params.blog_tags }}
 			<aside class="single_sidebar_aside">
 				<h2 class="smtitle">{{ T "tags" }}</h2>
 				<ul class="unstyled">
-					{{ range .Params.tags }}
-						<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ range .Params.blog_tags }}
+						<li><a class="p-category" href="{{ "/blog/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
 					{{ end }}
 				</ul>
 			</aside>
