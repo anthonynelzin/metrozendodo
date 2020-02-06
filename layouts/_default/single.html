@@ -18,6 +18,10 @@
 		{{ .Content }}
 	</div>
 	
+	<div class="single_contact single_content">
+		<p>{{ T "contact" . | safeHTML }}</p>
+	</div>
+	
 	<div class="single_sidebar">
 		<div class="single_sidebar_left">
 			{{ $related := .Site.RegularPages.Related . | first 5 }}
@@ -34,12 +38,14 @@
 		</div><!-- .single_sidebar_left -->
 		
 		<div class="single_sidebar_right">
-			{{ if .Params.blog_tags }}
+			{{ $section := .Section }}
+			{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
+			{{ if (index .Params $section_tags) }}
 			<aside class="single_sidebar_aside">
 				<h2 class="smtitle">{{ T "tags" }}</h2>
 				<ul class="unstyled">
-					{{ range .Params.blog_tags }}
-						<li><a class="p-category" href="{{ "/blog/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ range (index .Params $section_tags) }}
+							<li><a class="p-category" href="/{{ $section }}/tags/{{ . | urlize }}">{{ . }}</a></li>
 					{{ end }}
 				</ul>
 			</aside>

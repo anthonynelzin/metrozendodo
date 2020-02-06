@@ -428,6 +428,11 @@ time {
 	margin: 1rem 0 0 0;
 }
 
+.single_contact {
+	font-style: italic;
+	text-align: center;
+}
+
 .single_sidebar {
 	display: grid;
 		grid-column-gap: 1rem;
