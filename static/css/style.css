@@ -117,13 +117,15 @@ body {
 
 a {
 	color: inherit;
-	text-decoration: none;
+	text-decoration: underline;
+		text-decoration-style: dotted;
 }
 
 a:focus,
 a:hover {
 	background: var(--color-second);
 	color: var(--color-white);
+	text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -428,12 +430,6 @@ time {
 	.single_sidebar_right {
 		grid-column: 2/3;
 	}
-}
-
-.single a {
-	text-decoration: underline;
-		-webkit-text-decoration-color: var(--color-second);
-		text-decoration-color: var(--color-second);
 }
 
 .single abbr[title],
