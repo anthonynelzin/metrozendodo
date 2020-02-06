@@ -552,6 +552,8 @@ time {
 }
 
 .single table {
+	border-top: 3px solid var(--color-gray);
+	border-bottom: 3px solid var(--color-gray);
 	border-collapse: collapse;
 	margin: 0 0 1rem 0;
 	padding: 0;
@@ -559,8 +561,9 @@ time {
 	width: 100%;
 }
 
-.single table thead {
-	border-bottom: 3px dotted var(--color-whitish);
+.single table thead tr {
+	border-top: none;
+	border-bottom: 3px solid var(--color-grayer);
 }
 
 .single table th,
@@ -569,7 +572,7 @@ time {
 }
 
 .single table tr {
-	border-bottom: 1px dotted var(--color-whitish);
+	border-top: 3px solid var(--color-whitish);
 }
 
 .single ul {
