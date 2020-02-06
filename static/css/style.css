@@ -177,7 +177,7 @@ h3 {
 }
 
 .smtitle {
-	border-bottom: 1px solid var(--color-grayer);
+	border-bottom: 1px dotted var(--color-gray);
 	font-size: 1rem;
 	margin: 4rem 0 .5rem 0;
 	padding: 0 0 .25rem 0;
@@ -311,7 +311,7 @@ time {
 	
 	.index,
 	.single {
-		max-width: 66ch;
+		max-width: 60ch;
 	}
 }
 
@@ -322,12 +322,12 @@ time {
 **************************/
 
 .index_article {
-	border-top: 1px solid var(--color-whitish);
+	border-top: 1px dotted var(--color-gray);
 	padding: 1rem 0;
 }
 
 .index_article:last-of-type {
-	border-bottom: 1px solid var(--color-whitish);
+	border-bottom: 1px dotted var(--color-gray);
 }
 
 @media screen and (min-width: 45rem) and (min-height: 30rem) {
@@ -352,7 +352,7 @@ time {
 }
 
 .archive_links_list p {
-	border-bottom: 1px solid var(--color-whitish);
+	border-bottom: 1px dotted var(--color-grayer);
 	display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -378,6 +378,12 @@ time {
 
 .archive_articles {
 	margin-top: 3rem;
+}
+
+.archive_articles h2 {
+	border-bottom: 1px dotted var(--color-grayer);
+	margin: 0 0 1rem 0;
+	padding: 0 0 .5rem 0;
 }
 
 .archive_articles_content {
@@ -442,9 +448,9 @@ time {
 }
 
 .single blockquote {
-	border-left: .5rem solid var(--color-second);
+	font-family: var(--font-sans);
 	margin: 0 0 1rem 0;
-	padding: 0 0 0 1rem;
+	padding: 0 0 0 2rem;
 }
 
 .single blockquote p:last-of-type {
@@ -469,14 +475,14 @@ time {
 .single figure figcaption {
 	color: var(--color-gray);
 	font-family: var(--font-serif);
-	font-size: .9em;
+	font-size: .9rem;
 	font-style: italic;
 }
 
 .single .footnotes {
-	border-top: 1px solid var(--color-whitish);
-	font-size: .8rem;
-	margin-top: 2rem;
+	border-top: 1px dotted var(--color-grayer);
+	font-size: .9rem;
+	margin: 2rem 0 0 0;
 }
 
 .single .footnotes ol {
@@ -485,7 +491,7 @@ time {
 }
 
 .single .footnotes ol li {
-	margin-bottom: 1em;
+	margin: 0 0 1rem 2rem;
 }
 
 .single .footnotes ol li::before {
@@ -558,7 +564,7 @@ time {
 }
 
 .single table thead {
-	border-bottom: 3px solid var(--color-whitish);
+	border-bottom: 3px dotted var(--color-whitish);
 }
 
 .single table th,
@@ -567,7 +573,7 @@ time {
 }
 
 .single table tr {
-	border-bottom: 1px solid var(--color-whitish);
+	border-bottom: 1px dotted var(--color-whitish);
 }
 
 .single ul {
