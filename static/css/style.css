@@ -167,7 +167,7 @@ h1 {
 }
 
 h2 {
-	border-bottom: 1px solid var(--color-whitish);
+	border-bottom: 3px solid var(--color-grayer);
 	font-size: 1.25rem;
 	margin: 4rem 0 .5rem 0;
 	padding: 0 0 .25rem 0;
@@ -178,7 +178,7 @@ h3 {
 }
 
 .smtitle {
-	border-bottom: 3px solid var(--color-whitish);
+	border-bottom: 3px solid var(--color-grayer);
 	font-size: 1rem;
 	margin: 4rem 0 .5rem 0;
 	padding: 0 0 .25rem 0;
@@ -391,7 +391,7 @@ time {
 ****************************/
 
 .single_header {
-	border-bottom: 3px solid var(--color-whitish);
+	border-bottom: 3px solid var(--color-grayer);
 	padding: 0 0 .5rem 0;
 }
 
@@ -476,7 +476,7 @@ time {
 }
 
 .single .footnotes {
-	border-top: 3px solid var(--color-whitish);
+	border-top: 3px solid var(--color-grayer);
 	font-size: .8rem;
 	margin-top: 2rem;
 }
@@ -502,6 +502,10 @@ time {
 
 .single ins {
 	text-decoration: none;
+}
+
+.single_content h2 {
+	border-color: var(--color-whitish);
 }
 
 .single hr {
