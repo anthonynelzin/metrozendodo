@@ -10,18 +10,10 @@
 ******************************
 *****************************/
 
-@import url("https://rsms.me/inter/inter.css");
-
 :root {
-	--font-sans: Inter, system-ui, -apple-system, sans-serif;
+	--font-sans: system-ui, -apple-system, sans-serif;
 	--font-serif: Georgia, "Cambria", "Lucida Bright", serif;
     --font-mono: Monaco, "Courier New", Courier, monospace;
-}
-
-@supports (font-variation-settings: normal) {
-	:root {
-		--font-sans: "Inter var", system-ui, -apple-system, sans-serif;
-	}
 }
 
 *, *:before, *:after {
