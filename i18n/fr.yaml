@@ -20,6 +20,10 @@ contact:
             Vous préférez allez voir ailleurs ? Voici <a href='/defileur/'>quelques recommandations</a>."
 related:
     other: "Similaires"
+shades:
+    other: "Teintes"
+brands:
+    other: "Marques"
 tags:
     other: "Sujets"
     
