@@ -422,8 +422,9 @@ time {
 }
 
 .single a {
-	-webkit-text-decoration-color: var(--color-second);
-	text-decoration-color: var(--color-second);
+	text-decoration: underline;
+		-webkit-text-decoration-color: var(--color-second);
+		text-decoration-color: var(--color-second);
 }
 
 .single a:focus,
@@ -435,6 +436,11 @@ time {
 .single dfn[title] {
     border-bottom: 1px dotted;
     cursor: help;
+}
+
+.single bold,
+.single strong {
+	font-weight: 600;
 }
 
 .single blockquote {
