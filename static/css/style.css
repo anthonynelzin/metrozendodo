@@ -154,6 +154,7 @@ h3,
 .h2,
 .h3,
 .smtitle {
+	font-family: var(--font-sans);
 	font-weight: 800;
 	-webkit-hyphens: none;
 	-ms-hypens: none;
@@ -444,9 +445,9 @@ time {
 }
 
 .single blockquote {
-	font-family: var(--font-sans);
+	border-left: 1px dotted var(--color-second);
 	margin: 0 0 1rem 0;
-	padding: 0 0 0 2rem;
+	padding: 0 0 0 1rem;
 }
 
 .single blockquote p:last-of-type {
