@@ -29,10 +29,6 @@
         --color-first-before: {{ .Site.Params.Colors.ColorFirst | default "hsl(250, 55%, 30%)" | safeCSS }}; /* Default: bluish purple */
         --color-first-after: {{ .Site.Params.Colors.ColorFirst | default "hsl(310, 55%, 30%)" | safeCSS }}; /* Default: reddish purple */
         --color-second: {{ .Site.Params.Colors.ColorSecond | default "hsl(180, 50%, 40%)" | safeCSS }}; /* Default: green */
-        
-        --font-sans: {{ .Site.Params.FontSans | default "Inter, system-ui, -apple-system, 'Helvetica Neue', sans-serif;" | safeCSS }};
-        --font-serif: {{ .Site.Params.FontSerif | default "Georgia, 'Cambria', 'Lucida Bright', serif;" | safeCSS }}
-        --font-mono: {{ .Site.Params.FontMono | default "Monaco, 'Courier New', Courier, monospace;" | safeCSS }};
     }
 
     @media (prefers-color-scheme: dark) {
@@ -41,9 +37,9 @@
             --color-text: var(--color-white);
 
             --color-white: {{ .Site.Params.DarkColors.ColorWhite | default "hsl(250, 5%, 90%)" | safeCSS }};
-            --color-whitish: {{ .Site.Params.DarkColors.ColorWhitish | default "hsl(250, 5%, 80%)" | safeCSS }};
+            --color-whitish: {{ .Site.Params.DarkColors.ColorWhitish | default "hsl(250, 5%, 30%)" | safeCSS }};
             --color-gray: {{ .Site.Params.Colors.ColorGray | default "hsl(250, 5%, 70%)" | safeCSS }};
-            --color-grayer: {{ .Site.Params.Colors.ColorGrayer | default "hsl(250, 5%, 12.5%)" | safeCSS }};
+            --color-grayer: {{ .Site.Params.Colors.ColorGrayer | default "hsl(250, 5%, 80%)" | safeCSS }};
             --color-black: {{ .Site.Params.DarkColors.ColorBlack | default "hsl(250, 5%, 5%)" | safeCSS }};
 
             --color-first: {{ .Site.Params.DarkColors.ColorFirst | default "hsl(250, 35%, 40%)" | safeCSS }}; /* Default: bluish purple */

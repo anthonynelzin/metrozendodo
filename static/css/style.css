@@ -12,6 +12,18 @@
 
 @import url("https://rsms.me/inter/inter.css");
 
+:root {
+	--font-sans: Inter, system-ui, -apple-system, sans-serif;
+	--font-serif: Georgia, "Cambria", "Lucida Bright", serif;
+    --font-mono: Monaco, "Courier New", Courier, monospace;
+}
+
+@supports (font-variation-settings: normal) {
+	:root {
+		--font-sans: "Inter var", system-ui, -apple-system, sans-serif;
+	}
+}
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -118,7 +130,7 @@ body {
 a {
 	color: inherit;
 	text-decoration: underline;
-		text-decoration-style: dotted;
+		text-decoration-color: var(--color-second);
 }
 
 a:focus,
@@ -170,8 +182,9 @@ h1 {
 }
 
 h2 {
+	border-bottom: 3px solid var(--color-whitish);
 	font-size: 1.25rem;
-	margin: 4rem 0 .5rem 0;
+	margin: 4rem 0 1rem 0;
 	padding: 0 0 .25rem 0;
 }
 
@@ -180,7 +193,7 @@ h3 {
 }
 
 .smtitle {
-	border-bottom: 1px dotted var(--color-gray);
+	border-bottom: 3px solid var(--color-grayer);
 	font-size: 1rem;
 	margin: 4rem 0 .5rem 0;
 	padding: 0 0 .25rem 0;
@@ -215,7 +228,7 @@ time {
 *************************
 ************************/
 
-@media screen and (min-width: 45rem) and (min-height: 30rem) {
+@media screen and (min-width: 50rem) and (min-height: 30rem) {
 	.site-wrapper {
 		display: grid;
 			grid-template-columns: max-content max-content 1fr;
@@ -229,6 +242,7 @@ time {
 	display: grid;
 		align-items: center;
 		grid-template-columns: 1fr auto;
+	font-weight: 800;
 	margin: 1rem 1rem 0 1rem;
 	padding: 1rem;
 }
@@ -245,10 +259,6 @@ time {
 	display: block;
 }
 
-.header_brand_logo {
-	font-weight: 800;
-}
-
 .site-menu {
 	background: var(--color-main);
 	display: grid;
@@ -262,7 +272,7 @@ time {
 	text-align: right;
 }
 
-@media screen and (min-width: 45rem) and (min-height: 30rem) {
+@media screen and (min-width: 50rem) and (min-height: 30rem) {
 	.site-header {
 		grid-template-columns: 1fr;
 		grid-row-columns: 1fr auto;
@@ -285,7 +295,7 @@ time {
 			grid-template-columns: 1fr;
 			grid-row-columns: 2fr 1fr;
 		margin: 1rem 0;
-		padding: 1rem 1rem 1rem 0;
+		padding: 1rem 4rem 1rem 0;
 	}
 	
 	.menu_pages {
@@ -300,7 +310,7 @@ time {
 	padding: 4rem 1rem 1rem 1rem;
 }
 
-@media screen and (min-width: 45rem) and (min-height: 30rem) {
+@media screen and (min-width: 50rem) and (min-height: 30rem) {
 	.site-main {
 		margin:  1rem 1rem 1rem 0;
 		padding: 1rem 1rem 1rem 0;
@@ -314,7 +324,7 @@ time {
 	
 	.index,
 	.single {
-		max-width: 60ch;
+		max-width: 36rem;
 	}
 }
 
@@ -325,37 +335,42 @@ time {
 **************************/
 
 .index_article {
-	border-top: 1px dotted var(--color-gray);
+	border-top: 3px solid var(--color-whitish);
 	padding: 1rem 0;
 }
 
+.index_article:first-of-type {
+	border-top: 3px solid var(--color-gray);
+}
+
 .index_article:last-of-type {
-	border-bottom: 1px dotted var(--color-gray);
+	border-bottom: 3px solid var(--color-gray);
 }
 
-@media screen and (min-width: 45rem) and (min-height: 30rem) {
-	.index_article {
-		display: flex;
-			align-items: center;
-			justify-content: space-between;
-	}
-	
-	.index_article time {
-		padding: 0 0 0 1rem;
-		text-align: right;
-		white-space: nowrap;
-	}
+.index_article a {
+	display: inline-block;
 }
 
-.archive_links {
-	display: grid;
+.index_article time {
+	display: block;
+}
+
+.archive {
+	border-bottom: 3px solid var(--color-gray);
+	padding: 0 0 1rem 0;
+}
+
+@media screen and (min-width: 50rem) and (min-height: 30rem) {
+	.archive_links {
+		display: grid;
 		grid-column-gap: 2rem;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: 5fr 2fr;
 		grid-template-rows: auto;
+	}
 }
 
 .archive_links_list p {
-	border-bottom: 1px dotted var(--color-grayer);
+	border-bottom: 3px solid var(--color-whitish);
 	display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -368,32 +383,24 @@ time {
 }
 
 .archive_links_tags,
-.archive_links_years {
+.archive_links_years,
+.archive_articles_content {
 	display: grid;
-		grid-column-gap: 1rem;
-		grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 		grid-template-rows: auto;
+}
+
+.archive_links_tags,
+.archive_links_years {
+	grid-column-gap: 1rem;
 }
 
 .archive_links_list_alone {
 	grid-column: 1/-1;
 }
 
-.archive_articles {
-	margin-top: 3rem;
-}
-
-.archive_articles h2 {
-	border-bottom: 1px dotted var(--color-grayer);
-	margin: 0 0 1rem 0;
-	padding: 0 0 .5rem 0;
-}
-
 .archive_articles_content {
-	display: grid;
-		grid-gap: 1rem;
-		grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
-		grid-template-rows: auto;
+	grid-gap: 1rem;
 }
 
 /****************************
@@ -403,10 +410,17 @@ time {
 ****************************/
 
 .single_header {
-	padding: 0 0 .5rem 0;
+	border-top: 3px solid var(--color-gray);
+	border-bottom: 3px solid var(--color-whitish);
+	padding: 1rem 0 1rem 0;
+}
+
+.single_header_hero {
+	width: 100%;
 }
 
 .single_content {
+	border-bottom: 3px solid var(--color-gray);
 	font-family: var(--font-serif);
 	margin: 1rem 0 0 0;
 }
@@ -430,7 +444,7 @@ time {
 }
 
 .single blockquote {
-	border-left: 1px dotted var(--color-second);
+	border-left: .25rem solid var(--color-second);
 	margin: 0 0 1rem 0;
 	padding: 0 0 0 1rem;
 }
@@ -462,7 +476,7 @@ time {
 }
 
 .single .footnotes {
-	border-top: 1px dotted var(--color-grayer);
+	border-top: 3px solid var(--color-whitish);
 	font-size: .9rem;
 	margin: 2rem 0 0 0;
 }

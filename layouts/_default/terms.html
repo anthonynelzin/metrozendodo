@@ -1,7 +1,9 @@
 {{ define "main" }}
 
 <div class="main_content archive">
-	<h1>{{ .Title }}</h1>
+	<header class="single_header">
+		<h1>{{ .Title }}</h1>
+	</header>
 	
 	<ul class="unstyled archive_list">
 		{{ range .Data.Terms.Alphabetical }}
