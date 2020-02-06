@@ -117,13 +117,13 @@ body {
 
 a {
 	color: inherit;
+	text-decoration: none;
 }
 
 a:focus,
 a:hover {
 	background: var(--color-second);
 	color: var(--color-white);
-	text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -236,6 +236,10 @@ time {
 
 .header_nav {
 	align-self: end;
+}
+
+.header_brand_link {
+	display: block;
 }
 
 .header_brand_logo {
@@ -394,6 +398,7 @@ time {
 }
 
 .single_content {
+	font-family: var(--font-serif);
 	margin: 1rem 0 0 0;
 }
 
@@ -423,11 +428,6 @@ time {
 	text-decoration: underline;
 		-webkit-text-decoration-color: var(--color-second);
 		text-decoration-color: var(--color-second);
-}
-
-.single a:focus,
-.single a:hover {
-	color: var(--color-white);
 }
 
 .single abbr[title],

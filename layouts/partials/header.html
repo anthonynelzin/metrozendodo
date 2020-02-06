@@ -3,10 +3,10 @@
 	<span class="header_brand_logo">{{ .Site.Params.Menutitle }}</span>
 	<span class="header_brand_title">{{ .Site.Title }}</span>
 {{ else }}
-	<a href="{{ .Site.BaseURL }}">
+	<a href="{{ .Site.BaseURL }}" class="header_brand_link">
 		<span class="header_brand_logo">{{ .Site.Params.Menutitle }}</span>
+		<span class="header_brand_title">{{ .Site.Title }}</span>
 	</a>
-	<span class="header_brand_title">{{ .Site.Title }}</span>
 {{ end }}
 </div>
 
