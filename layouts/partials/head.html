@@ -58,15 +58,17 @@
     {{ end }}
     
     {{ if .Site.Params.HeaderAnimation }}
-        body {
-            animation: gradient 30s ease infinite;
-	        background-size: 300% 300%;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 50% 0%; }
-            50% { background-position: 50% 100%; }
-            100% { background-position: 50% 0%; }
+        @media (prefers-reduced-motion: no-preference) {
+        	@keyframes gradient {
+            	0% { background-position: 50% 0%; }
+            	50% { background-position: 50% 100%; }
+            	100% { background-position: 50% 0%; }
+        	}
+		
+			body {
+            	animation: gradient 30s ease infinite;
+	        	background-size: 300% 300%;
+        	}
         }
     {{ end }}
     
