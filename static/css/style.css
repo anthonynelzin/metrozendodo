@@ -101,7 +101,13 @@ body {
 	color: var(--color-text);
 	font-size: 1rem;
 	font-family: var(--font-sans);
-		font-feature-settings: 'ss01' 1, 'ss02' 1;
+		font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss06' 1, 'ss07' 1;
+		/*
+		ss01 : 6 et 9 droits
+		ss02 : 4 ouvert
+		ss06 : haute lisibilité
+		ss07 : a fermé 
+		*/
 	-webkit-hyphens: auto;
 	-ms-hypens: auto;
 	hyphens: auto;
