@@ -1,10 +1,12 @@
-{{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
-{{ $figcaption := .Get 1 }}
+{{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{ $figcaption := .Get "caption" }}
+{{ $alt := .Get "alt" }}
 
 {{ .Scratch.Set "processed" ($image.Resize "800x q85") }}
 
 {{ $image := .Scratch.Get "processed" }}
+
 <figure>
-	<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" />
+	<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" alt="{{ $alt }}" />
 	<figcaption>{{ $figcaption | safeHTML }}</figcaption>
-</figure>   
+</figure>

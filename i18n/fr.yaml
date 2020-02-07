@@ -5,7 +5,7 @@ print_credits:
     other: "Merci d’avoir imprimé cet article écrit par Anthony Nelzin-Santos (anthony@nelzin.fr) sur métro[zen]dodo (metrozendodo.fr). Tous droits réservés."
 
 alt_image:
-    other: "Image d’illustration de l’article"
+    other: "Illustration de l’article"
 image:
     other: "Image"
 by:
