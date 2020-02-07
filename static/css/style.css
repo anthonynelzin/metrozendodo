@@ -556,6 +556,7 @@ time {
 }
 
 .single table {
+	font-variant-numeric: tabular-nums;
 	border-top: 3px solid var(--color-gray);
 	border-bottom: 3px solid var(--color-gray);
 	border-collapse: collapse;
