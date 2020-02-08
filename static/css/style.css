@@ -604,16 +604,21 @@ time {
 		line-height: 1.4;
 	}
 	
-	.header,
-	.single_sidebar_right,
-	.contact,
-	.footer {
+	.site-header,
+	.site-menu,
+	.single_contact,
+	.single_sidebar {
 		display: none;
 	}
 	
-	.main_content {
-		margin: 0;
-		max-width: 100%;
+	.site-main {
+		margin: 0 0 1rem 0;
+		padding: 0 0 0 0;
+	}
+	
+	.single_header,
+	.single_content {
+		border: none;
 	}
 	
 	.single a {
