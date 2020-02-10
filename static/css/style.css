@@ -240,7 +240,7 @@ time {
 		flex-flow: row wrap;
 		justify-content: space-between;
 	font-weight: 800;
-	margin: 1rem 1rem 0 1rem;
+	margin: 1rem 0 0 0;
 	padding: 1rem;
 }
 
@@ -261,7 +261,7 @@ time {
 	display: flex;
 		align-items: start;
 		justify-content: space-between;
-	margin: 0 1rem;
+	margin: 0 0 0 0;
 	padding: 0 1rem;
 }
 
@@ -305,7 +305,7 @@ time {
 
 .site-main {
 	background: var(--color-main);
-	margin: 0 1rem 1rem 1rem;
+	margin: 0 0 1rem 0;
 	padding: 4rem 1rem 1rem 1rem;
 }
 
