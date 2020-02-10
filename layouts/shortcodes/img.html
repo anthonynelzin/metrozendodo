@@ -6,7 +6,7 @@
 
 {{ $image := .Scratch.Get "processed" }}
 
-<figure>
+<figure role="figure" aria-label="{{ $figcaption | plainify }}">
 	<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" alt="{{ $alt }}" />
 	<figcaption>{{ $figcaption | safeHTML }}</figcaption>
 </figure>
