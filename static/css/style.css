@@ -261,6 +261,7 @@ time {
 	display: flex;
 		align-items: start;
 		justify-content: space-between;
+	line-height: 2;
 	margin: 0 0 0 0;
 	padding: 0 1rem;
 }
@@ -293,6 +294,7 @@ time {
 	
 	.site-menu {
 		flex-flow: column;
+		line-height: inherit;
 		margin: 1rem 0;
 		padding: 1rem 4rem 1rem 0;
 	}
