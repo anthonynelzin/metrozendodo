@@ -26,8 +26,9 @@
         --color-black: {{ .Site.Params.Colors.ColorBlack | default "hsl(280, 30%, 20%)" | safeCSS }};
 
         --color-first: {{ .Site.Params.Colors.ColorFirst | default "hsl(280, 55%, 30%)" | safeCSS }}; /* Default: purple */
-        --color-first-before: {{ .Site.Params.Colors.ColorFirst | default "hsl(250, 55%, 30%)" | safeCSS }}; /* Default: bluish purple */
-        --color-first-after: {{ .Site.Params.Colors.ColorFirst | default "hsl(310, 55%, 30%)" | safeCSS }}; /* Default: reddish purple */
+        --color-first-before: {{ .Site.Params.Colors.ColorFirstBefore | default "hsl(250, 55%, 30%)" | safeCSS }}; /* Default: bluish purple */
+        --color-first-after: {{ .Site.Params.Colors.ColorFirstAfter | default "hsl(310, 55%, 30%)" | safeCSS }}; /* Default: reddish purple */
+        --color-first-shadow: {{ .Site.Params.Colors.ColorFirstShadow | default "hsla(280, 55%, 10%, 20%)" | safeCSS }}; /* Default : dark purple */
         --color-second: {{ .Site.Params.Colors.ColorSecond | default "hsl(190, 55%, 30%)" | safeCSS }}; /* Default: green */
     }
 
@@ -38,21 +39,22 @@
 
             --color-white: {{ .Site.Params.DarkColors.ColorWhite | default "hsl(250, 5%, 90%)" | safeCSS }};
             --color-whitish: {{ .Site.Params.DarkColors.ColorWhitish | default "hsl(250, 5%, 30%)" | safeCSS }};
-            --color-gray: {{ .Site.Params.Colors.ColorGray | default "hsl(250, 5%, 70%)" | safeCSS }};
-            --color-grayer: {{ .Site.Params.Colors.ColorGrayer | default "hsl(250, 5%, 80%)" | safeCSS }};
+            --color-gray: {{ .Site.Params.DarkColors.ColorGray | default "hsl(250, 5%, 70%)" | safeCSS }};
+            --color-grayer: {{ .Site.Params.DarkColors.ColorGrayer | default "hsl(250, 5%, 80%)" | safeCSS }};
             --color-black: {{ .Site.Params.DarkColors.ColorBlack | default "hsl(250, 5%, 5%)" | safeCSS }};
 
             --color-first: {{ .Site.Params.DarkColors.ColorFirst | default "hsl(250, 35%, 40%)" | safeCSS }}; /* Default: bluish purple */
-            --color-first-before: {{ .Site.Params.Colors.ColorFirst | default "hsl(220, 35%, 30%)" | safeCSS }}; /* Default : blue */
-        	--color-first-after: {{ .Site.Params.Colors.ColorFirst | default "hsl(280, 35%, 30%)" | safeCSS }}; /* Default : purple */
-            --color-second: {{ .Site.Params.Colors.DarkColorThird | default "hsl(340, 90%, 70%)" | safeCSS }}; /* Default: pink */
+            --color-first-before: {{ .Site.Params.DarkColors.ColorFirstBefore | default "hsl(220, 35%, 30%)" | safeCSS }}; /* Default : blue */
+        	--color-first-after: {{ .Site.Params.DarkColors.ColorFirstAfter | default "hsl(280, 35%, 30%)" | safeCSS }}; /* Default : purple */
+        	--color-first-shadow: {{ .Site.Params.DarkColors.ColorFirstShadow | default "hsla(250, 15%, 10%, 30%)" | safeCSS }}; /* Default : dark purple */
+            --color-second: {{ .Site.Params.DarkColors.DarkColorSecond | default "hsl(340, 90%, 70%)" | safeCSS }}; /* Default: pink */
         }
     }
 
     {{ if .Params.CustomColor }}
         body { background: {{ .Params.CustomColor | safeCSS }}; }
     {{ else if .Site.Params.HeaderGradient }}
-        body { background: linear-gradient(to bottom right, var(--color-first-before), var(--color-first), var(--color-first-after)); }
+        body { background: linear-gradient(to bottom right, var(--color-first-before), var(--color-first), var(--color-first-after)); background-repeat: no-repeat; background-attachment: fixed; }
     {{ else }}
     	body { background: var(--color-first); }
     {{ end }}
