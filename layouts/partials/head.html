@@ -29,7 +29,7 @@
         --color-first-before: {{ .Site.Params.Colors.ColorFirstBefore | default "hsl(250, 55%, 30%)" | safeCSS }}; /* Default: bluish purple */
         --color-first-after: {{ .Site.Params.Colors.ColorFirstAfter | default "hsl(310, 55%, 30%)" | safeCSS }}; /* Default: reddish purple */
         --color-first-shadow: {{ .Site.Params.Colors.ColorFirstShadow | default "hsla(280, 55%, 10%, 20%)" | safeCSS }}; /* Default : dark purple */
-        --color-second: {{ .Site.Params.Colors.ColorSecond | default "hsl(190, 55%, 30%)" | safeCSS }}; /* Default: green */
+        --color-second: {{ .Site.Params.Colors.ColorSecond | default "hsl(190, 55%, 25%)" | safeCSS }}; /* Default: forest green */
     }
 
     @media (prefers-color-scheme: dark) {
@@ -47,7 +47,7 @@
             --color-first-before: {{ .Site.Params.DarkColors.ColorFirstBefore | default "hsl(220, 35%, 30%)" | safeCSS }}; /* Default : blue */
         	--color-first-after: {{ .Site.Params.DarkColors.ColorFirstAfter | default "hsl(280, 35%, 30%)" | safeCSS }}; /* Default : purple */
         	--color-first-shadow: {{ .Site.Params.DarkColors.ColorFirstShadow | default "hsla(250, 15%, 10%, 30%)" | safeCSS }}; /* Default : dark purple */
-            --color-second: {{ .Site.Params.DarkColors.DarkColorSecond | default "hsl(340, 90%, 70%)" | safeCSS }}; /* Default: pink */
+            --color-second: {{ .Site.Params.DarkColors.DarkColorSecond | default "hsl(210, 100%, 80%)" | safeCSS }}; /* Default: baby blue */
         }
     }
 
