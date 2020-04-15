@@ -236,6 +236,7 @@ time {
 			right: 1rem;
 			bottom: 1rem;
 			left: 1rem;
+			margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 	}
 }
 
@@ -314,7 +315,7 @@ time {
 .site-main {
 	background: var(--color-main);
 	margin: 0 0 4rem 0;
-	padding: 4rem 1rem 1rem 1rem;
+	padding: 1rem;
 }
 
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
