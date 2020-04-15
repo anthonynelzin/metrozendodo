@@ -224,8 +224,9 @@ time {
 *************************
 ************************/
 
-body {
+body { /* Propriétés spécifiques à Safari Mobile */
 	margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+	-webkit-text-size-adjust: 100%;
 }
 
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
