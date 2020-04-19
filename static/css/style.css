@@ -241,7 +241,7 @@ body { /* Propriétés spécifiques à Safari Mobile */
 			right: 1.6vh;
 			bottom: 2vh;
 			left: 1.6vh;
-		height: 96vh;
+		height: 96vh; /* Fix pour Safari 13.1 */
 	}
 }
 

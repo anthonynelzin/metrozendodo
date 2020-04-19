@@ -52,11 +52,11 @@
     }
 
     {{ if .Params.CustomColor }}
-        body { background: {{ .Params.CustomColor | safeCSS }}; }
+        html { background: {{ .Params.CustomColor | safeCSS }}; }
     {{ else if .Site.Params.HeaderGradient }}
-        body { background: linear-gradient(to bottom right, var(--color-first-before), var(--color-first), var(--color-first-after)); background-repeat: no-repeat; background-attachment: fixed; }
+        html { background: linear-gradient(to bottom right, var(--color-first-before), var(--color-first), var(--color-first-after)); background-repeat: no-repeat; background-attachment: fixed; }
     {{ else }}
-    	body { background: var(--color-first); }
+    	html { background: var(--color-first); }
     {{ end }}
     
     {{ if .Site.Params.HeaderAnimation }}
@@ -67,7 +67,7 @@
             	100% { background-position: 50% 0%; }
         	}
 		
-			body {
+			html {
             	animation: gradient 30s ease infinite;
 	        	background-size: 300% 300%;
         	}
