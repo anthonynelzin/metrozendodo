@@ -11,7 +11,7 @@
 *****************************/
 
 :root {
-	--font-sans: system-ui, -apple-system, sans-serif;
+	--font-sans: -apple-system, "Helvetica Neue", "Helvetica", sans-serif;
 	--font-serif: Georgia, "Cambria", "Lucida Bright", serif;
     --font-mono: Monaco, "Courier New", Courier, monospace;
 }
@@ -237,10 +237,11 @@ body { /* Propriétés spécifiques à Safari Mobile */
 			grid-template-columns: max-content max-content 1fr;
 			justify-content: space-between;
 		position: absolute;
-			top: 1rem;
-			right: 1rem;
-			bottom: 1rem;
-			left: 1rem;
+			top: 2vh;
+			right: 1.6vh;
+			bottom: 2vh;
+			left: 1.6vh;
+		height: 96vh;
 	}
 }
 
