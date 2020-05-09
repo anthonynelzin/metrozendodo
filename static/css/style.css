@@ -416,8 +416,8 @@ time {
 }
 
 .single_contact {
-	font-style: italic;
-	text-align: center;
+	font-family: var(--font-sans);
+	font-size: .9rem;
 }
 
 .single_sidebar {
@@ -453,7 +453,7 @@ time {
 .single code,
 .single pre {
 	font-family: var(--font-mono);
-	font-size: .9em;
+	font-size: .9rem;
 }
 
 .single del {
