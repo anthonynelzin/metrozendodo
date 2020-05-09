@@ -11,7 +11,7 @@
 *****************************/
 
 :root {
-	--font-sans: -apple-system, "Helvetica Neue", "Helvetica", sans-serif;
+	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
 	--font-serif: Georgia, "Cambria", "Lucida Bright", serif;
     --font-mono: Monaco, "Courier New", Courier, monospace;
 }
