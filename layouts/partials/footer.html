@@ -1,17 +1,14 @@
 {{ if .Site.Params.Pwa }}
 	<script>
-		if('serviceWorker' in navigator) {
-			navigator.serviceWorker
-				.register('/sw.js', { scope: '/' })
-				.then(function(registration) {
-					console.log('Service Worker enregistré.');
-				});
-
-			navigator.serviceWorker
-				.ready
-				.then(function(registration) {
-					console.log('Service Worker disponible.');
-				});
-		}
+		if ('serviceWorker' in navigator) {
+  			navigator.serviceWorker
+  			.register('/sw.js', { scope: '/' })
+  			.then(function(reg) {
+    			console.log('Le SW a été enregistré avec le scope ' + reg.scope + '.');
+  			})
+  			.catch(function(error) {
+    			console.log('Le SW n’a pas été enregistré. Erreur ' + error + '.');
+  			});
+		};
 	</script>
 {{ end }}
