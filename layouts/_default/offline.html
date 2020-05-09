@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<article class="h-entry main_content single">
+	<header class="single_header">
+		<figure class="single_header_hero">
+			<img src="{{ .Site.BaseURL }}img/offline.jpg" class="u-featured" alt="Des montagnes au crépuscule" />
+			<figcaption>La vallée de Yosemite. Image <a href="https://unsplash.com/photos/8BFWBUkSqQo">Rodrigo Soares</a> (libre de droits).</figcaption>
+		</figure>
+
+		<h1 class="p-name single_header_title">{{ .Title }}</h1>
+	</header>
+	
+	<div class="e-content single_content">
+		{{ .Content }}
+	</div>
+</article>
+
+{{ end }}

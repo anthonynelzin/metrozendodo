@@ -1,41 +1,17 @@
-<div class="footer_content main_content">
-	<nav class="footer_tags">
-		<h1 class="smtitle">{{ T "tags" }}</h1>
-		<div aria-label='{{ T "tags_list" }}' class="footer_tags_content">
-		{{ range .Site.Taxonomies.tags }}
-			<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></p>
-		{{ end }}
-		</div>
-	</nav>
+{{ if .Site.Params.Pwa }}
+	<script>
+		if('serviceWorker' in navigator) {
+			navigator.serviceWorker
+				.register('/sw.js', { scope: '/' })
+				.then(function(registration) {
+					console.log('Service Worker enregistré.');
+				});
 
-	<nav aria-label='{{ T "nav_main" }}' class="footer_left">
-		<h1 class="smtitle">{{ .Site.Title }}</h1>
-		<ul class="unstyled">
-		{{ range .Site.Menus.main }}
-			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-		{{ end }}
-		{{ range .Site.Menus.footer_left }}
-			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-		{{ end }}
-		</ul>
-	</nav>
-
-	<nav aria-label='{{ T "nav_other" }}' class="footer_right">
-		<h1 class="smtitle">{{ .Site.Params.Menutitle }}</h1>
-		<ul class="unstyled">
-		{{ range .Site.Menus.footer_right }}
-			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-		{{ end }}
-		</ul>
-	</nav>
-
-	<p aria-label='{{ T "colophon" }}' class="footer_colophon">
-		{{ if .Site.Params.Motto }}
-			{{ .Site.Params.Motto }}.
-		{{ end }}
-	
-		{{ if .Site.Params.Colophon }}
-			{{ .Site.Params.Colophon | safeHTML }}
-		{{ end }}
-	</p>
-</div>
+			navigator.serviceWorker
+				.ready
+				.then(function(registration) {
+					console.log('Service Worker disponible.');
+				});
+		}
+	</script>
+{{ end }}
