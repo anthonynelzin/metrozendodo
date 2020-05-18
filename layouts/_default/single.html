@@ -9,49 +9,35 @@
 					<figcaption>{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author }}{{ end }}.</figcaption>
 				</figure>
 		{{ end }}
-
+	
 		<h1 class="p-name single_header_title">{{ .Title }}</h1>	
-		<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 	</header>
 
 	<div class="e-content single_content">
 		{{ .Content }}
 	</div>
 	
-	<div class="single_contact single_content">
+	<div class="single_sidebar">
+		<aside class="single_sidebar_aside">
+			<h2 class="h3">{{ T "date" }}</h2>
+			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		</aside>
+	
+		{{ $section := .Section }}
+		{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
+		{{ if (index .Params $section_tags) }}
+		<aside class="single_sidebar_aside">
+			<h2 class="h3">{{ T "tags" }}</h2>
+			{{ range (index .Params $section_tags) }}
+				<p><a class="p-category" href="/{{ $section }}/tags/{{ . | urlize }}">{{ . }}</a></p>
+			{{ end }}
+		</aside>
+		{{ end }}
+	</div><!-- .single_sidebar -->
+	
+	<div class="single_contact">
 		<p>{{ T "contact" . | safeHTML }}</p>
 	</div>
-	
-	<div class="single_sidebar">
-		<div class="single_sidebar_left">
-			{{ $related := .Site.RegularPages.Related . | first 5 }}
-			{{ with $related }}
-			<aside class="single_sidebar_aside">
-				<h2 class="smtitle">{{ T "related" }}</h2>
-				<ul class="unstyled">
-				{{ range . }}
-					<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-				{{ end }}
-				</ul>
-			</aside>
-			{{ end }}
-		</div><!-- .single_sidebar_left -->
-		
-		<div class="single_sidebar_right">
-			{{ $section := .Section }}
-			{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
-			{{ if (index .Params $section_tags) }}
-			<aside class="single_sidebar_aside">
-				<h2 class="smtitle">{{ T "tags" }}</h2>
-				<ul class="unstyled">
-					{{ range (index .Params $section_tags) }}
-							<li><a class="p-category" href="/{{ $section }}/tags/{{ . | urlize }}">{{ . }}</a></li>
-					{{ end }}
-				</ul>
-			</aside>
-			{{ end }}
-		</div><!-- .single_sidebar_right -->
-	</div><!-- .single_sidebar -->
 </article>
 
 {{ end }}

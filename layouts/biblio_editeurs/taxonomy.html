@@ -6,17 +6,7 @@
 	</header>
 			
 	<div class="archive_links">
-		<div class="archive_links_list">
-			<h2 class="h3">{{ T "by_tag" }}</h2>
-			<div class="archive_links_tags">
-				{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
-				{{ range (index .Site.Taxonomies $section_tags) }}
-					<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="archive_links_list_count">{{ len .Pages }}</p>
-				{{ end }}
-			</div>
-		</div>
-		
-		<div class="archive_links_list">
+		<div class="archive_links_list archive_links_list_alone">
 			<h2 class="h3">{{ T "by_year" }}</h2>
 			<div class="archive_links_years">
 				{{ range (.Data.Pages.GroupByDate "2006") }}
@@ -33,7 +23,7 @@
 			<div class="archive_articles_content">
 				{{ range .Pages }}
 				<article>
-					<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>	
+					<h3><a href="{{ .Permalink }}">{{ range .Params.Biblio_auteurs }}<span class="comma">{{ . }}</span>{{ end }} — <i>{{ .Title }}</i></a></h3>	
 					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 				</article>
 				{{ end }}

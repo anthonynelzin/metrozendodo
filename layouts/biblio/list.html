@@ -33,7 +33,7 @@
 			<div class="archive_articles_content">
 				{{ range .Pages }}
 				<article>
-					<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>	
+					<h3><a href="{{ .Permalink }}">{{ range .Params.Biblio_auteurs }}<span class="comma">{{ . }}</span>{{ end }} — <i>{{ .Title }}</i></a></h3>	
 					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 				</article>
 				{{ end }}
