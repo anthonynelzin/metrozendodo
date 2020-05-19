@@ -182,6 +182,7 @@ h1,
 
 h2,
 .h2 {
+	border-bottom: 3px solid var(--color-whitish);
 	font-size: 1.25rem;
 	margin: 4rem 0 0 0;
 	padding: 0 0 .25rem 0;
@@ -189,6 +190,7 @@ h2,
 
 h3,
 .h3 {
+	border: none;
 	font-size: 1rem;
 }
 
@@ -349,11 +351,6 @@ time {
 	padding: 0 0 1rem 0;
 }
 
-.archive h2 {
-	border-bottom: 3px solid var(--color-grayer);
-	margin: 4rem 0 0 0;
-}
-
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
 	.archive_links {
 		display: grid;
@@ -361,10 +358,6 @@ time {
 		grid-template-columns: 5fr 2fr;
 		grid-template-rows: auto;
 	}
-}
-
-.archive_links h2 {
-	padding: 0 0 .25rem 0;
 }
 
 .archive_links_list p {
@@ -452,7 +445,7 @@ time {
 	font-family: var(--font-sans);
 	font-size: .9rem;
 	grid-column: 1/-1;
-	padding: 1rem 0 0 0;
+	padding: 1rem 0 1rem 0;
 }
 
 .single_sidebar {
@@ -473,45 +466,45 @@ time {
 	}
 }
 
-.single abbr[title],
-.single dfn[title] {
+.single_content abbr[title],
+.single_content dfn[title] {
 	cursor: help;
     text-decoration: underline;
     	text-decoration-style: dotted;
     	text-decoration-color: var(--color-second);
 }
 
-.single bold,
-.single strong {
+.single_content bold,
+.single_content strong {
 	font-weight: 800;
 }
 
-.single blockquote {
+.single_content blockquote {
 	border-left: .25rem solid var(--color-second);
 	margin: 0 0 1rem 0;
 	padding: 0 0 0 1rem;
 }
 
-.single blockquote p:last-of-type {
+.single_content blockquote p:last-of-type {
 	margin-bottom: 0;
 }
 
-.single code,
-.single pre {
+.single_content code,
+.single_content pre {
 	font-family: var(--font-mono);
 	font-size: .9rem;
 }
 
-.single del {
+.single_content del {
 	text-decoration: line-through;
 }
 
-.single figure {
+.single_content figure {
 	margin-bottom: 1rem;
 	max-width: 100%;
 }
 
-.single figure figcaption {
+.single_content figure figcaption {
 	color: var(--color-gray);
 	font-family: var(--font-serif);
 	font-size: .9rem;
@@ -519,36 +512,40 @@ time {
 	text-align: right;
 }
 
-.single .footnotes {
+.single_content .footnotes {
 	border-top: 3px solid var(--color-whitish);
 	font-size: .9rem;
 	margin: 2rem 0 0 0;
 }
 
-.single .footnotes ol {
+.single_content .footnotes ol {
 	counter-reset: section;
 	list-style-type: none;
 }
 
-.single .footnotes ol li {
+.single_content .footnotes ol li {
 	margin: 0 0 1rem 0;
 }
 
-.single .footnotes ol li::before {
+.single_content .footnotes ol li::before {
 	content: counters(section,".") ". ";
 	counter-increment: section;
 	font-weight: 800;
 }
 
-.single .footnotes ol li p {
+.single_content .footnotes ol li p {
 	display: inline;
 }
 
-.single ins {
+.single_content ins {
 	text-decoration: none;
 }
 
-.single hr {
+.single_content h2 {
+	margin: 4rem 0 1rem 0;
+}
+
+.single_content hr {
 	border: 0;
 	color: inherit;
 	margin: 0;
@@ -556,50 +553,50 @@ time {
 	text-align: center;
 }
 
-.single hr::before {
+.single_content hr::before {
 	content: "❧";
 	font-size: 2rem;
 }
 
-.single .footnotes hr::before {
+.single_content .footnotes hr::before {
 	content: "";
 }
 
-.single mark {
+.single_content mark {
 	background: var(--color-second);
 }
 
-.single p {
+.single_content p {
 	margin: 0 0 1rem 0;
 }
 
-.single .single_sidebar p {
+.single_sidebar p {
 	margin: 0 0 0 0;
 }
 
-.single pre {
+.single_content pre {
 	white-space: pre-wrap;
 	margin-bottom: 1em;
 	padding: 1em;
 }
 
-.single sub,
-.single sup {
+.single_content sub,
+.single_content sup {
 	font-size: .8rem;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
 }
 
-.single sub {
+.single_content sub {
 	bottom: -.3rem;
 }
 
-.single sup {
+.single_content sup {
 	top: -.3rem;
 }
 
-.single table {
+.single_content table {
 	font-variant-numeric: tabular-nums;
 	border-top: 3px solid var(--color-gray);
 	border-bottom: 3px solid var(--color-gray);
@@ -610,21 +607,21 @@ time {
 	width: 100%;
 }
 
-.single table thead tr {
+.single_content table thead tr {
 	border-top: none;
 	border-bottom: 3px solid var(--color-grayer);
 }
 
-.single table th,
-.single table td {
+.single_content table th,
+.single_content table td {
 	padding: .5rem 0;
 }
 
-.single table tr {
+.single_content table tr {
 	border-top: 3px solid var(--color-whitish);
 }
 
-.single ul {
+.single_content ul {
 	list-style: outside square;
 	margin: 0 0 1rem 1rem;
 }

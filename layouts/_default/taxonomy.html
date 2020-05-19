@@ -7,7 +7,7 @@
 
 	<div class="archive_links">
 		<div class="archive_links_list archive_links_list_alone">
-			<h2 class="smtitle">{{ T "by_year" }}</h2>
+			<h2>{{ T "by_year" }}</h2>
 			<div class="archive_links_years">
 				{{ range (.Data.Pages.GroupByDate "2006") }}
 					<p><a href="#{{ .Key }}">{{ .Key }}</a> <span class="archive_links_list_count">{{ len .Pages }}</p>
