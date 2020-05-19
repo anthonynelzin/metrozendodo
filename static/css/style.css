@@ -499,12 +499,12 @@ time {
 	text-decoration: line-through;
 }
 
-.single_content figure {
+.single figure {
 	margin-bottom: 1rem;
 	max-width: 100%;
 }
 
-.single_content figure figcaption {
+.single figure figcaption {
 	color: var(--color-gray);
 	font-family: var(--font-serif);
 	font-size: .9rem;
