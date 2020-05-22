@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<article class="h-entry main_content single">
+<article class="h-entry main_content grid grid-content single">
 	<header class="single_header">
 		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 			{{ $image := $hero.Resize "800x q85" }}
@@ -17,7 +17,7 @@
 		{{ .Content }}
 	</div>
 	
-	<div class="single_sidebar">
+	<div class="single_sidebar grid grid-2">
 		{{ if $nuancier := .Resources.GetMatch "nuancier.jpg" }}
 		<aside class="single_header_hero single_sidebar_aside">
 			{{ $image := $nuancier.Resize "400x q85" }}

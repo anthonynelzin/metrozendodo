@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<article class="h-entry main_content single">
+<article class="h-entry main_content grid grid-content single">
 	<header class="single_header">
 		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 			{{ $image := $hero.Resize "800x q85" }}
@@ -17,7 +17,7 @@
 		{{ .Content }}
 	</div>
 	
-	<div class="single_sidebar">
+	<div class="single_sidebar grid grid-2">
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "date" }}</h2>
 			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
