@@ -7,7 +7,7 @@
 	
 	<div class="single_archive">
 		{{ range (.Data.Pages.GroupByDate "2006") }}
-			<h2 id="{{ .Key }}">{{ .Key }}</h2>
+			<h2 id="{{ .Key }}">{{ .Key }} <span class="count">({{ len .Pages }})</span></h2>
 	
 			<div class="grid grid-auto">
 				{{ range .Pages }}
@@ -24,7 +24,7 @@
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "by_year" }}</h2>
 			{{ range (.Data.Pages.GroupByDate "2006") }}
-				<p><a href="#{{ .Key }}">{{ .Key }}</a> <span class="archive_links_list_count">{{ len .Pages }}</span></p>
+				<p><a href="#{{ .Key }}">{{ .Key }}</a> <span class="count">({{ len .Pages }})</span></p>
 			{{ end }}
 		</aside>
 		
@@ -32,7 +32,7 @@
 			<h2 class="h3">{{ T "by_tag" }}</h2>
 			{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
 			{{ range (index .Site.Taxonomies $section_tags) }}
-				<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="archive_links_list_count">{{ len .Pages }}</span></p>
+				<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="count">({{ len .Pages }})</span></p>
 			{{ end }}
 		</aside>
 	</div><!-- .single-sidebar -->
