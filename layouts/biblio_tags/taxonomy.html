@@ -1,35 +1,33 @@
 {{ define "main" }}
 
-<div class="main_content archive">
+<div class="main_content grid grid-content archive">
 	<header class="single_header">
-		<h1>{{ .Title }}</h1>
+		<h1>{{ .Title }} <span class="count">({{ len .Pages }})</span></h1>
 	</header>
-			
-	<div class="archive_links">
-		<div class="archive_links_list archive_links_list_alone">
-			<h2>{{ T "by_year" }}</h2>
-			<div class="archive_links_years">
-				{{ range (.Data.Pages.GroupByDate "2006") }}
-					<p><a href="#{{ .Key }}">{{ .Key }}</a> <span class="archive_links_list_count">{{ len .Pages }}</p>
-				{{ end }}
-			</div>
-		</div>
-	</div>
 
-	{{ range (.Data.Pages.GroupByDate "2006") }}
-		<section class="archive_articles">
-			<h2 id="{{ .Key }}">{{ .Key }}</h2>
+	<div class="single_archive">
+		{{ range (.Data.Pages.GroupByDate "2006") }}
+			<h2 id="{{ .Key }}">{{ .Key }} <span class="count">({{ len .Pages }})</span></h2>
 	
-			<div class="archive_articles_content">
+			<div class="grid grid-auto">
 				{{ range .Pages }}
 				<article>
 					<h3><a href="{{ .Permalink }}">{{ range .Params.Biblio_auteurs }}<span class="comma">{{ . }}</span>{{ end }} — <i>{{ .Title }}</i></a></h3>	
-					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+					<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }}</time>
 				</article>
 				{{ end }}
 			</div>
-		</section>
-	{{ end }}
+		{{ end }}
+	</div><!-- .single_archive -->
+	
+	<div class="single_sidebar grid grid-2">
+		<aside class="single_sidebar_aside">
+			<h2 class="h3">{{ T "by_year" }}</h2>
+			{{ range (.Data.Pages.GroupByDate "2006") }}
+				<p><a href="#{{ .Key }}">{{ .Key }}</a> <span class="count">({{ len .Pages }})</span></p>
+			{{ end }}
+		</aside>
+	</div><!-- .single-sidebar -->
 </div>
 
 {{ end }}
