@@ -3,6 +3,7 @@
 <div class="main_content grid grid-content archive">
 	<header class="single_header">
 		<h1>{{ .Title }} <span class="count">({{ len .Pages }} {{ .Params.Articles }})</span></h1>
+		{{ with .Description }}<p class="single_header_description">{{ . }}</p>{{ end }}
 	</header>
 			
 	<div class="single_archive">

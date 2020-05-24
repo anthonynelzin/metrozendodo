@@ -391,6 +391,11 @@ time,
 	padding: 0 0 1rem 0;
 }
 
+.single_header_description {
+	font-family: var(--font-serif);
+	font-style: italic;
+}
+
 .single_header_hero {
 	grid-column: 1/-1;
 	width: 100%;
