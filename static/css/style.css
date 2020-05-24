@@ -413,11 +413,13 @@ time,
 	font-family: var(--font-sans);
 	font-size: .9rem;
 	grid-column: 1/-1;
+	margin: 2rem 0 0 0;
 	padding: 1rem 0 0 0;
 }
 
 .single_sidebar {
 	grid-column: 1/-1;
+	margin: 2rem 0 0 0;
 }
 
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
@@ -425,6 +427,7 @@ time,
 		grid-template-columns: 1fr;
 		grid-column: 2;
 		grid-row: 2;
+		margin: 0 0 0 0;
 		text-align: right;
 	}
 	
@@ -482,7 +485,7 @@ time,
 .single_content .footnotes {
 	border-top: 3px solid var(--color-whitish);
 	font-size: .9rem;
-	margin: 2rem 0 0 0;
+	margin: 1rem 0 0 0;
 }
 
 .single_content .footnotes ol {
