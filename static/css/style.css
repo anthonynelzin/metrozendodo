@@ -141,14 +141,6 @@ a:hover {
     }
 }
 
-.header a:focus,
-.header a:hover,
-.footer a:focus,
-.footer a:hover {
-	background: var(--color-white);
-	color: var(--color-black);
-}
-
 .comma:not(:last-of-type)::after {
 	content: ", ";
 }
@@ -208,9 +200,9 @@ h1,
 
 h2,
 .h2 {
-	border-bottom: 3px solid var(--color-whitish);
+	border-bottom: .25rem solid var(--color-whitish);
 	font-size: 1.25rem;
-	margin: 4rem 0 1rem 0;
+	margin: 8rem 0 .5rem 0;
 	padding: 0 0 .25rem 0;
 }
 
@@ -335,8 +327,8 @@ time,
 }
 
 .main_content {
-	border-top: 3px solid var(--color-gray);
-	border-bottom: 3px solid var(--color-gray);
+	border-top: .25rem solid var(--color-gray);
+	border-bottom: .25rem solid var(--color-gray);
 	padding: 1rem 0 1rem 0;
 }
 
@@ -358,7 +350,7 @@ time,
 **************************/
 
 .index_article {
-	border-top: 3px solid var(--color-whitish);
+	border-top: .25rem solid var(--color-whitish);
 	padding: 1rem 0;
 }
 
@@ -371,14 +363,6 @@ time,
 	padding: 1rem 0 0 0;
 }
 
-.index_article a {
-	display: inline-block;
-}
-
-.index_article time {
-	display: block;
-}
-
 /****************************
 *****************************
 * Mise en page des articles *
@@ -386,7 +370,7 @@ time,
 ****************************/
 
 .single_header {
-	border-bottom: 3px solid var(--color-whitish);
+	border-bottom: .25rem solid var(--color-whitish);
 	grid-column: 1/-1;
 	padding: 0 0 1rem 0;
 }
@@ -414,17 +398,16 @@ time,
 }
 
 .single_contact {
-	border-top: 3px solid var(--color-whitish);
+	border-top: .25rem solid var(--color-whitish);
 	font-family: var(--font-sans);
 	font-size: .9rem;
 	grid-column: 1/-1;
-	margin: 2rem 0 0 0;
 	padding: 1rem 0 0 0;
 }
 
 .single_sidebar {
 	grid-column: 1/-1;
-	margin: 2rem 0 0 0;
+	margin: 4rem 0 0 0;
 }
 
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
@@ -488,7 +471,7 @@ time,
 }
 
 .single_content .footnotes {
-	border-top: 3px solid var(--color-whitish);
+	border-top: .25rem solid var(--color-whitish);
 	font-size: .9rem;
 	margin: 1rem 0 0 0;
 }
@@ -569,8 +552,8 @@ time,
 
 .single_content table {
 	font-variant-numeric: tabular-nums;
-	border-top: 3px solid var(--color-gray);
-	border-bottom: 3px solid var(--color-gray);
+	border-top: .12rem solid var(--color-gray);
+	border-bottom: .12rem solid var(--color-gray);
 	border-collapse: collapse;
 	margin: 0 0 1rem 0;
 	padding: 0;
@@ -580,7 +563,7 @@ time,
 
 .single_content table thead tr {
 	border-top: none;
-	border-bottom: 3px solid var(--color-grayer);
+	border-bottom: .12rem solid var(--color-grayer);
 }
 
 .single_content table th,
@@ -589,7 +572,7 @@ time,
 }
 
 .single_content table tr {
-	border-top: 3px solid var(--color-whitish);
+	border-top: .12rem solid var(--color-whitish);
 }
 
 .single_content ul {
