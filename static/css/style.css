@@ -244,8 +244,6 @@ time,
 
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
 	body {
-		-webkit-box-shadow: 5px 5px 10px 0px var(--color-first-shadow);
-		box-shadow: 5px 5px 10px 0px var(--color-first-shadow);
 		display: grid;
 			grid-template-columns: max-content max-content 1fr;
 			justify-content: space-between;
