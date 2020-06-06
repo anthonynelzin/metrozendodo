@@ -536,16 +536,14 @@ time,
 .single_content sup {
 	font-size: .8rem;
 	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
 }
 
 .single_content sub {
-	bottom: -.3rem;
+	vertical-align: sub;
 }
 
 .single_content sup {
-	top: -.3rem;
+	vertical-align: super;
 }
 
 .single_content table {
