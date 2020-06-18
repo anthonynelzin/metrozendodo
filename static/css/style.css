@@ -10,10 +10,13 @@
 ******************************
 *****************************/
 
+@import url("../fonts/css/ibm-plex.css");
+
 :root {
-	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
-	--font-serif: Georgia, "Cambria", "Lucida Bright", serif;
-    --font-mono: Monaco, "Courier New", Courier, monospace;
+	--font-sans: "IBM Plex Sans", "Helvetica Neue", "Helvetica", sans-serif;
+	--font-condensed: "IBM Plex Sans Condensed", "Helvetica Neue", "Helvetica", sans-serif;
+	--font-serif: "IBM Plex Serif", Georgia, "Cambria", "Lucida Bright", serif;
+    --font-mono: "IBM Plex Mono", "Menlo", Courier, monospace;
 }
 
 *, *:before, *:after {
@@ -182,7 +185,7 @@ h3,
 .h1,
 .h2,
 .h3 {
-	font-family: var(--font-sans);
+	font-family: var(--font-condensed);
 	font-weight: 800;
 	-webkit-hyphens: none;
 	-ms-hypens: none;
@@ -261,6 +264,7 @@ time,
 }
 
 .header_brand {
+	font-family: var(--font-condensed);
 	font-weight: 800;
 	align-self: start;
 }
