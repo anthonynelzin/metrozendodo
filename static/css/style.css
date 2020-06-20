@@ -106,8 +106,7 @@ body {
 	color: var(--color-text);
 	font-size: 1rem;
 	font-family: var(--font-sans);
-		font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss04' 1, 'ss07' 1;
-		font-feature-settings: 'liga', 'clig';
+		font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss04' 1, 'ss07' 1, 'liga', 'clig';
 	-webkit-hyphens: auto;
 	-ms-hypens: auto;
 	hyphens: auto;
