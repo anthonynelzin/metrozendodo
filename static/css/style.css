@@ -617,44 +617,51 @@ time,
 	}
 	
 	.site-main {
+		background: white;
 		margin: 0 0 1rem 0;
 		padding: 0 0 0 0;
 	}
 	
+	.main_content,
 	.single_header,
-	.single_content {
+	.single_content,
+	.single_content .footnotes {
 		border: none;
 	}
 	
-	.single a {
+	.single_content a {
 		text-decoration: none;
 		word-wrap: break-word;
 	}
 	
-	.single a[href^=http]:before,
-	.single a[href^=https]:before {
+	.single_content a[href^=http]:before,
+	.single_content a[href^=https]:before {
 		color: var(--color-gray);
 		content: "[";
 	}
 	
-	.single a[href^=http]:after,
-	.single a[href^=https]:after {
+	.single_content a[href^=http]:after,
+	.single_content a[href^=https]:after {
 		color: var(--color-gray);
 		content: "](" attr(href) ")";
 	}
 	
-	.single figure {
+	.single_content blockquote {
+		border-left: .25rem solid;
+	}
+	
+	.single_content figure {
 		break-inside: avoid;
 	}
 	
-	.single figure iframe {
+	.single_content figure iframe {
 		display: none;
 		height: 0;
 		width: 0;	
 	}
 	
-	.single h2,
-	.single h3 {
+	.single_content h2,
+	.single_content h3 {
    		break-after: avoid-page;
    	}
 }
