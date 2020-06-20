@@ -1,7 +1,14 @@
 {{ define "main" }}
 
-<article class="h-entry main_content grid grid-content single">
+<article class="h-entry main_content grid grid-content single biblio">
 	<header class="single_header">
+		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+			{{ $image := $hero.Resize "1000x q85" }}
+				<figure class="single_header_hero" aria-hidden="true">
+					<img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' />
+				</figure>
+		{{ end }}
+	
 		<h1 class="p-name single_header_title">{{ range .Params.Biblio_auteurs }}<span class="comma">{{ . }}</span>{{ end }} — <i>{{ .Title }}</i></h1>	
 	</header>
 	
@@ -10,9 +17,9 @@
 	</div>
 	
 	<div class="single_sidebar grid grid-2">
-		<aside class="single_header_hero single_sidebar_aside">
+		<aside class="single_sidebar_hero single_sidebar_aside" aria-hidden="true">
 			{{ if $hero := .Resources.GetMatch "hero.jpg" }}
-				{{ $image := $hero.Resize "800x q85" }}
+				{{ $image := $hero.Resize "300x q85" }}
 					<img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' />
 			{{ end }}
 		</aside>
