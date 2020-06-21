@@ -11,14 +11,16 @@
 *****************************/
 
 @font-face {
-	src: url("../fonts/IBMPlexSansVar-Roman.woff2") format("woff2-variations");
+	font-display: swap;
 	font-family: "IBM Plex Sans Variable";
 	font-style: normal;
+	src: url("../fonts/IBMPlexSansVar-Roman.woff2") format("woff2-variations");
 }
 @font-face {
-	src: url("../fonts/IBMPlexSansVar-Italic.woff2") format("woff2-variations");
+	font-display: swap;
 	font-family: "IBM Plex Sans Variable";
 	font-style: italic;
+	src: url("../fonts/IBMPlexSansVar-Italic.woff2") format("woff2-variations");
 }
 
 :root {
