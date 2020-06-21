@@ -34,8 +34,8 @@
 			<h2 class="h3">Acheter</h2>
 			<div class="grid grid-auto-mini">
 				{{ range .Params.link }}
-				<p>{{ . | safeHTML }}</p>
-			{{ end }}
+					<p>{{ . | safeHTML }}</p>
+				{{ end }}
 			</div>
 		</aside>
 		{{ end }}
@@ -57,12 +57,14 @@
 			{{ with .Params.AchatPrix }}<p>{{ . }}</p>{{ end }}
 		</aside>
 		
-		{{ with .Params.LectureDebut }}
+		{{ if .Params.Lecture }}
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">Lecture</h2>
-			<p>{{ . }}{{ end }}</p>
-			<p>{{ with .Params.LectureFin }}{{ . }}</p>{{ end }}
+			{{ range .Params.Lecture }}
+				<p>{{ . }}</p>
+			{{ end }}
 		</aside>
+		{{ end }}
 		
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">Conservation</h2>
