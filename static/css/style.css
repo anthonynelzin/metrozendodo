@@ -198,8 +198,7 @@ h3,
 	-webkit-hyphens: none;
 	-ms-hypens: none;
 	hyphens: none;
-	letter-spacing: -.05rem;
-	line-height: 1.4;
+	line-height: 1.2;
 	margin: 0;
 	padding: 0;
 }
@@ -274,17 +273,12 @@ time,
 		align-items: center;
 		flex-flow: row wrap;
 		justify-content: space-between;
-	padding: 1rem;
+	padding: 1rem 1rem 1rem 1rem;
 }
 
 .header_brand {
 	font-weight: 700;
 	font-variation-settings: "wght" 700, "wdth" 85;
-	letter-spacing: -.05rem;
-}
-
-.header_brand_link {
-	display: inline-block;
 }
 
 .site-menu {
@@ -293,7 +287,7 @@ time,
 		align-items: start;
 		justify-content: space-between;
 	line-height: 2;
-	padding: 0 1rem;
+	padding: 0 1rem 0 1rem;
 }
 
 .menu_pages {
@@ -304,24 +298,17 @@ time,
 	@media screen and (min-width: 50rem) and (min-height: 30rem) {
 		.site-header {
 			flex-flow: column;
-			text-align: center;
 		}
 	
-		.header_brand {
-			max-width: 2rem;
-		}
-	
-		.header_brand_title,
+		.header_brand,
 		.header_signature {
-			line-height: 1;
-			writing-mode: vertical-rl;
-				text-orientation: sideways;
+			-webkit-writing-mode: vertical-lr;
+			writing-mode: vertical-lr;
 		}
 	
 		.site-menu {
 			flex-flow: column;
-			line-height: inherit;
-			padding: 1rem 1rem 1rem 0;
+			padding: 1rem 1rem 1rem 1rem;
 		}
 	
 		.menu_pages {
@@ -332,7 +319,7 @@ time,
 
 .site-main {
 	background: var(--color-main);
-	padding: 1rem;
+	padding: 1rem 1rem 1rem 1rem;
 }
 
 .main_content {
