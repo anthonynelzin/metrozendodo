@@ -277,14 +277,9 @@ time,
 }
 
 .header_brand {
-	align-self: start;
 	font-weight: 700;
 	font-variation-settings: "wght" 700, "wdth" 85;
 	letter-spacing: -.05rem;
-}
-
-.header_signature {
-	align-self: end;
 }
 
 .header_brand_link {
@@ -315,13 +310,9 @@ time,
 			max-width: 2rem;
 		}
 	
-		.header_brand_title {
-			writing-mode: vertical-rl;
-				text-orientation: sideways;
-			padding: .5rem 0 0 0;
-		}
-	
+		.header_brand_title,
 		.header_signature {
+			line-height: 1;
 			writing-mode: vertical-rl;
 				text-orientation: sideways;
 		}
@@ -333,7 +324,6 @@ time,
 		}
 	
 		.menu_pages {
-			align-self: end;
 			text-align: left;
 		}
 	}
