@@ -11,11 +11,13 @@
 *****************************/
 
 @font-face {
+	font-display: optional;
 	font-family: "IBM Plex Sans Variable";
 	font-style: normal;
 	src: url("../fonts/IBMPlexSansVar-Roman.woff2") format("woff2-variations");
 }
 @font-face {
+	font-display: optional;
 	font-family: "IBM Plex Sans Variable";
 	font-style: italic;
 	src: url("../fonts/IBMPlexSansVar-Italic.woff2") format("woff2-variations");
@@ -106,7 +108,6 @@ body {
 	color: var(--color-text);
 	font-size: 1rem;
 	font-family: var(--font-sans);
-		font-display: swap;
 		font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss04' 1, 'ss07' 1, 'liga', 'clig';
 	-webkit-hyphens: auto;
 	-ms-hypens: auto;
