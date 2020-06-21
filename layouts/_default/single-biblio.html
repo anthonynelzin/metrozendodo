@@ -32,11 +32,11 @@
 		{{ if .Params.link }}
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">Acheter</h2>
-			<ul class="unstyled">
+			<div class="grid grid-auto-mini">
 				{{ range .Params.link }}
-				<li>{{ . | safeHTML }}</li>
+				<p>{{ . | safeHTML }}</p>
 			{{ end }}
-				</ul>
+			</div>
 		</aside>
 		{{ end }}
 	
@@ -66,19 +66,19 @@
 		
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">Conservation</h2>
-			<ul class="unstyled">
-				{{ range .Params.Biblio_localisations }}<li><a href="{{ "/biblio/localisations/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>{{ end }}
-			</ul>
+			{{ range .Params.Biblio_localisations }}
+				<p><a href="{{ "/biblio/localisations/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
+			{{ end }}
 		</aside>
 	
 		{{ if .Params.biblio_tags }}
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "tags" }}</h2>
-			<ul class="unstyled">
+			<div class="grid grid-auto-mini">
 				{{ range .Params.biblio_tags }}
-					<li><a class="p-category" href="{{ "/biblio/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					<p><a class="p-category" href="{{ "/biblio/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
 				{{ end }}
-			</ul>
+			</div>
 		</aside>
 		{{ end }}
 	</div><!-- .single_sidebar -->

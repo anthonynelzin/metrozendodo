@@ -33,44 +33,40 @@
 		{{ if .Params.link }}
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">Acheter</h2>
-			<ul class="unstyled">
+			<div class="grid grid-auto-mini">
 				{{ range .Params.link }}
-				<li>{{ . | safeHTML }}</li>
-			{{ end }}
-				</ul>
+					<p>{{ . | safeHTML }}</p>
+				{{ end }}
+			</div>
 		</aside>
 		{{ end }}
 		
 		{{ if .Params.stylo_marques }}
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "brands" }}</h2>
-			<ul class="unstyled">
-				{{ range .Params.stylo_marques }}
-					<li><a class="p-category" href="{{ "/stylo/marques/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-				{{ end }}
-			</ul>
+			{{ range .Params.stylo_marques }}
+				<p><a class="p-category" href="{{ "/stylo/marques/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
+			{{ end }}
 		</aside>
 		{{ end }}
 		
 		{{ if .Params.stylo_teintes }}
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "shades" }}</h2>
-			<ul class="unstyled">
-				{{ range .Params.stylo_teintes }}
-					<li><a class="p-category" href="{{ "/stylo/teintes/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-				{{ end }}
-			</ul>
+			{{ range .Params.stylo_teintes }}
+				<p><a class="p-category" href="{{ "/stylo/teintes/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
+			{{ end }}
 		</aside>
 		{{ end }}
 		
 		{{ if .Params.stylo_tags }}
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "tags" }}</h2>
-			<ul class="unstyled">
+			<div class="grid grid-auto-mini">
 				{{ range .Params.stylo_tags }}
-					<li><a class="p-category" href="{{ "/stylo/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					<p><a class="p-category" href="{{ "/stylo/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
 				{{ end }}
-			</ul>
+			</div>
 		</aside>
 		{{ end }}
 	</div><!-- .single_sidebar -->

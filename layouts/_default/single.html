@@ -28,9 +28,11 @@
 		{{ if (index .Params $section_tags) }}
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "tags" }}</h2>
-			{{ range (index .Params $section_tags) }}
-				<p><a class="p-category" href="/{{ $section }}/tags/{{ . | urlize }}">{{ . }}</a></p>
-			{{ end }}
+			<div class="grid grid-auto-mini">
+				{{ range (index .Params $section_tags) }}
+					<p><a class="p-category" href="/{{ $section }}/tags/{{ . | urlize }}">{{ . }}</a></p>
+				{{ end }}
+			</div>
 		</aside>
 		{{ end }}
 	</div><!-- .single_sidebar -->

@@ -24,17 +24,21 @@
 	<div class="single_sidebar grid grid-2">
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "by_year" }}</h2>
-			{{ range (.Data.Pages.GroupByDate "2006") }}
-				<p><a href="#{{ .Key }}">{{ .Key }}</a> <span class="count">({{ len .Pages }})</span></p>
-			{{ end }}
+			<div class="grid grid-auto-mini">
+				{{ range (.Data.Pages.GroupByDate "2006") }}
+					<p><a href="#{{ .Key }}">{{ .Key }}</a> <span class="count">({{ len .Pages }})</span></p>
+				{{ end }}
+			</div>
 		</aside>
 		
 		<aside class="single_sidebar_aside">
 			<h2 class="h3">{{ T "by_tag" }}</h2>
-			{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
-			{{ range (index .Site.Taxonomies $section_tags) }}
-				<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="count">({{ len .Pages }})</span></p>
-			{{ end }}
+			<div class="grid grid-auto-mini">
+				{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
+				{{ range (index .Site.Taxonomies $section_tags) }}
+					<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="count">({{ len .Pages }})</span></p>
+				{{ end }}
+			</div>
 		</aside>
 	</div><!-- .single-sidebar -->
 </div>
