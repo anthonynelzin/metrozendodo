@@ -12,8 +12,8 @@
 
 :root {
 	--font-sans: "ff-good-web-pro", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
-	--font-headings: "ff-good-web-pro", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
-	--font-serif: "ff-meta-serif-web-pro", Georgia, "Cambria", "Lucida Bright", serif;
+	--font-headings: "ff-good-headline-web-pro", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+	--font-serif: "ff-more-web-pro", Georgia, "Cambria", "Lucida Bright", serif;
     --font-mono: "ff-nuvo-mono-web-pro", Monaco, "Courier New", Courier, monospace;
 }
 
