@@ -97,7 +97,7 @@ body {
 	color: var(--color-text);
 	font-size: 1rem;
 	font-family: var(--font-sans);
-		font-feature-settings: "calt", "liga", "lnum";
+		font-feature-settings: "liga";
 	-webkit-hyphens: auto;
 	-ms-hypens: auto;
 	hyphens: auto;
@@ -190,7 +190,7 @@ h3,
 .h2,
 .h3 {
 	font-family: var(--font-headings);
-		font-weight: 800;
+		font-weight: 700;
 	-webkit-hyphens: none;
 	-ms-hypens: none;
 	hyphens: none;
@@ -273,7 +273,7 @@ time,
 
 .header_brand {
 	font-family: var(--font-headings);
-		font-weight: 800;
+		font-weight: 700;
 }
 
 .site-menu {
@@ -436,7 +436,6 @@ time,
 .single_content bold,
 .single_content strong {
 	font-weight: 700;
-	font-variation-settings: "wght" 700;
 }
 
 .single_content blockquote {
@@ -458,7 +457,7 @@ time,
 .single_content code,
 .single_content pre {
 	font-family: var(--font-mono);
-	font-size: .9rem;
+		font-feature-settings: "zero";
 }
 
 .single_content del {
@@ -496,7 +495,6 @@ time,
 	content: counters(section,".") ". ";
 	counter-increment: section;
 	font-weight: 700;
-	font-variation-settings: "wght" 700, "wdth" 85;
 }
 
 .single_content .footnotes ol li p {
