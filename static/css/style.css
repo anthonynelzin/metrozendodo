@@ -10,23 +10,11 @@
 ******************************
 *****************************/
 
-@font-face {
-	font-display: optional;
-	font-family: "IBM Plex Sans Variable";
-	font-style: normal;
-	src: url("../fonts/IBMPlexSansVar-Roman.woff2") format("woff2-variations");
-}
-@font-face {
-	font-display: optional;
-	font-family: "IBM Plex Sans Variable";
-	font-style: italic;
-	src: url("../fonts/IBMPlexSansVar-Italic.woff2") format("woff2-variations");
-}
-
 :root {
-	--font-sans: "IBM Plex Sans Variable", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
-	--font-serif: Georgia, "Cambria", "Lucida Bright", serif;
-    --font-mono: Monaco, "Courier New", Courier, monospace;
+	--font-sans: "ff-meta-web-pro", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+	--font-headings: "ff-meta-web-pro-condensed", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+	--font-serif: "ff-meta-serif-web-pro", Georgia, "Cambria", "Lucida Bright", serif;
+    --font-mono: "ff-nuvo-mono-web-pro", Monaco, "Courier New", Courier, monospace;
 }
 
 *, *:before, *:after {
@@ -109,7 +97,7 @@ body {
 	color: var(--color-text);
 	font-size: 1rem;
 	font-family: var(--font-sans);
-		font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss04' 1, 'ss07' 1, 'liga', 'clig';
+		font-feature-settings: "calt", "liga", "lnum";
 	-webkit-hyphens: auto;
 	-ms-hypens: auto;
 	hyphens: auto;
@@ -149,6 +137,10 @@ a:hover {
 	a:hover {
 	    color: var(--color-black) !important;
     }
+}
+
+.caps {
+	font-feature-settings: "smcp";
 }
 
 .comma:not(:last-of-type)::after {
@@ -198,8 +190,7 @@ h3,
 .h2,
 .h3 {
 	font-family: var(--font-sans);
-		font-weight: 700;
-		font-variation-settings: "wght" 700, "wdth" 85;
+		font-weight: 900;
 	-webkit-hyphens: none;
 	-ms-hypens: none;
 	hyphens: none;
@@ -211,14 +202,12 @@ h3,
 h1,
 .h1 {
 	font-size: 1.5rem;
-	letter-spacing: -.1rem;
 }
 
 h2,
 .h2 {
 	border-bottom: .25rem solid var(--color-whitish);
 	font-size: 1.25rem;
-	letter-spacing: -.075rem;
 	margin: 4rem 0 .5rem 0;
 	padding: 0 0 .25rem 0;
 }
@@ -226,7 +215,6 @@ h2,
 h3,
 .h3 {
 	font-size: 1em;
-	letter-spacing: -.05rem;
 }
 
 .h3 {
@@ -284,9 +272,7 @@ time,
 }
 
 .header_brand {
-	font-weight: 700;
-	font-variation-settings: "wght" 700, "wdth" 85;
-	letter-spacing: -.075rem;
+	font-weight: 900;
 }
 
 .site-menu {
@@ -388,6 +374,7 @@ time,
 }
 
 .single_content {
+	font-family: var(--font-serif);
 	grid-column: 1/-1;
 }
 
