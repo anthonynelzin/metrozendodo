@@ -101,22 +101,28 @@ body {
 	-webkit-hyphens: auto;
 	-ms-hypens: auto;
 	hyphens: auto;
-	-webkit-hyphenate-limit-before: 3;
-	-webkit-hyphenate-limit-after: 2;
-	-ms-hyphenate-limit-chars: 5 3 2;
-	hyphenate-limit-chars: 5 3 2;
-	-webkit-hyphenate-limit-lines: 3;
-	-ms-hyphenate-limit-lines: 3;
-	hyphenate-limit-lines: 3;
-	-ms-hyphenate-limit-zone: 6%;
-	hyphenate-limit-zone: 6%;
-	-ms-hyphenate-limit-last: always;
-	hyphenate-limit-last: always;
+		-webkit-hyphenate-limit-before: 3;
+		-webkit-hyphenate-limit-after: 2;
+		-ms-hyphenate-limit-chars: 5 3 2;
+		hyphenate-limit-chars: 5 3 2;
+		-webkit-hyphenate-limit-lines: 3;
+		-ms-hyphenate-limit-lines: 3;
+		hyphenate-limit-lines: 3;
+		-ms-hyphenate-limit-zone: 6%;
+		hyphenate-limit-zone: 6%;
+		-ms-hyphenate-limit-last: always;
+		hyphenate-limit-last: always;
 	line-height: 1.8;
 	padding: 1rem 1rem 1rem 1rem;
 	margin: 1rem 0 1rem 0;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
+}
+
+@supports (margin: env(safe-area-inset-top)) {
+	body {
+		margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+	}
 }
 
 a {
