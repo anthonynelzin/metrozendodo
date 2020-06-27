@@ -575,7 +575,7 @@ time,
 
 .single_content ul {
 	list-style: outside square;
-	margin: 0 0 1rem 1rem;
+	margin: 0 0 1rem 1.25rem;
 }
 
 @media print {
