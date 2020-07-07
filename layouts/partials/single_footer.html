@@ -1,0 +1,18 @@
+<div class="single_footer grid grid-2">
+	<div class="single_footer_related">
+		{{ $related := .Site.RegularPages.Related . | first 4 }}
+		{{ with $related }}
+		<h2 class="h3">{{ T "related" }}</h2>
+			{{ range . }}
+				<p><a href="{{ .Permalink }}" rel="next">{{ .Title }}</a></p>
+			{{ end }}
+		{{ end }}
+	</div>
+
+	<div class="single_footer_then">
+		<h2 class="h3">{{ T "then" }}</h2>
+		{{ range .Site.Menus.then }}
+			<p><a href="{{ .URL }}" rel="next">{{ .Name }}</a></p>
+		{{ end }}
+	</div>
+</div>

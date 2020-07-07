@@ -85,9 +85,7 @@
 		{{ end }}
 	</div><!-- .single_sidebar -->
 	
-	<div class="single_contact">
-		<p>{{ T "contact" . | safeHTML }}</p>
-	</div>
+	{{ partial "single_footer.html" . }}
 </article>
 
 {{ end }}
