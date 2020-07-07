@@ -4,7 +4,7 @@
 		{{ with $related }}
 		<h2 class="h3">{{ T "related" }}</h2>
 			{{ range . }}
-				<p><a href="{{ .Permalink }}" rel="next">{{ .Title }}</a></p>
+				<p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
 			{{ end }}
 		{{ end }}
 	</div>
