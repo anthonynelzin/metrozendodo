@@ -246,6 +246,15 @@ time,
 	color: var(--color-gray);
 }
 
+ul {
+	list-style: inside square;
+	margin: 0 0 0 0;
+}
+
+ul + p {
+	margin: 1rem 0 1rem 0 !important;
+}
+
 .unstyled {
 	list-style: none !important;
 	margin: 0 !important;
@@ -397,7 +406,6 @@ time,
 
 .single_footer {
 	font-family: var(--font-sans);
-	font-size: .8rem;
 	grid-column: 1/-1;
 	padding: 1rem 0 0 0;
 }
@@ -589,11 +597,6 @@ time,
 
 .single_content table tr {
 	border-top: .12rem solid var(--color-whitish);
-}
-
-.single_content ul {
-	list-style: outside square;
-	margin: 0 0 1rem 1.25rem;
 }
 
 @media print {

@@ -3,16 +3,20 @@
 		{{ $related := .Site.RegularPages.Related . | first 4 }}
 		{{ with $related }}
 		<h2 class="h3">{{ T "related" }}</h2>
+		<ul>
 			{{ range . }}
-				<p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+				<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
 			{{ end }}
+		</ul>
 		{{ end }}
 	</div>
 
 	<div class="single_footer_then">
 		<h2 class="h3">{{ T "then" }}</h2>
-		{{ range .Site.Menus.then }}
-			<p><a href="{{ .URL }}" rel="next">{{ .Name }}</a></p>
-		{{ end }}
+		<ul>
+			{{ range .Site.Menus.then }}
+				<li><a href="{{ .URL }}" rel="next">{{ .Name }}</a></li>
+			{{ end }}
+		</ul>
 	</div>
 </div>
