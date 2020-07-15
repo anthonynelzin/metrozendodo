@@ -1,23 +1,23 @@
 <rss version="2.0">
 	<channel>
-        <title>{{ .Site.Title }}</title>
-        <link>{{ .Permalink }}</link>
-        {{ with .Site.Params.description }}<description>{{ . }}</description>{{ end }}
-        {{ with .Site.LanguageCode }}<language>{{ . }}</language>{{ end }}
-        {{ if not .Date.IsZero }}<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
-        {{ if .Site.Params.Author.Mail }}
-        	<managingEditor>{{ .Site.Params.Author.Mail }} ({{ .Site.Params.Author.Name }})</managingEditor>
-        	<webMaster>{{ .Site.Params.Author.Mail }} ({{ .Site.Params.Author.Name }})</webMaster>
-        {{ end }}
-        {{ with .Site.Copyright }}<copyright>{{ . }}</copyright>{{ end }}
-        
-    	{{ range .Site.RegularPages | first .Site.Config.Services.RSS.Limit }}
-    	<item>
-    		<title>{{ .Title }}</title>
-    		<link>{{ .Permalink }}</link>
-    		<guid>{{ .Permalink }}</guid>
-    		<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
-    		<description>
+		<title>{{ .Site.Title }}</title>
+		<link>{{ .Permalink }}</link>
+		{{ with .Site.Params.description }}<description>{{ . }}</description>{{ end }}
+		{{ with .Site.LanguageCode }}<language>{{ . }}</language>{{ end }}
+		{{ if not .Date.IsZero }}<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+		{{ if .Site.Params.Author.Mail }}
+			<managingEditor>{{ .Site.Params.Author.Mail }} ({{ .Site.Params.Author.Name }})</managingEditor>
+			<webMaster>{{ .Site.Params.Author.Mail }} ({{ .Site.Params.Author.Name }})</webMaster>
+		{{ end }}
+		{{ with .Site.Copyright }}<copyright>{{ . }}</copyright>{{ end }}
+		
+		{{ range .Site.RegularPages | first .Site.Config.Services.RSS.Limit }}
+		<item>
+			<title>{{ .Title }}</title>
+			<link>{{ .Permalink }}</link>
+			<guid>{{ .Permalink }}</guid>
+			<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+			<description>
 				{{ printf "<![CDATA[%s" .Content }}
 				{{ printf "<hr/>" }}
 				{{ if .Params.Author }}
@@ -28,13 +28,13 @@
 				{{ printf "]]>" }}
 			</description>
 			<author>
-      			{{ if .Params.Author }}
-      				{{ .Params.Author.Mail }} ({{ .Params.Author.Name }})
-      			{{ else }}
-      				{{ .Site.Params.Author.Mail }} ({{ .Site.Params.Author.Name }})
-      			{{ end }}
-      		</author>
-      	</item>
-    	{{ end }}
-  </channel>
+				{{ if .Params.Author }}
+					{{ .Params.Author.Mail }} ({{ .Params.Author.Name }})
+				{{ else }}
+					{{ .Site.Params.Author.Mail }} ({{ .Site.Params.Author.Name }})
+				{{ end }}
+			</author>
+		</item>
+		{{ end }}
+	</channel>
 </rss>
