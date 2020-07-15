@@ -13,20 +13,21 @@
         
     	{{ range .Site.RegularPages | first .Site.Config.Services.RSS.Limit }}
     	<item>
-			<title>{{ .Title }}</title>
-			<link>{{ .Permalink }}</link>
-			<guid>{{ .Permalink }}</guid>
-			<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
-			<description>
-				{{ .Content | htmlEscape }}
-				{{ printf "&lt;hr/&gt;" }}
+    		<title>{{ .Title }}</title>
+    		<link>{{ .Permalink }}</link>
+    		<guid>{{ .Permalink }}</guid>
+    		<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+    		<description>
+				{{ printf "<![CDATA[%s" .Content }}
+				{{ printf "<hr/>" }}
 				{{ if .Params.Author }}
-					{{ printf "&lt;a href=&#34;mailto:%s&#34;&gt;Commenter par courrier électronique&lt;/a&gt;" .Params.Author.Mail }}
+					{{ printf "<a href='mailto:%s'>Commenter par courrier électronique</a>" .Params.Author.Mail }}
 				{{ else }}
-					{{ printf "&lt;a href=&#34;mailto:%s&#34;&gt;Commenter par courrier électronique&lt;/a&gt;" .Site.Params.Author.Mail }}
+					{{ printf "<a href='mailto:%s'>Commenter par courrier électronique</a>" .Site.Params.Author.Mail }}
 				{{ end }}
+				{{ printf "]]>" }}
 			</description>
-      		<author>
+			<author>
       			{{ if .Params.Author }}
       				{{ .Params.Author.Mail }} ({{ .Params.Author.Name }})
       			{{ else }}
