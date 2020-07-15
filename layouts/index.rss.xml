@@ -19,7 +19,6 @@
 			<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
 			<description>
 				{{ .Content | html }}
-				<hr/>
 				{{ if .Params.Author }}
 					{{ printf "<a href='mailto:%s'>Commenter par courrier électronique</a>" .Params.Author.Mail }}
 				{{ else }}
