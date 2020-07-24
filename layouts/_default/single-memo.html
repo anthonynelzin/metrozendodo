@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+<article class="h-entry main_content grid grid-content single">
+	<header class="single_header">
+		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+			{{ $image := $hero.Resize "1000x q85" }}
+				<figure class="single_header_hero" aria-hidden="true">
+					<img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' />
+					<figcaption>{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author.Name }}{{ end }}.</figcaption>
+				</figure>
+		{{ end }}
+	
+		<h1 class="p-name single_header_title">AJA : {{ .Title }}</h1>	
+	</header>
+
+	<div class="e-content single_content">
+		{{ .Content }}
+	</div>
+	
+	<div class="single_sidebar grid grid-2">
+		<aside class="single_sidebar_aside">
+			<h2 class="h3">{{ T "date" }}</h2>
+			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		</aside>
+	
+		{{ $section := .Section }}
+		{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
+		{{ if (index .Params $section_tags) }}
+		<aside class="single_sidebar_aside">
+			<h2 class="h3">{{ T "tags" }}</h2>
+			<div class="grid grid-auto-mini">
+				{{ range (index .Params $section_tags) }}
+					<p><a class="p-category" href="/{{ $section }}/tags/{{ . | urlize }}">{{ . }}</a></p>
+				{{ end }}
+			</div>
+		</aside>
+		{{ end }}
+	</div><!-- .single_sidebar -->
+	
+	{{ partial "single_footer.html" . }}
+</article>
+
+{{ end }}
