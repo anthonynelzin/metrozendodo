@@ -161,6 +161,7 @@ i i {
 
 .grid-auto {
 	grid-template-columns: repeat(auto-fit, minmax(33ch, 1fr));
+	row-gap: 1rem;
 }
 
 .grid-auto-mini {
