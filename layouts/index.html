@@ -1,13 +1,96 @@
 {{ define "main" }}
 
-<div class="main_content index">
-	{{ range first 25 (where .Site.RegularPages "Section" "blog") }}
-		<article class="h-entry index_article">		
-			<h1 class="p-name index_article_title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+<div class="index"><!-- Blog -->
+	<div class="grid index_header">
+		{{ with .Site.GetPage "section" "blog" }}
+		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		{{ with .Description }}<p class="index_header_description">{{ . }}</p>{{ end }}
+		{{ end }}
+	</div>
+	
+	{{ range first 10 (where .Site.RegularPages "Section" "blog") }}
+		<article class="h-entry grid index_article">		
+			<h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 			
 			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</article>
 	{{ end }}
+</div>
+
+<div class="index"><!-- Biblio -->
+	<div class="grid index_header">
+		{{ with .Site.GetPage "section" "biblio" }}
+		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		{{ with .Description }}<p class="index_header_description">{{ . }}</p>{{ end }}
+		{{ end }}
+	</div>
+	
+	<div class="grid grid-auto-nano index_gallery">
+		{{ range first 6 (where .Site.RegularPages "Section" "biblio") }}
+			<article class="h-entry">		
+				{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+				{{ $image := $hero.Resize "200x q85" }}
+					<a class="index_thumbnail" href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
+				{{ end }}
+			</article>
+		{{ end }}
+	</div>
+</div>
+
+<div class="index"><!-- Photo -->
+	<div class="grid index_header">
+		{{ with .Site.GetPage "section" "photo" }}
+		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		{{ with .Description }}<p class="index_header_description">{{ . }}</p>{{ end }}
+		{{ end }}
+	</div>
+	
+	<div class="grid grid-auto-nano index_gallery">
+		{{ range first 6 (where .Site.RegularPages "Section" "photo") }}
+			<article class="h-entry">		
+				{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+				{{ $image := $hero.Resize "200x q85" }}
+					<a class="index_thumbnail" href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
+				{{ end }}
+			</article>
+		{{ end }}
+	</div>
+</div>
+
+<div class="index"><!-- Memo -->
+	<div class="grid index_header">
+		{{ with .Site.GetPage "section" "memo" }}
+		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		{{ with .Description }}<p class="index_header_description">{{ . }}</p>{{ end }}
+		{{ end }}
+	</div>
+	
+	<div class="grid grid-2 index_compact">
+		{{ range first 5 (where .Site.RegularPages "Section" "memo") }}
+			<article class="h-entry">		
+				<h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+			</article>
+		{{ end }}
+	</div>
+</div>
+
+<div class="index"><!-- Stylo -->
+	<div class="grid index_header">
+		{{ with .Site.GetPage "section" "stylo" }}
+		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		{{ with .Description }}<p class="index_header_description">{{ . }}</p>{{ end }}
+		{{ end }}
+	</div>
+	
+	<div class="grid grid-2 index_compact">
+		{{ range first 5 (where .Site.RegularPages "Section" "stylo") }}
+			<article class="h-entry">		
+				<h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+			</article>
+		{{ end }}
+	</div>
 </div>
 
 {{ end }}

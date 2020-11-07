@@ -76,7 +76,7 @@
     
     {{ if .IsPage }}
     	@media print {
-    		.main_content:before {
+    		#main:before {
     			border: 1px solid;
     			content: "{{ T "print_credits" . | safeHTML }}";
     			display: block;
