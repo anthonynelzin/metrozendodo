@@ -65,14 +65,13 @@
 		{{ end }}
 	</div>
 	
-	<div class="grid grid-2 index_compact">
-		{{ range first 5 (where .Site.RegularPages "Section" "memo") }}
-			<article class="h-entry">		
-				<h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-			</article>
-		{{ end }}
-	</div>
+	{{ range first 5 (where .Site.RegularPages "Section" "memo") }}
+		<article class="h-entry grid index_article">		
+			<h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+			
+			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		</article>
+	{{ end }}
 </div>
 
 <div class="index"><!-- Stylo -->
@@ -83,14 +82,13 @@
 		{{ end }}
 	</div>
 	
-	<div class="grid grid-2 index_compact">
-		{{ range first 5 (where .Site.RegularPages "Section" "stylo") }}
-			<article class="h-entry">		
-				<h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-				<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
-			</article>
-		{{ end }}
-	</div>
+	{{ range first 5 (where .Site.RegularPages "Section" "stylo") }}
+		<article class="h-entry grid index_article">		
+			<h2 class="p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+			
+			<time datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+		</article>
+	{{ end }}
 </div>
 
 {{ end }}
