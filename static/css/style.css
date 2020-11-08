@@ -188,7 +188,7 @@ h3,
 .h1,
 .h2,
 .h3 {
-	font-weight: 700;
+	font-weight: normal;
 	-webkit-hyphens: none;
 	-ms-hypens: none;
 	hyphens: none;
@@ -278,7 +278,6 @@ ul + p {
 	display: flex;
 		align-items: start;
 		justify-content: space-between;
-	padding: 0 0 1rem 0;
 }
 
 .menu_pages {
@@ -297,15 +296,10 @@ ul + p {
 		-webkit-writing-mode: vertical-lr;
 		writing-mode: vertical-lr;
 	}
-	
-	.header_brand {
-		margin: 0 0 1rem 0;
-	}
 
 	.site-menu {
 		flex-flow: column;
 		margin: 0 1rem 0 1rem;
-		padding: 0 1rem 0 0;
 	}
 
 	.menu_pages {
@@ -334,20 +328,8 @@ ul + p {
 	margin: 5rem 0 0 0;
 }
 
-.index+.index {
-	margin: 5rem 0 0 0;
-}
-
 .index_header {
 	margin: 0 0 1rem 0;
-}
-
-.index_article {
-	padding: 1rem 0 1rem 0;
-}
-
-.index_article:last-of-type {
-	padding: 1rem 0 0 0;
 }
 
 .index_thumbnail:hover {
