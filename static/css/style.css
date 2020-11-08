@@ -11,10 +11,8 @@
 *****************************/
 
 :root {
-	--font-sans: "ff-good-web-pro", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
-	--font-headings: "ff-good-headline-web-pro", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
-	--font-serif: "ff-more-web-pro", Georgia, "Cambria", "Lucida Bright", serif;
-    --font-mono: "ff-nuvo-mono-web-pro", Monaco, "Courier New", Courier, monospace;
+	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+	--font-mono: Monaco, "Courier New", Courier, monospace;
 }
 
 *, *:before, *:after {
@@ -194,8 +192,7 @@ h3,
 .h1,
 .h2,
 .h3 {
-	font-family: var(--font-headings);
-		font-weight: 700;
+	font-weight: 700;
 	-webkit-hyphens: none;
 	-ms-hypens: none;
 	hyphens: none;
@@ -283,8 +280,7 @@ ul + p {
 }
 
 .header_brand {
-	font-family: var(--font-headings);
-		font-weight: 700;
+	font-weight: 700;
 }
 
 .site-menu {
@@ -413,7 +409,6 @@ ul + p {
 }
 
 .single_content {
-	font-family: var(--font-serif);
 	grid-column: 1/-1;
 }
 
@@ -428,7 +423,6 @@ ul + p {
 }
 
 .single_footer {
-	font-family: var(--font-sans);
 	grid-column: 1/-1;
 	padding: 1rem 0 0 0;
 }
