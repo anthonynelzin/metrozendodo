@@ -332,6 +332,7 @@ ul + p {
 }
 
 .index_header_title {
+	font-size: 1.25rem;
 	font-weight: 900;
 }
 
