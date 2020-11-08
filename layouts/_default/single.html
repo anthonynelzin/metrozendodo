@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<article class="h-entry grid grid-content single">
+<article class="h-entry single">
 	<header class="single_header">
 		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 			{{ $image := $hero.Resize "1000x q85" }}
@@ -19,7 +19,7 @@
 	
 	<div class="single_sidebar grid grid-2">
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">{{ T "date" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "date" }}</h2>
 			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</aside>
 	
@@ -27,7 +27,7 @@
 		{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
 		{{ if (index .Params $section_tags) }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">{{ T "tags" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "tags" }}</h2>
 			<div class="grid grid-auto-mini">
 				{{ range (index .Params $section_tags) }}
 					<p><a class="p-category" href="/{{ $section }}/tags/{{ . | urlize }}">{{ . }}</a></p>
