@@ -25,6 +25,12 @@ then:
     
 by_tag:
     other: "Par étiquette"
+by_author:
+    other: "Par auteur"
+by_publisher:
+    other: "Par éditeur"
+by_location:
+    other: "Par localisation"
 by_year:
     other: "Par année"
      
