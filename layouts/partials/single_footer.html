@@ -2,7 +2,7 @@
 	<div class="single_footer_related">
 		{{ $related := .Site.RegularPages.Related . | first 4 }}
 		{{ with $related }}
-		<h2 class="h3">{{ T "related" }}</h2>
+		<h2 class="single_sidebar_aside_title">{{ T "related" }}</h2>
 		<ul>
 			{{ range . }}
 				<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="single_footer_then">
-		<h2 class="h3">{{ T "then" }}</h2>
+		<h2 class="single_sidebar_aside_title">{{ T "then" }}</h2>
 		<ul>
 			{{ range .Site.Menus.then }}
 				<li><a href="{{ .URL }}" rel="next">{{ .Name }}</a></li>

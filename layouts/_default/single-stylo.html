@@ -26,13 +26,13 @@
 		{{ end }}
 	
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">{{ T "date" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "date" }}</h2>
 			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</aside>
 	
 		{{ if .Params.link }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">Acheter</h2>
+			<h2 class="single_sidebar_aside_title">Acheter</h2>
 			<div class="grid grid-auto-mini">
 				{{ range .Params.link }}
 					<p>{{ . | safeHTML }}</p>
@@ -43,7 +43,7 @@
 		
 		{{ if .Params.stylo_marques }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">{{ T "brands" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "brands" }}</h2>
 			{{ range .Params.stylo_marques }}
 				<p><a class="p-category" href="{{ "/stylo/marques/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
 			{{ end }}
@@ -52,7 +52,7 @@
 		
 		{{ if .Params.stylo_teintes }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">{{ T "shades" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "shades" }}</h2>
 			{{ range .Params.stylo_teintes }}
 				<p><a class="p-category" href="{{ "/stylo/teintes/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
 			{{ end }}
@@ -61,7 +61,7 @@
 		
 		{{ if .Params.stylo_tags }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">{{ T "tags" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "tags" }}</h2>
 			<div class="grid grid-auto-mini">
 				{{ range .Params.stylo_tags }}
 					<p><a class="p-category" href="{{ "/stylo/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>

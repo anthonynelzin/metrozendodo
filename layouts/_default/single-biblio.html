@@ -25,13 +25,13 @@
 		</aside>
 	
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">{{ T "date" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "date" }}</h2>
 			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</aside>
 		
 		{{ if .Params.link }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">Acheter</h2>
+			<h2 class="single_sidebar_aside_title">Acheter</h2>
 			<div class="grid grid-auto-mini">
 				{{ range .Params.link }}
 					<p>{{ . | safeHTML }}</p>
@@ -41,7 +41,7 @@
 		{{ end }}
 	
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">Informations</h2>
+			<h2 class="single_sidebar_aside_title">Informations</h2>
 			<p>{{ range .Params.Biblio_auteurs }}<span class="comma"><a href="{{ "/biblio/auteurs/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></span>{{ end }}</p>
 				<p>{{ range .Params.Biblio_editeurs }}<a href="{{ "/biblio/editeurs/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
 				<p>{{ with .Params.Annee }}{{ . }}{{ end }}</p>
@@ -51,7 +51,7 @@
 		
 		{{ with .Params.AchatDate }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">Achat</h2>
+			<h2 class="single_sidebar_aside_title">Achat</h2>
 			<p>{{ . }}{{ end }}</p>
 			{{ with .Params.AchatLieu }}<p>{{ . }}</p>{{ end }}
 			{{ with .Params.AchatPrix }}<p>{{ . }}</p>{{ end }}
@@ -59,7 +59,7 @@
 		
 		{{ if .Params.Lecture }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">Lecture</h2>
+			<h2 class="single_sidebar_aside_title">Lecture</h2>
 			{{ range .Params.Lecture }}
 				<p>{{ . }}</p>
 			{{ end }}
@@ -67,7 +67,7 @@
 		{{ end }}
 		
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">Conservation</h2>
+			<h2 class="single_sidebar_aside_title">Conservation</h2>
 			{{ range .Params.Biblio_localisations }}
 				<p><a href="{{ "/biblio/localisations/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
 			{{ end }}
@@ -75,7 +75,7 @@
 	
 		{{ if .Params.biblio_tags }}
 		<aside class="single_sidebar_aside">
-			<h2 class="h3">{{ T "tags" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "tags" }}</h2>
 			<div class="grid grid-auto-mini">
 				{{ range .Params.biblio_tags }}
 					<p><a class="p-category" href="{{ "/biblio/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>

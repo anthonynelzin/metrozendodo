@@ -10,7 +10,7 @@
 
 <div class="archive_sidebar">
 	<aside class="archive_sidebar_aside">
-		<h2 class="archive_index_title">{{ T "by_year" }}</h2>
+		<h2 class="archive_sidebar_aside_title">{{ T "by_year" }}</h2>
 		<div class="grid grid-auto-mini">
 			{{ range (.Data.Pages.GroupByDate "2006") }}
 				<p><a href="#{{ .Key }}">{{ .Key }}</a> <span class="count">({{ len .Pages }})</span></p>
@@ -19,7 +19,7 @@
 	</aside>
 	
 	<aside class="archive_sidebar_aside">
-		<h2 class="archive_index_title">{{ T "by_tag" }}</h2>
+		<h2 class="archive_sidebar_aside_title">{{ T "by_tag" }}</h2>
 		<div class="grid grid-auto-mini">
 			{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
 			{{ range (index .Site.Taxonomies $section_tags) }}
