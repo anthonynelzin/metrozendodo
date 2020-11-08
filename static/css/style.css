@@ -159,7 +159,7 @@ i i {
 }
 
 .grid-auto-mini {
-	grid-template-columns: repeat(auto-fit, minmax(21ch, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
 }
 
 .grid-2 {
@@ -312,21 +312,15 @@ ul + p {
 		column-gap: 1rem;
 }
 
-.index_header,
-.archive_header,
-.index_article {
-	align-items: center;
-	grid-template-columns: 1fr auto;
+.index_article,
+.index_biblio {
+	margin: 0 0 1rem 0;
 }
 
 .index_gallery {
 	align-items: top;
 	grid-template-columns: repeat(auto-fit, minmax(12ch, 1fr));
-}
-
-.index_biblio {
-	align-items: center;
-	grid-template-columns: auto 1fr auto;
+	row-gap: .5rem;
 }
 
 .index_header_title {
@@ -338,11 +332,30 @@ ul + p {
 	color: var(--color-gray);
 }
 
-.index_article_title,
-.index_biblio_title {
-	white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
+@media screen and (min-width: 50rem) and (min-height: 30rem) {
+	.index_header,
+	.archive_header,
+	.index_article {
+		align-items: center;
+		grid-template-columns: 1fr auto;
+	}
+
+	.index_article,
+	.index_biblio {
+		margin: 0 0 0 0;
+	}
+
+	.index_biblio {
+		align-items: center;
+		grid-template-columns: auto 1fr auto;
+	}
+
+	.index_article_title,
+	.index_biblio_title {
+		white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+	}
 }
 
 .index_article_title {
