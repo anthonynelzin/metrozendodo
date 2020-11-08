@@ -225,11 +225,6 @@ video {
 	display: inline;
 }
 
-time,
-.count {
-	color: var(--color-gray);
-}
-
 ul {
 	list-style: inside square;
 	margin: 0 0 0 0;
@@ -271,7 +266,11 @@ ul + p {
 }
 
 .header_brand {
-	font-weight: 700;
+	font-weight: 900;
+}
+
+.header_signature {
+	font-weight: 500;
 }
 
 .site-menu {
@@ -330,6 +329,22 @@ ul + p {
 
 .index_header {
 	margin: 0 0 1rem 0;
+}
+
+.index_header_title {
+	font-weight: 900;
+}
+
+.index_header_description {
+	color: var(--color-gray);
+}
+
+.index_article_title {
+	font-weight: 500;
+}
+
+.index_article_time {
+	color: var(--color-gray);
 }
 
 .index_thumbnail:hover {
@@ -586,7 +601,7 @@ ul + p {
 
 .single_content table thead tr {
 	border-top: none;
-	border-bottom: 1px solid var(--color-grayer);
+	border-bottom: 1px solid var(--color-gray);
 }
 
 .single_content table th,
