@@ -498,7 +498,7 @@ ul + p {
 .single_content blockquote {
 	font-style: italic;
 	margin: 0 0 1rem 0;
-	padding: 0 0 0 1rem;
+	padding: 0 2.5rem 0 2.5rem;
 }
 
 .single_content blockquote i,
