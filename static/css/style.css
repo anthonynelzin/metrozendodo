@@ -327,8 +327,6 @@ ul + p {
 }
 
 .single {
-	border-bottom: .25rem solid var(--color-gray);
-	border-top: .25rem solid var(--color-gray);
 	margin: 5rem 0 0 0;
 	padding: 1rem 0 1rem 0;
 }
@@ -347,8 +345,6 @@ ul + p {
 **************************/
 
 .index {
-	border-bottom: .25rem solid var(--color-gray);
-	border-top: .25rem solid var(--color-gray);
 	margin: 5rem 0 0 0;
 	padding: 1rem 0 1rem 0;
 }
@@ -358,13 +354,11 @@ ul + p {
 }
 
 .index_header {
-	border-bottom: .25rem solid var(--color-whitish);
 	margin: 0 0 1rem 0;
 	padding: 0 0 1rem 0;
 }
 
 .index_article {
-	border-bottom: 1px solid var(--color-whitish);
 	padding: 1rem 0 1rem 0;
 }
 
@@ -373,7 +367,6 @@ ul + p {
 }
 
 .index_article:last-of-type {
-	border-bottom: none;
 	padding: 1rem 0 0 0;
 }
 
@@ -406,7 +399,6 @@ ul + p {
 ****************************/
 
 .single_header {
-	border-bottom: .25rem solid var(--color-whitish);
 	grid-column: 1/-1;
 	padding: 0 0 1rem 0;
 }
@@ -496,7 +488,6 @@ ul + p {
 }
 
 .single_content blockquote {
-	border-left: .25rem solid var(--color-second);
 	font-style: italic;
 	margin: 0 0 1rem 0;
 	padding: 0 0 0 1rem;
@@ -534,7 +525,6 @@ ul + p {
 }
 
 .single_content .footnotes {
-	border-top: .25rem solid var(--color-whitish);
 	font-size: .9rem;
 	margin: 1rem 0 0 0;
 }
@@ -566,7 +556,6 @@ ul + p {
 .single_sidebar h2,
 .single_footer h2,
 .single_archive h2 {
-	border-bottom: .25rem solid var(--color-whitish);
 	padding: 0 0 .25rem 0;
 }
 
@@ -627,8 +616,8 @@ ul + p {
 
 .single_content table {
 	font-variant-numeric: tabular-nums;
-	border-top: .12rem solid var(--color-gray);
-	border-bottom: .12rem solid var(--color-gray);
+	border-top: 1px solid var(--color-gray);
+	border-bottom: 1px solid var(--color-gray);
 	border-collapse: collapse;
 	margin: 0 0 1rem 0;
 	padding: 0;
@@ -638,7 +627,7 @@ ul + p {
 
 .single_content table thead tr {
 	border-top: none;
-	border-bottom: .12rem solid var(--color-grayer);
+	border-bottom: 1px solid var(--color-grayer);
 }
 
 .single_content table th,
@@ -647,7 +636,7 @@ ul + p {
 }
 
 .single_content table tr {
-	border-top: .12rem solid var(--color-whitish);
+	border-top: 1px solid var(--color-whitish);
 }
 
 @media print {
@@ -682,13 +671,6 @@ ul + p {
 		padding: 0 0 0 0;
 	}
 	
-	.main_content,
-	.single_header,
-	.single_content,
-	.single_content .footnotes {
-		border: none;
-	}
-	
 	.single_content a {
 		text-decoration: none;
 		word-wrap: break-word;
@@ -704,10 +686,6 @@ ul + p {
 	.single_content a[href^=https]:after {
 		color: var(--color-gray);
 		content: "](" attr(href) ")";
-	}
-	
-	.single_content blockquote {
-		border-left: .25rem solid;
 	}
 	
 	.single_content figure {
