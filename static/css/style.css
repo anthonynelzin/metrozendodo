@@ -216,11 +216,16 @@ ul + p {
 *************************
 ************************/
 
+body {
+	display: grid;
+		justify-content: space-between;
+		gap: 1rem;
+		grid-template-columns: 1fr;
+}
+
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
 	body {
-		display: grid;
-			grid-template-columns: max-content max-content 1fr;
-			justify-content: space-between;
+		grid-template-columns: max-content max-content 1fr;
 		margin: 1rem 1rem 1rem 1rem;
 	}
 }
@@ -230,7 +235,6 @@ ul + p {
 		align-items: center;
 		flex-flow: row wrap;
 		justify-content: space-between;
-	padding: 0 0 1rem 0;
 }
 
 .header_brand {
@@ -255,7 +259,7 @@ ul + p {
 	.site-header {
 		flex-flow: column;
 		margin: 0 1rem 0 1rem;
-		padding: .25rem 0 .25rem 0;
+		padding: .5rem 0 0 0;
 	}
 
 	.header_brand,
@@ -265,12 +269,11 @@ ul + p {
 	}
 	
 	.header_brand {
-		padding: 0 0 2.5rem 0;
+		margin: 0 0 2.5rem 0;
 	}
 
 	.site-menu {
 		flex-flow: column;
-		margin: 0 1rem 0 1rem;
 	}
 
 	.menu_pages {
@@ -284,26 +287,12 @@ ul + p {
 ***************************
 **************************/
 
-.index,
+.index+.index {
+	margin: 5rem 0 0 0;
+}
+
+.index_header,
 .archive_header {
-	margin: 5rem 0 5rem 0;
-}
-
-@media screen and (min-width: 50rem) and (min-height: 30rem) {
-	.index:first-of-type {
-		margin: 0 0 0 0;
-	}
-
-	.index:last-of-type {
-		margin: 5rem 0 0 0;
-	}
-
-	.archive_header {
-		margin: 0 0 5rem 0;
-	}
-}
-
-.index_header {
 	margin: 0 0 1rem 0;
 }
 
