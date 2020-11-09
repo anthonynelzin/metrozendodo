@@ -263,6 +263,10 @@ ul + p {
 		-webkit-writing-mode: vertical-lr;
 		writing-mode: vertical-lr;
 	}
+	
+	.header_brand {
+		padding: 0 0 2.5rem 0;
+	}
 
 	.site-menu {
 		flex-flow: column;
