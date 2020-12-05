@@ -464,6 +464,7 @@ ul + p {
 	
 	.single_footer_then {
 		grid-column: 2;
+		text-align: right;
 	}
 }
 
