@@ -10,6 +10,16 @@
 
 <div class="archive_sidebar">
 	<aside class="archive_sidebar_aside">
+		<h2 class="archive_index_title">{{ T "by_tag" }}</h2>
+		<div class="grid grid-auto-mini">
+			{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
+			{{ range (index .Site.Taxonomies $section_tags) }}
+				<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="count">({{ len .Pages }})</span></p>
+			{{ end }}
+		</div>
+	</aside>
+
+	<aside class="archive_sidebar_aside">
 		<h2 class="archive_index_title">{{ T "by_author" }}</h2>
 		<div class="grid grid-auto-mini">
 			{{ $section_tags := printf "%s_auteurs" .Section | printf "%s" }}
@@ -20,29 +30,9 @@
 	</aside>
 
 	<aside class="archive_sidebar_aside">
-		<h2 class="archive_index_title">{{ T "by_publisher" }}</h2>
-		<div class="grid grid-auto-mini">
-			{{ $section_tags := printf "%s_editeurs" .Section | printf "%s" }}
-			{{ range (index .Site.Taxonomies $section_tags) }}
-				<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="count">({{ len .Pages }})</span></p>
-			{{ end }}
-		</div>
-	</aside>
-
-	<aside class="archive_sidebar_aside">
 		<h2 class="archive_index_title">{{ T "by_location" }}</h2>
 		<div class="grid grid-auto-mini">
 			{{ $section_tags := printf "%s_localisations" .Section | printf "%s" }}
-			{{ range (index .Site.Taxonomies $section_tags) }}
-				<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="count">({{ len .Pages }})</span></p>
-			{{ end }}
-		</div>
-	</aside>
-	
-	<aside class="archive_sidebar_aside">
-		<h2 class="archive_index_title">{{ T "by_tag" }}</h2>
-		<div class="grid grid-auto-mini">
-			{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}
 			{{ range (index .Site.Taxonomies $section_tags) }}
 				<p><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="count">({{ len .Pages }})</span></p>
 			{{ end }}
