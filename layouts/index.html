@@ -28,7 +28,7 @@
 		{{ range first 5 (where .Site.RegularPages "Section" "biblio") }}
 			<article class="h-entry index_thumbnail">		
 				{{ if $hero := .Resources.GetMatch "hero.jpg" }}
-				{{ $image := $hero.Resize "200x q85" }}
+				{{ $image := $hero.Resize "250x q85" }}
 					<a href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
 				{{ end }}
 			</article>
@@ -48,7 +48,7 @@
 		{{ range first 5 (where .Site.RegularPages "Section" "photo") }}
 			<article class="h-entry index_thumbnail">		
 				{{ if $hero := .Resources.GetMatch "hero.jpg" }}
-				{{ $image := $hero.Resize "200x q85" }}
+				{{ $image := $hero.Resize "250x q85" }}
 					<a href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
 				{{ end }}
 			</article>
