@@ -267,7 +267,6 @@ ul + p {
 .index_header,
 .archive_header,
 .index_article,
-.index_gallery,
 .index_biblio {
 	display: grid;
 		column-gap: 1rem;
@@ -278,12 +277,6 @@ ul + p {
 	margin: 0 0 1rem 0;
 }
 
-.index_gallery {
-	align-items: top;
-	grid-template-columns: repeat(auto-fit, minmax(12ch, 1fr));
-	row-gap: .5rem;
-}
-
 .index_header_title {
 	font-size: 1.25rem;
 	font-weight: 900;
@@ -291,6 +284,35 @@ ul + p {
 
 .index_header_description {
 	color: var(--color-gray);
+}
+
+.index_article_title {
+	font-weight: 500;
+}
+
+.index_article_time {
+	color: var(--color-gray);
+}
+
+.index_gallery {
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+.index_thumbnail {
+	display: inline-block;
+	vertical-align: top;
+	width: 40%;
+}
+
+.index_thumbnail+.index_thumbnail {
+	margin: 0 0 0 1rem;
+}
+
+.index_thumbnail a:hover {
+	background: none !important;
+	opacity: .75;
 }
 
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
@@ -317,19 +339,10 @@ ul + p {
 			overflow: hidden;
 			text-overflow: ellipsis;
 	}
-}
 
-.index_article_title {
-	font-weight: 500;
-}
-
-.index_article_time {
-	color: var(--color-gray);
-}
-
-.index_thumbnail:hover {
-	background: none !important;
-	opacity: .75;
+	.index_gallery {
+		display: flex;
+	}
 }
 
 .archive_sidebar {

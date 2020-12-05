@@ -25,11 +25,11 @@
 	</header>
 	
 	<div class="index_gallery">
-		{{ range first 6 (where .Site.RegularPages "Section" "biblio") }}
-			<article class="h-entry">		
+		{{ range first 5 (where .Site.RegularPages "Section" "biblio") }}
+			<article class="h-entry index_thumbnail">		
 				{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 				{{ $image := $hero.Resize "200x q85" }}
-					<a class="index_thumbnail" href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
+					<a href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
 				{{ end }}
 			</article>
 		{{ end }}
@@ -45,11 +45,11 @@
 	</header>
 	
 	<div class="index_gallery">
-		{{ range first 6 (where .Site.RegularPages "Section" "photo") }}
-			<article class="h-entry">		
+		{{ range first 5 (where .Site.RegularPages "Section" "photo") }}
+			<article class="h-entry index_thumbnail">		
 				{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 				{{ $image := $hero.Resize "200x q85" }}
-					<a class="index_thumbnail" href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
+					<a href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
 				{{ end }}
 			</article>
 		{{ end }}
