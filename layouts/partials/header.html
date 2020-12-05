@@ -1,7 +1,7 @@
 {{ if .IsHome }}
-	<p class="header_brand"><span class="header_brand_logo">[…]</span> {{ .Site.Title }}</p>
+	<p class="header_brand">{{ .Site.Title }}</p>
 {{ else }}
-	<a href="{{ .Site.BaseURL }}" class="header_brand"><span class="header_brand_logo">[…]</span> {{ .Site.Title }}</a>
+	<a href="{{ .Site.BaseURL }}" class="header_brand">{{ .Site.Title }}</a>
 {{ end }}
 
 <p class="h-card header_signature">
