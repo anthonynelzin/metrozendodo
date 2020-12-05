@@ -1,0 +1,32 @@
+{{ $type := .Get "type" }}
+{{ $section := .Get "section" }}
+{{ $limit := .Get "limit" }}
+
+<div class="index"><!-- {{.Get "section" }} -->
+	<header class="index_header">
+		{{ with .Site.GetPage "section" $section }}
+		<h1 class="index_header_title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		{{ with .Description }}<p class="index_header_description">{{ . }}</p>{{ end }}
+		{{ end }}
+	</header>
+
+	{{ if eq $type "list"  }}
+		{{ range first $limit (where .Site.RegularPages "Section" $section) }}
+			<article class="h-entry index_article">		
+				<h2 class="p-name index_article_title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+				<time class="index_article_time" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+			</article>
+		{{ end }}
+	{{ else }}
+		<div class="index_gallery">
+			{{ range first $limit (where .Site.RegularPages "Section" $section) }}
+				<article class="h-entry index_thumbnail">		
+					{{ if $hero := .Resources.GetMatch "hero.jpg" }}
+					{{ $image := $hero.Resize "250x q85" }}
+						<a href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
+					{{ end }}
+				</article>
+			{{ end }}
+		</div>
+	{{ end }}
+</div>

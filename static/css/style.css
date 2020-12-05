@@ -303,7 +303,7 @@ ul + p {
 .index_thumbnail {
 	display: inline-block;
 	vertical-align: top;
-	width: 40%;
+	width: 35%;
 }
 
 .index_thumbnail+.index_thumbnail {
@@ -340,8 +340,8 @@ ul + p {
 			text-overflow: ellipsis;
 	}
 
-	.index_gallery {
-		display: flex;
+	.index_thumbnail {
+		width: 25%;
 	}
 }
 
