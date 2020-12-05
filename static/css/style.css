@@ -159,7 +159,7 @@ i i {
 }
 
 .grid-auto-mini {
-	grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
 }
 
 .grid-2 {
