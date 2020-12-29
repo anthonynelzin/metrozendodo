@@ -19,9 +19,16 @@
 	
 	<div class="single_sidebar grid grid-2">
 		<aside class="single_sidebar_aside">
-			<h2 class="single_sidebar_aside_title">{{ T "date" }}</h2>
+			<h2 class="single_sidebar_aside_title">{{ T "published" }}</h2>
 			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Date.Day }} {{ index .Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
 		</aside>
+		
+		{{ if .Lastmod }}
+		<aside class="single_sidebar_aside">
+			<h2 class="single_sidebar_aside_title">{{ T "updated" }}</h2>
+			<time class="dt-published" datetime='{{ .Date.Format "2006-01-02T15:04:05" }}'>{{ .Lastmod.Day }} {{ index .Site.Data.mois (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }}</time>
+		</aside>
+		{{ end }}
 	
 		{{ $section := .Section }}
 		{{ $section_tags := printf "%s_tags" .Section | printf "%s" }}

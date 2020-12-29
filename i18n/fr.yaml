@@ -10,8 +10,10 @@ image:
     other: "Image"
 by:
     other: "par"
-date:
-    other: "Date"
+published:
+    other: "Publié le"
+updated:
+    other: "Mis à jour le"
 related:
     other: "Similaires"
 shades:
