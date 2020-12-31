@@ -21,7 +21,7 @@
 		{{ if $nuancier := .Resources.GetMatch "nuancier.jpg" }}
 		<aside class="single_header_hero single_sidebar_aside" aria-hidden="true">
 			{{ $image := $nuancier.Resize "300x q85" }}
-			<img src="{{ $image.RelPermalink }}" alt='Nuancier {{ .Title }}' width="{{ $image.Width }}" />
+			<img src="{{ $image.RelPermalink }}" loading="lazy" alt='Nuancier {{ .Title }}' width="{{ $image.Width }}" />
 		</aside>
 		{{ end }}
 	

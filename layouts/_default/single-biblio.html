@@ -20,7 +20,7 @@
 		<aside class="single_sidebar_hero single_sidebar_aside" aria-hidden="true">
 			{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 				{{ $image := $hero.Resize "300x q85" }}
-					<img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' />
+					<img src="{{ $image.RelPermalink }}" class="u-featured" loading="lazy" alt='{{ T "alt_image" }}' />
 			{{ end }}
 		</aside>
 	

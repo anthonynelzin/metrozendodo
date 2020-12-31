@@ -23,7 +23,7 @@
 				<article class="h-entry index_thumbnail">		
 					{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 					{{ $image := $hero.Resize "250x q85" }}
-						<a href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' /></a>
+						<a href="{{ .Permalink }}"><img src="{{ $image.RelPermalink }}" class="u-featured" loading="lazy" alt='{{ T "alt_image" }}' /></a>
 					{{ end }}
 				</article>
 			{{ end }}
