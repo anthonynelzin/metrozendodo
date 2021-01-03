@@ -1,0 +1,82 @@
+/*****************************
+******************************
+*                            *
+*   Anthony Nelzin-Santos    *
+*     anthony@nelzin.fr      *
+* https://anthony.nelzin.fr/ *
+*                            *
+*         EUPL v1.2          *
+*                            *
+******************************
+*****************************/
+
+@media print {
+	@page {
+		margin: 2cm 1cm;
+	}
+
+	html {
+		font-size: 12pt;
+	}
+
+	body {
+		background: white;
+		color: black !important;
+		font-family: "Times New Roman", Times, serif;
+		-webkit-hyphens: none;
+		-ms-hypens: none;
+		hyphens: none;
+		line-height: 1.4;
+	}
+	
+	.site-header,
+	.site-menu,
+	.single_footer,
+	.single_sidebar {
+		display: none;
+	}
+	
+	.site-main {
+		background: white;
+		margin: 0 0 1rem 0;
+		padding: 0 0 0 0;
+	}
+	
+	.single_content a {
+		text-decoration: none;
+		word-wrap: break-word;
+	}
+	
+	.single_content a[href^=http]:before,
+	.single_content a[href^=https]:before {
+		color: var(--color-gray);
+		content: "[";
+	}
+	
+	.single_content a[href^=http]:after,
+	.single_content a[href^=https]:after {
+		color: var(--color-gray);
+		content: "](" attr(href) ")";
+	}
+	
+	.single_content figure {
+		break-inside: avoid;
+	}
+	
+	.single_content figure iframe {
+		display: none;
+		height: 0;
+		width: 0;	
+	}
+	
+	.single_content h2,
+	.single_content h3 {
+   		break-after: avoid-page;
+   	}
+}
+
+@media print and (color) {
+	* {
+		-webkit-print-color-adjust: exact;
+	}
+}

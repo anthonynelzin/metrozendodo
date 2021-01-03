@@ -83,7 +83,10 @@
     	}
 	{{ end }}
 </style>
-<link rel="stylesheet" href="/css/style.css">
+{{ $cssMain := resources.Get "css/style.css" | resources.Minify }}
+<link rel="stylesheet" media="all" href="{{ $cssMain.Permalink }}">
+{{ $cssPrint := resources.Get "css/print.css" | resources.Minify }}
+<link rel="stylesheet" media="print" href="{{ $cssPrint.Permalink }}">
 
 <!-- Plausible -->
 <script async defer data-domain="metrozendodo.fr" src="https://stats.metrozendodo.fr/js/index.js"></script>
