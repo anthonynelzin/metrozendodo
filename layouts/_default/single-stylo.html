@@ -3,11 +3,15 @@
 <article class="h-entry grid grid-content single">
 	<header class="single_header">
 		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
-			{{ $image := $hero.Resize "880x q85" }}
-				<figure class="single_header_hero" aria-hidden="true">
-					<img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' />
-					<figcaption>{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author.Name }}{{ end }}.</figcaption>
-				</figure>
+			{{ $small := $hero.Resize "480x q85" }}
+			{{ $large := $hero.Resize "880x q85" }}
+			<figure role="figure" class="single_header_hero" aria-hidden="true">
+				<picture>
+					<source srcset="{{ $small.RelPermalink }}" media="(max-width: 480px)">
+					<img src="{{ $large.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' />
+				</picture>
+				<figcaption>{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author.Name }}{{ end }}.</figcaption>
+			</figure>
 		{{ end }}
 
 		<h1 class="p-name single_header_title">{{ .Title }}</h1>
