@@ -1,12 +1,15 @@
 {{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{ $small := $image.Resize "480x q85" }}
+{{ $large := $image.Resize "625x q85" }}
 {{ $figcaption := .Get "caption" }}
 {{ $alt := .Get "alt" }}
 
-{{ .Scratch.Set "processed" ($image.Resize "625x q85") }}
-
-{{ $image := .Scratch.Get "processed" }}
-
 <figure role="figure">
-	<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" loading="lazy" alt="{{ $alt }}" />
-	<figcaption>{{ $figcaption | safeHTML }}</figcaption>
+	<picture>
+		<source srcset="{{ $small.RelPermalink }}" media="(max-width: 480px)">
+		<img src="{{ $large.RelPermalink }}" width="{{ $large.Width }}" loading="lazy" alt="{{ $alt }}" />
+	</picture>
+	{{ with $figcaption }}
+		<figcaption>{{ $figcaption | safeHTML }}</figcaption>
+	{{ end }}
 </figure>
