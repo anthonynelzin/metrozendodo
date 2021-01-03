@@ -2,7 +2,7 @@
 {{ $figcaption := .Get "caption" }}
 {{ $alt := .Get "alt" }}
 
-{{ .Scratch.Set "processed" ($image.Resize "800x q85") }}
+{{ .Scratch.Set "processed" ($image.Resize "625x q85") }}
 
 {{ $image := .Scratch.Get "processed" }}
 

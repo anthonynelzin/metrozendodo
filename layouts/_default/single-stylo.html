@@ -3,7 +3,7 @@
 <article class="h-entry grid grid-content single">
 	<header class="single_header">
 		{{ if $hero := .Resources.GetMatch "hero.jpg" }}
-			{{ $image := $hero.Resize "1000x q85" }}
+			{{ $image := $hero.Resize "880x q85" }}
 				<figure class="single_header_hero" aria-hidden="true">
 					<img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "alt_image" }}' />
 					<figcaption>{{ if .Params.Credits }}{{ .Params.Credits | safeHTML }}{{ else }}{{ T "image" }} {{ .Site.Params.Author.Name }}{{ end }}.</figcaption>
@@ -20,7 +20,7 @@
 	<div class="single_sidebar grid grid-2">
 		{{ if $nuancier := .Resources.GetMatch "nuancier.jpg" }}
 		<aside class="single_header_hero single_sidebar_aside" aria-hidden="true">
-			{{ $image := $nuancier.Resize "300x q85" }}
+			{{ $image := $nuancier.Resize "190x q85" }}
 			<img src="{{ $image.RelPermalink }}" loading="lazy" alt='Nuancier {{ .Title }}' width="{{ $image.Width }}" />
 		</aside>
 		{{ end }}
