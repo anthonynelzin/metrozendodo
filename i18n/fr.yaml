@@ -26,12 +26,12 @@ shades:
 brands:
     other: "Marques"
 tags:
-    other: "Étiquettes"
+    other: "Thèmes"
 then:
     other: "Ensuite"
     
 by_tag:
-    other: "Par étiquette"
+    other: "Par thème"
 by_author:
     other: "Par auteur"
 by_publisher:
@@ -42,7 +42,7 @@ by_year:
     other: "Par année"
      
 tags_list:
-    other: "Liste des étiquettes"
+    other: "Liste des thèmes"
 nav_main:
     other: "Navigation principale"
 nav_other:
