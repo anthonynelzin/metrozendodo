@@ -4,10 +4,15 @@ skip_link:
 print_credits:
     other: "Merci d’avoir imprimé cet article écrit par Anthony Nelzin-Santos (anthony@nelzin.fr) sur métro[zen]dodo (metrozendodo.fr). Tous droits réservés."
 
-alt_image:
-    other: "Illustration de l’article"
 image:
     other: "Image"
+alt_image:
+    other: "Illustration de l’article"
+offline_image:
+    other: "Des montagnes au crépuscule"
+offline_caption:
+    other: "La vallée de Yosemite. Image <a href='https://unsplash.com/photos/8BFWBUkSqQo'>Rodrigo Soares</a> (libre de droits)."
+
 by:
     other: "par"
 published:

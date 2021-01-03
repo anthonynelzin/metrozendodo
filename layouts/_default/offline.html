@@ -3,8 +3,10 @@
 <article class="h-entry single">
 	<header class="single_header">
 		<figure class="single_header_hero">
-			<img src="{{ .Site.BaseURL }}img/offline.jpg" class="u-featured" alt="Des montagnes au crépuscule" />
-			<figcaption>La vallée de Yosemite. Image <a href="https://unsplash.com/photos/8BFWBUkSqQo">Rodrigo Soares</a> (libre de droits).</figcaption>
+			{{ $hero := resources.Get "img/offline.jpg" }}
+			{{ $image := $hero.Resize "880x q85" }}
+			<img src="{{ $image.RelPermalink }}" class="u-featured" alt='{{ T "error_image" }}' />
+			<figcaption>{{ T "offline_caption" | safeHTML }}</figcaption>
 		</figure>
 
 		<h1 class="p-name single_header_title">{{ .Title }}</h1>
