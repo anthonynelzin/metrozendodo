@@ -598,11 +598,11 @@ ul + p {
 }
 
 .single_content sub {
-	font-feature-settings: "sinf";
+	font-variant-position: sub;
 }
 
 .single_content sup {
-	font-feature-settings: "sups";
+	font-variant-position: super;
 }
 
 .single_content table {
