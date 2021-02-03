@@ -54,7 +54,7 @@
     {{ if .Params.CustomColor }}
         html { background: {{ .Params.CustomColor | safeCSS }}; }
     {{ else if .Site.Params.HeaderGradient }}
-        html { background: linear-gradient(to bottom right, var(--color-first-before), var(--color-first), var(--color-first-after)); background-repeat: no-repeat; background-attachment: fixed; }
+        html { background: linear-gradient(to top right, var(--color-first-before), var(--color-first), var(--color-first-after)); background-repeat: no-repeat; background-attachment: fixed; }
     {{ else }}
     	html { background: var(--color-first); }
     {{ end }}
