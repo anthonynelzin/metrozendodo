@@ -108,14 +108,14 @@ body {
 		-ms-hyphenate-limit-last: always;
 	line-height: 1.8;
 	padding: 1rem 1rem 1rem 1rem;
-	margin: 1rem 0 0 0;
+	margin: 1rem 0 1rem 0;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
 }
 
-@supports (margin: env(safe-area-inset-top)) {
+@media screen and (min-width: 50rem) and (min-height: 30rem) {
 	body {
-		margin: 1rem env(safe-area-inset-right) env(safe-area-inset-bottom, 1rem) env(safe-area-inset-left);
+		margin: 1rem 1rem 1rem 1rem;
 	}
 }
 
