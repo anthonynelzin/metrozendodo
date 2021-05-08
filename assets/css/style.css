@@ -453,6 +453,10 @@ ul + p {
 	display: none;
 }
 
+.single_sidebar_aside {
+	margin: 0 0 1rem 0;
+}
+
 .single_sidebar_aside_title {
 	font-weight: 700;
 }
@@ -474,6 +478,7 @@ ul + p {
 	}
 
 	.single_sidebar {
+		display: block;
 		grid-template-columns: 1fr;
 		grid-column: 2;
 		grid-row: 2;

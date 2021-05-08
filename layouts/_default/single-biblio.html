@@ -21,7 +21,7 @@
 		{{ .Content }}
 	</div>
 	
-	<div class="single_sidebar grid grid-2">
+	<div class="single_sidebar">
 		<aside class="single_sidebar_hero single_sidebar_aside" aria-hidden="true">
 			{{ if $hero := .Resources.GetMatch "hero.jpg" }}
 				{{ $image := $hero.Resize "190x q85" }}
@@ -48,7 +48,7 @@
 		{{ if .Params.link }}
 		<aside class="single_sidebar_aside">
 			<h2 class="single_sidebar_aside_title">Acheter</h2>
-			<div class="grid grid-auto-mini">
+			<div>
 				{{ range .Params.link }}
 					<p>{{ . | safeHTML }}</p>
 				{{ end }}
@@ -92,7 +92,7 @@
 		{{ if .Params.biblio_tags }}
 		<aside class="single_sidebar_aside">
 			<h2 class="single_sidebar_aside_title">{{ T "tags" }}</h2>
-			<div class="grid grid-auto-mini">
+			<div>
 				{{ range .Params.biblio_tags }}
 					<p><a class="p-category" href="{{ "/biblio/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
 				{{ end }}

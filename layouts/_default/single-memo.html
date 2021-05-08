@@ -21,7 +21,7 @@
 		{{ .Content }}
 	</div>
 	
-	<div class="single_sidebar grid grid-2">
+	<div class="single_sidebar">
 		<aside class="single_sidebar_aside">
 			<h2 class="single_sidebar_aside_title">{{ T "published" }}</h2>
 			{{ if .PublishDate }}{{ if ne .PublishDate .Date }}
@@ -43,7 +43,7 @@
 		{{ if (index .Params $section_tags) }}
 		<aside class="single_sidebar_aside">
 			<h2 class="single_sidebar_aside_title">{{ T "tags" }}</h2>
-			<div class="grid grid-auto-mini">
+			<div>
 				{{ range (index .Params $section_tags) }}
 					<p><a class="p-category" href="/{{ $section }}/tags/{{ . | urlize }}">{{ . }}</a></p>
 				{{ end }}

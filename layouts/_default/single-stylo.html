@@ -21,7 +21,7 @@
 		{{ .Content }}
 	</div>
 	
-	<div class="single_sidebar grid grid-2">
+	<div class="single_sidebar">
 		{{ if $nuancier := .Resources.GetMatch "nuancier.jpg" }}
 		<aside class="single_header_hero single_sidebar_aside" aria-hidden="true">
 			{{ $image := $nuancier.Resize "190x q85" }}
@@ -48,7 +48,7 @@
 		{{ if .Params.link }}
 		<aside class="single_sidebar_aside">
 			<h2 class="single_sidebar_aside_title">Acheter</h2>
-			<div class="grid grid-auto-mini">
+			<div>
 				{{ range .Params.link }}
 					<p>{{ . | safeHTML }}</p>
 				{{ end }}
@@ -77,7 +77,7 @@
 		{{ if .Params.stylo_tags }}
 		<aside class="single_sidebar_aside">
 			<h2 class="single_sidebar_aside_title">{{ T "tags" }}</h2>
-			<div class="grid grid-auto-mini">
+			<div>
 				{{ range .Params.stylo_tags }}
 					<p><a class="p-category" href="{{ "/stylo/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></p>
 				{{ end }}
