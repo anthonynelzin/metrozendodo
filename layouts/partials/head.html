@@ -54,7 +54,7 @@
     {{ if .Params.CustomColor }}
         html { background: {{ .Params.CustomColor | safeCSS }}; }
     {{ else if .Site.Params.HeaderGradient }}
-        html { background: linear-gradient(to top right, var(--color-first-before), var(--color-first), var(--color-first-after)); background-repeat: no-repeat; background-attachment: fixed; }
+        html { background: linear-gradient(to bottom, var(--color-first-before), var(--color-first), var(--color-first-after)); background-repeat: no-repeat; background-attachment: fixed; }
     {{ else }}
     	html { background: var(--color-first); }
     {{ end }}
@@ -93,7 +93,13 @@
 <!-- Mobile devices -->
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content='{{ .Site.Params.Colors.ColorFirst | default "hsl(280, 55%, 30%)" | safeCSS }}'>
+{{ if .Params.CustomColor }}
+    <meta name="theme-color" content="{{ .Params.CustomColor }}">
+{{ else }}
+    <meta name="theme-color" content='{{ .Site.Params.Colors.ColorFirstBefore | default "hsl(250, 55%, 30%)" }}' media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content='{{ .Site.Params.DarkColors.ColorFirstBefore | default "hsl(220, 35%, 30%)" }}' media="(prefers-color-scheme: dark)">
+{{ end }}
+
 
 <!-- PWA -->
 {{ if .Site.Params.Pwa }}
