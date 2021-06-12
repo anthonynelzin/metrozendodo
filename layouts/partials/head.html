@@ -53,25 +53,8 @@
 
     {{ if .Params.CustomColor }}
         html { background: {{ .Params.CustomColor | safeCSS }}; }
-    {{ else if .Site.Params.HeaderGradient }}
-        html { background: linear-gradient(to bottom, var(--color-first-before), var(--color-first), var(--color-first-after)); background-repeat: no-repeat; background-attachment: fixed; }
     {{ else }}
     	html { background: var(--color-first); }
-    {{ end }}
-    
-    {{ if .Site.Params.HeaderAnimation }}
-        @media (prefers-reduced-motion: no-preference) {
-        	@keyframes gradient {
-            	0% { background-position: 50% 0%; }
-            	50% { background-position: 50% 100%; }
-            	100% { background-position: 50% 0%; }
-        	}
-		
-			html {
-            	animation: gradient 30s ease infinite;
-	        	background-size: 300% 300%;
-        	}
-        }
     {{ end }}
     
     {{ if .IsPage }}
@@ -96,8 +79,8 @@
 {{ if .Params.CustomColor }}
     <meta name="theme-color" content="{{ .Params.CustomColor }}">
 {{ else }}
-    <meta name="theme-color" content='{{ .Site.Params.Colors.ColorFirstBefore | default "hsl(250, 55%, 30%)" }}' media="(prefers-color-scheme: light)">
-	<meta name="theme-color" content='{{ .Site.Params.DarkColors.ColorFirstBefore | default "hsl(220, 35%, 30%)" }}' media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content='{{ .Site.Params.Colors.ColorFirst | default "hsl(280, 55%, 30%)" }}' media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content='{{ .Site.Params.DarkColors.ColorFirst | default "hsl(250, 35%, 40%)" }}' media="(prefers-color-scheme: dark)">
 {{ end }}
 
 
