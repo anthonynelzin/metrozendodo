@@ -2,9 +2,6 @@ name: "métro[zen]dodo"
 license: "EUPL 1.2"
 licenselink: "https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12"
 description: "Le thème de métro[zen]dodo"
-tags:
-features:
-min_version: 0.21
 
 author:
     name: "Anthony Nelzin-Santos"
