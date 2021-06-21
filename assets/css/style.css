@@ -411,7 +411,6 @@ ul + p {
 .single {
 	display: grid;
 		row-gap: 1rem;
-	margin: 5rem 0 0 0;
 }
 
 @media screen and (min-width: 50rem) and (min-height: 30rem) {
