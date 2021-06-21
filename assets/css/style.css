@@ -45,9 +45,9 @@
 }
 
 :root {
-	--font-sans: "Archivo", sans-serif;
-	--font-serif: "Bitter", serif;
-	--font-mono: "Monaco", "Courier New", "Courier", monospace;
+	--font-sans: "Archivo", ui-sans-serif, sans-serif;
+	--font-serif: "Bitter", ui-serif, serif;
+	--font-mono: ui-monospace, "Monaco", "Courier New", "Courier", monospace;
 }
 
 *, *:before, *:after {
